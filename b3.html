@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Kiểu dữ liệu ?</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <main class="app_wrap">
+            <div class="app_slider">
+
+                <div class="item">
+                    <div class="overflow">
+                        <div class="item_content">
+                            <h2>Kiểu dữ liệu là gì?</h2>
+                            <p>
+                                Kiểu dữ liệu là cách phân loại dữ liệu cho trình biên dịch hiểu về kiểu của biến đang dùng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="overflow">
+                        <div class="item_content">
+                            <h2>Các kiểu dữ liệu thông dụng</h2>
+
+                            <h3>Kiểu dữ liệu boolean (kiểu logic)</h3>
+                            <p><c-null>Boolean</c-null> là kiểu dữ liệu logic chỉ bao gồm hai giá trị là <c-string>true</c-string> và <c-string>false</c-string>.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>the_week_has_10_day</c-var-name> = <c-string>false</c-string>;
+                                </li>
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>the_week_has_7_day</c-var-name> = <c-string>true</c-string>;
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Kiểu dữ liệu null</h3>
+                            <p>Kiểu dữ liệu <c-null>null</c-null> có nghĩa là chưa có giá trị cụ thể, tạm thời set là <c-null>null</c-null>.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>the_week_is_coming</c-var-name> = <c-null>null</c-null>;
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Kiểu dữ liệu undefined</h3>
+                            <p>Kiểu dữ liệu <c-null>undefined</c-null> có nghĩa là giá trị chưa được gán, có thể hiểu là giá trị mặc định của biến sau khi tạo và không gán giá trị cụ thể.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name>; <c-cmt>//undefined</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Kiểu dữ liệu number</h3>
+                            <p>Kiểu dữ liệu <c-null>number</c-null> là kiểu dữ liệu dạng số, tương tự trong toán học, có 3 loại thông dụng là <c-string>số nguyên</c-string>, <c-string>số thực</c-string> và <c-string>NaN ( không phải số )</c-string>.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>n</c-var-name> = 1 ; <c-cmt>// số nguyên dương 1</c-cmt>
+                                    <br><c-var-name>n</c-var-name> = -1 ; <c-cmt>// số nguyên âm 1</c-cmt>
+                                    <br><c-var-name>n</c-var-name> = 1.1 ; <c-cmt>// số thực dương 1.1</c-cmt>
+                                    <br><c-var-name>n</c-var-name> = -1.1 ; <c-cmt>// số thực âm 1.1</c-cmt>
+                                </li>
+                            </ul>
+                            <p>NaN: là viết tắt của Not a Number, được sử dụng để đại diện cho những trường hợp tính toán sai hoặc kết quả của một phép tính không xác định.</p>
+                            <ul class="pre">
+                                <li>
+                                    <h5>lấy số 0 chia cho số 0</h5>
+                                    <c-func>console.log</c-func>(<c-string>0 / 0</c-string>); <c-cmt>// NaN</c-cmt>
+                                </li>
+                                <li>
+                                    <h5>lấy 1 chuỗi kí tự chia cho 1 số</h5>
+                                    <c-func>console.log</c-func>(<c-string>:"hi umi" / 100</c-string>); <c-cmt>// NaN</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Kiểu dữ liệu string</h3>
+                            <p>
+                                Kiểu dữ liệu <c-null>string</c-null> để biểu diễn chữ, văn bản, đoạn văn bản,...
+                                <br>Có ba cách để biểu diễn string trong JavaScript: <c-string>""</c-string>, <c-string>''</c-string>, <c-string>``</c-string>.
+                            </p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>; <c-cmt>//dùng dấu "</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>'hi umi'</c-string>; <c-cmt>//dùng dấu '</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>`hi umi`</c-string>; <c-cmt>//dùng dấu `</c-cmt>
+                                </li>
+                            </ul>
+                            <p>Đặc biệt là dấu `` có thể thêm biến, hằng, biểu thức bên trong, bằng cách dùng <c-null>${}</c-null>.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-string>`my name is <c-null>${</c-null><c-var-name> name</c-var-name><c-null> }</c-null>`</c-string>); <c-cmt>//my name is hi umi</c-cmt>
+                                </li>
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>age</c-var-name> = <c-string>100</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-string>`your age is <c-null>${</c-null><c-var-name> age</c-var-name> + 100<c-null> }</c-null>`</c-string>); <c-cmt>//your age is 200</c-cmt>
+                                </li>
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>is_true</c-var-name> = <c-string>true</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-string>`is it true? <c-null>${</c-null><c-var-name> is_true</c-var-name> <c-func>?</c-func> 'yes' <c-func>:</c-func> 'no' <c-null> }</c-null>`</c-string>); <c-cmt>//is it true? yes</c-cmt>
+                                    <br><c-var-name>is_true</c-var-name> = <c-string>false</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-string>`is it true? <c-null>${</c-null><c-var-name> is_true</c-var-name> <c-func>?</c-func> 'yes' <c-func>:</c-func> 'no' <c-null> }</c-null>`</c-string>); <c-cmt>//is it true? no</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Kiểu dữ liệu object</h3>
+                            <p><c-null>Object</c-null> là kiểu dữ liệu tham chiếu. Có thể hiểu <c-null>object</c-null> là một tập hợp gồm các cặp key - value (khóa - giá trị).</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>const</c-key-word> <c-var-name>person</c-var-name> = {
+                                    <dl>
+                                        <dt>name:</dt>
+                                        <dd>"hi umi",</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>age:</dt>
+                                        <dd>100</dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+                            <p>Bạn có thể lấy giá trị của <c-null>object</c-null> bằng 2 cách, dùng . hoặc [].</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-func>console.log</c-func>(<c-var-name>person</c-var-name>.<c-var>name</c-var>); <c-cmt>// "hi umi"</c-cmt>
+                                    <br><c-func>console.log</c-func>( <c-var-name>person</c-var-name>[ <c-var>name</c-var> ]); <c-cmt>// "hi umi"</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item in_center">
+                    <div class="overflow">
+                        <div class="item_content">
+                            <h2>Cách xác định kiểu dữ liệu của biến</h2>
+                            <p>
+                                Để xác định kiểu dữ liệu hiện tại của một biến, bạn có thể dùng typeof với hai loại cú pháp:
+                            </p>
+                            <h5>Dạng toán tử typeof x.</h5>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//undefined</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//string</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>true</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//boolean</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>100</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//number</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = { <c-var>x</c-var>: <c-string>0</c-string> };
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//object</c-cmt>
+                                </li>
+                            </ul>
+                            <h5>Dạng hàm typeof(x).</h5>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//undefined</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//string</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>true</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//boolean</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = <c-string>100</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//number</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>name</c-var-name> = { <c-var>x</c-var>: <c-string>0</c-string> };
+                                    <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//object</c-cmt>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app_slider_arrows">
+                <a href="./b2.html" class="item_prev_lesson">Bài trước</a>
+                <div class="item_prev is_disable">Lùi lại</div>
+                <div class="item_next">Tiếp theo</div>
+                <a href="./b4.html" class="item_next_lesson is_disable">Bài tiếp theo</a>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.app_related {
+    display: flex;
+    align-content: inherit;
+    justify-content: space-between;
+
+    padding: 32px;
+    border-bottom: 8px solid var(--bc-btn-bc);
+
+    &_item {}
+}

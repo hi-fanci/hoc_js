@@ -1,0 +1,30 @@
+- biến
+- hằng
+- kiểu dữ liệu - cơ bản 
+    - string 
+    - number 
+    - boolean
+    - null
+    - undefined 
+- kiểu dữ liệu - nâng cao 
+    - array 
+        -> các phương thức
+    - object 
+        -> các phương thức
+- function - cơ bản 
+    - setTimeout
+    - setInterval
+- function - nâng cao
+    - promise 
+    - async/await 
+- class - cơ bản
+
+- bài 1: biến và hằng trong javascript
+- bài 2: kiểu dữ liệu - cơ bản - string - number - boolean - null - undefined 
+- bài 3: kiểu dữ liệu - nâng cao - array
+- bài 4: kiểu dữ liệu - nâng cao - object
+- bài 5: function - cơ bản - setTimeout
+- bài 6: function - cơ bản - setInterval
+- bài 7: function - nâng cao - requestAnimationFrame
+- bài 8: function - nâng cao - promise, async/await
+- bài 9: class - cơ bản

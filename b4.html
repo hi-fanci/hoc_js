@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Toán tử</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <main class="app_wrap">
+            <div class="app_slider">
+
+                <div class="item in_center">
+                    <div class="overflow">
+                        <div class="item_content">
+                            <h2>Các toán tử trong Javascript</h2>
+                            <p>
+                                Toán tư trong JS củng tương tự các toán tử cơ bản của toán học, như dấu <c-string>+</c-string>, <c-string>-</c-string>, <c-string>*</c-string>, <c-string>/</c-string>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="overflow">
+                        <div class="item_content">
+                            <h2>Các kiểu toán tử thông dụng</h2>
+
+                            <h3>Toán tử số học</h3>
+                            <p>Toán tử số học dùng để thực hiện các phép tính toán trong số học. bao gồm:</p>
+
+                            <h5> Toán tử cộng <c-string>+</c-string></h5>
+                            <h5> Toán tử trừ <c-string>-</c-string></h5>
+                            <h5> Toán tử nhân <c-string>*</c-string></h5>
+                            <h5> Toán tử luỹ thừa <c-string>**</c-string></h5>
+                            <h5> Toán tử chia <c-string>/</c-string></h5>
+                            <h5> Toán tử chia lấy số dư<c-string>%</c-string></h5>
+                            <ul class="pre">
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>3</c-string> + <c-string>2</c-string>); <c-cmt>// 5</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>3</c-string> - <c-string>2</c-string>); <c-cmt>// 1</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>3</c-string> * <c-string>2</c-string>); <c-cmt>// 6</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>3</c-string> ** <c-string>2</c-string>); <c-cmt>// 9 ( 3 ^ 2)</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>3</c-string> / <c-string>2</c-string>); <c-cmt>// 1.5</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>3</c-string> % <c-string>2</c-string>); <c-cmt>// 1 ( số dư )</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Toán tử nối chuỗi</h3>
+                            <p>Khi một trong hai toán hạng của toán tử của <c-string>+</c-string> là kiểu string thì toán hạng còn lại sẽ bị chuyển thành kiểu string.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>"hello"</c-string> + <c-string>"world"</c-string>); <c-cmt>// hello world</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(<c-string>"1"</c-string> + <c-string>2</c-string>); <c-cmt>// 12</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h3>Toán tử tăng/giảm</h3>
+                            <p>Đây là cú pháp ngắn gọn cho việc tăng/giảm giá trị cho 1 biến</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-key-word>let</c-key-word> <c-var-name>x</c-var-name> = <c-string>10</c-string>; <c-cmt>// x = 10</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>x</c-var-name> ++; <c-cmt>// x = 11</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>x</c-var-name> += <c-string>4</c-string>; <c-cmt>// x = 15</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>x</c-var-name> --; <c-cmt>// x = 14</c-cmt>
+                                </li>
+                                <li>
+                                    <c-var-name>x</c-var-name> -= <c-string>4</c-string>; <c-cmt>// x = 10</c-cmt>
+                                </li>
+
+                            </ul>
+                            <!--  -->
+
+                            <h3>Toán tử điều kiện rẽ nhánh</h3>
+                            <p>Toán tử này dùng cho câu lệnh <c-null>If</c-null>- <c-null>Else</c-null> cách ngắn gọn</p>
+                            <p><c-null>if</c-null> <c-var-name>true</c-var-name> : <c-string>thực hiện điều kiện đúng</c-string> : <c-string>điều kiện sai</c-string></p>
+                            <ul class="pre">
+                                <li>
+                                    <c-func>console.log</c-func>(( <c-var-name>1</c-var-name> > <c-var-name>10</c-var-name> ) ? <c-string>"yes"</c-string> : <c-string>"no"</c-string>); <c-cmt>// no</c-cmt>
+                                </li>
+                                <li>
+                                    <c-func>console.log</c-func>(( <c-var-name>10</c-var-name> > <c-var-name>1</c-var-name> ) ? <c-string>"yes"</c-string> : <c-string>"no"</c-string>); <c-cmt>// yes</c-cmt>
+                                </li>
+                            </ul>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app_slider_arrows">
+                <a href="./b3.html" class="item_prev_lesson">Bài trước</a>
+                <div class="item_prev is_disable">Lùi lại</div>
+                <div class="item_next">Tiếp theo</div>
+                <a href="./b5.html" class="item_next_lesson is_disable">Bài tiếp theo</a>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/common.js"></script>
+</body>
+
+</html>

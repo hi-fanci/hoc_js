@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --c-default: #cbd5e1;
+
+    --c-key-word: #f59e0b;
+    --c-key-word-name: #0ea5e9;
+    --c-string: #fde047;
+    --c-null: #ec4899;
+    --c-cmt: #5c6370;
+
+    --bc-default: #111827;
+
+    --f-default: "Open Sans", sans-serif;
+    --f-code: "Inconsolata", serif;
+
+    --c-btn: #cbd5e1;
+    --bc-btn-bc: #6b7280;
+
+    --c-nav-link: #14b8a6;
+}
+
+.c-keyw,
+c-keyw {
+    font-weight: 700;
+    color: var(--c-key-word);
+}
+
+.c-keyw-name,
+c-keyw-name {
+    font-weight: 700;
+    color: var(--c-key-word-name);
+}
+
+.c-string,
+c-string {
+    font-weight: 500;
+    color: var(--c-string);
+}
+
+.c-null,
+c-null {
+    font-weight: 700;
+    color: var(--c-null);
+}
+
+.c-cmt,
+c-cmt {
+    font-weight: 500;
+    color: var(--c-cmt);
+    padding-right: 20px;
+}
+
+.c-strong,
+c-strong {
+    color: var(--c-key-word-name);
+    font-weight: 700;
+}
+
+.c-bold,
+c-bold {
+    font-weight: 700;
+}
+
+.c-note,
+c-note {
+    &::before {
+        content: '#note:';
+        display: inline-block;
+        padding-right: 4px;
+        font-weight: 700;
+    }
+}

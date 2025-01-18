@@ -1,0 +1,14 @@
+.app_main {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &_content {
+        padding: 48px 60px 24px 16px;
+    }
+
+    &_block {
+        min-height: 480px;
+        padding-bottom: 48px;
+    }
+}

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Kiểu dữ liệu - nâng cao - mảng</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        const page_name = "data type - advanced - array";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <ul class="app_menu_lists">
+                <li class="app_menu_item">
+                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Giới thiệu</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_init" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Khởi tạo</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_get_length" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Lấy độ dài của mảng</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_access" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Truy cập vào phần tử Array</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_add" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Thêm phần tử</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_update" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Cập nhật giá trị của phần tử</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_clone" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Clone mảng mới</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_for_loop" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Vòng lặp qua mảng</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_finding" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Tìm kiếm trong mảng</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_other" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Các phương thức khác</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#app_releated" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Bài học</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_intro">
+                    <h2>Array - mảng</h2>
+                    <div class="block">
+                        <p>
+                            Trong JavaScript, <c-strong>mảng (array)</c-strong> là một cấu trúc dữ liệu dùng để lưu trữ một tập hợp các giá trị. Các giá trị trong mảng có thể là bất kỳ kiểu dữ liệu nào như số, chuỗi, đối tượng, hoặc thậm chí là các mảng khác. Các phần tử trong mảng được lưu trữ theo <c-bold>chỉ mục (index)</c-bold>, với chỉ mục bắt đầu từ <c-bold>0</c-bold>.
+                        </p>
+
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>numbers</c-keyw-name> = <c-string>['a', 'b', -1, 0, 1, true, false, 'this is text']</c-string>;
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ▲ b_intro ▲ -->
+
+                <div class="app_main_block" id="b_init">
+                    <h3>Khởi tạo</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>[ ]</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[ ]</c-string>;
+                                    <br><c-keyw>let</c-keyw> <c-keyw-name>xxx</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Cách này được phổ biến hơn do ngắn gọn, sử dụng.</p>
+                        </li>
+                        <li>
+                            <h6>new Array()</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-keyw>new</c-keyw> <c-null>Array</c-null>();
+                                    <br><c-keyw>let</c-keyw> <c-keyw-name>xxx</c-keyw-name> = <c-keyw>new</c-keyw> <c-null>Array</c-null>(<c-string>1, 2, 3</c-string>);
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ init ▲ -->
+
+                <div class="app_main_block" id="b_get_length">
+                    <h3>Lấy độ dài của mảng</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>length</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                    <br><c-keyw>let</c-keyw> <c-keyw-name>xxx</c-keyw-name> = <c-string>[1, 2, 2, 3, 3, 3]</c-string>;
+                                    <br>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.length ); <c-cmt>// 3</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>xxx</c-keyw-name>.length ); <c-cmt>// 6</c-cmt>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ get length ▲ -->
+
+                <div class="app_main_block" id="b_access">
+                    <h3>Truy cập vào phần tử Array</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>[ ]</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c'];</c-string>
+
+                                    <br><br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>[0] ); <c-cmt>// "a"</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>[1] ); <c-cmt>// "b"</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>[-1] ); <c-cmt>// undefined</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>[10] ); <c-cmt>// undefined</c-cmt>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Nếu ví trí là <c-bold>số âm</c-bold>, hoặc <c-bold>lớn hơn</c-bold> độ dài của mảng, thì kết quả trả về là <c-bold>undefined</c-bold>, cách lấy độ dài của mảng <a href="#b_get_length" class="js_goto">ở đây</a>.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ access ▲ -->
+
+                <div class="app_main_block" id="b_add">
+                    <h3>Thêm phần tử</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>[ ]</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>arr</c-keyw-name>[3] = <c-string>'d'</c-string>;
+                                    <br><c-keyw-name>arr</c-keyw-name>[10] = <c-string>'e'</c-string>;
+                                </li>
+                                <li><br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["a", "b", "c", "d",,,,,,, "e"]</c-cmt>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Những vị trí ở khoảng giữa chưa có giá trị thì mặc định sẽ là <c-bold>undefined</-bold>.</p>
+                        </li>
+                        <li>
+                            <h6>push( )</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw-name>arr</c-keyw-name>.<c-null>push</c-null>( <c-string>'d'</c-string> );
+                                </li>
+                                <li>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["a", "b", "c", "d"]</c-cmt>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note><c-strong>.push()</c-strong> sẽ thêm <c-bold>phần tử mới</c-bold> vào ngay sau <c-bold>phần tử cuối cùng</c-bold> của mảng.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ add ▲ -->
+
+                <div class="app_main_block" id="b_update">
+                    <h3>Cập nhật giá trị của phần tử</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>[ ]</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>arr</c-keyw-name>[0] = <c-string>'A'</c-string>;
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["A", "b", "c"]</c-cmt>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ update ▲ -->
+
+                <div class="app_main_block" id="b_clone">
+                    <h3>Clone mảng mới</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>slice( )</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3]</c-string>;
+                                    <br>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>new_arr</c-keyw-name> = <c-keyw-name>arr</c-keyw-name>.<c-null>slice</c-null>();
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw-name>new_arr</c-keyw-name>[0] = <c-string>100</c-string>;
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 2, 3]</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>new_arr</c-keyw-name> ); <c-cmt>// [100, 2, 3]</c-cmt>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h6>spread[ ...array ]</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3]</c-string>;
+                                    <br>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>new_arr</c-keyw-name> = [ <c-null>...</c-null><c-keyw-name>arr</c-keyw-name> ];
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw-name>new_arr</c-keyw-name>[0] = <c-string>100</c-string>;
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 2, 3]</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>new_arr</c-keyw-name> ); <c-cmt>// [100, 2, 3]</c-cmt>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Thao tác trên <c-bold>mảng clone</c-bold> sẽ không ảnh hưởng đến <c-bold>mảng gốc</c-bold>.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ copy clone ▲ -->
+
+                <div class="app_main_block" id="b_for_loop">
+                    <h3>Vòng lặp qua mảng</h3>
+                    <div class="block">
+                        <ul class="counter">
+                            <li>
+                                <h6>for</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                    </li>
+                                    <li>
+                                        <c-null>for</c-null>( <c-keyw>let</c-keyw> <c-keyw-name>i</c-keyw-name> = 0; <c-keyw-name>i</c-keyw-name> &#60; <c-keyw-name>arr</c-keyw-name>.length; <c-keyw-name>i</c-keyw-name>++ ) {
+                                        <ul>
+                                            <li>
+                                                <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>[<c-keyw-name>i</c-keyw-name>] );
+                                            </li>
+                                        </ul>
+                                        }
+                                    </li>
+                                    <li>
+                                        <br>
+                                        <c-cmt>// kết quả</c-cmt>
+                                        <br>
+                                        <c-cmt>"a"</c-cmt>
+                                        <br>
+                                        <c-cmt>"b"</c-cmt>
+                                        <br>
+                                        <c-cmt>"c"</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6>forEach</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                    </li>
+                                    <li>
+                                        <c-keyw-name>arr</c-keyw-name>.<c-null>forEach</c-null>( <c-keyw-name>val</c-keyw-name> => <c-keyw>console.log</c-keyw>( <c-keyw-name>val</c-keyw-name> ) );
+                                    </li>
+                                    <li>
+                                        <br>
+                                        <c-cmt>// kết quả</c-cmt>
+                                        <br>
+                                        <c-cmt>"a"</c-cmt>
+                                        <br>
+                                        <c-cmt>"b"</c-cmt>
+                                        <br>
+                                        <c-cmt>"c"</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- ▲ for-loop ▲ -->
+
+                <div class="app_main_block" id="b_finding">
+                    <h3>Tìm kiếm trong mảng</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>indexOf</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'a', 'b', 'c', 'a', 'b']</c-string>;
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.<c-null>indexOf</c-null>(<c-string>'a'</c-string>) ); <c-cmt>// 0</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.<c-null>indexOf</c-null>(<c-string>'a'</c-string>, <c-string>2</c-string>) ); <c-cmt>// 4</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.<c-null>indexOf</c-null>(<c-string>'e'</c-string>) ); <c-cmt>// -1</c-cmt>
+                                </li>
+                            </ul>
+                            <p>
+                                <c-note></c-note><c-strong>indexOf( value, from )</c-strong> trả về vị trí đầu tiên mà <c-bold>value</c-bold> được tìm thấy bắt đầu từ vị trí <c-bold>from</c-bold>, mặc định là <c-bold>0</c-bold>.
+                            </p>
+                        </li>
+                        <li>
+                            <h6>includes</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'a', 'b', 'c', 'b', 'c']</c-string>;
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.<c-null>includes</c-null>(<c-string>'a'</c-string>) ); <c-cmt>// true</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.<c-null>includes</c-null>(<c-string>'a'</c-string>, <c-string>2</c-string>) ); <c-cmt>// false</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>.<c-null>lastindexOf</c-null>(<c-string>'e'</c-string>) ); <c-cmt>// false</c-cmt>
+                                </li>
+                            </ul>
+                            <p>
+                                <c-note></c-note><c-strong>includes( value, from )</c-strong> trả về <c-bold>true</c-bold> nếu <c-bold>value</c-bold> được tìm thấy bắt đầu từ vị trí <c-bold>from</c-bold>, mặc định là <c-bold>0</c-bold>, không thì <c-bold>false</c-bold>.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ finding ▲ -->
+                <div class="app_main_block" id="b_other">
+                    <h3>Các phương thức khác</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>splice()</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3, 4, 5]</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>arr</c-keyw-name>.<c-null>splice</c-null>(2, 2); <c-cmt>// Xóa 2 phần tử bắt đầu từ chỉ số 2</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 2, 5]</c-cmt>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note><c-strong>splice(from, counter)</c-strong>, trong đó <c-bold>from</c-bold> là vị trí bắt đầu xoá, <c-bold>counter</c-bold> là số lượng phần tử bị xoá.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3, 4, 5, 6, 7 ,8, 9, 10]</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr_deleted</c-keyw-name> = <c-keyw-name>arr</c-keyw-name>.<c-null>splice</c-null>(0, 5);
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [6, 7, 8, 9, 10]</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr_deleted</c-keyw-name> ); <c-cmt>// [1, 2, 3, 4, 5]</c-cmt>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note><c-strong>splice(from, counter)</c-strong> trả về mảng chứa các giá trị được xoá.</p>
+                        </li><!-- ▲ slice ▲ -->
+
+                        <li>
+                            <h6>filter</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</c-string>,
+                                    <br><c-keyw-name>arr_01</c-keyw-name> = <c-keyw-name>arr</c-keyw-name>.<c-null>filter</c-null>( <c-keyw-name>val</c-keyw-name> => <c-keyw-name>val</c-keyw-name> > 5 ),
+                                    <br><c-keyw-name>arr_02</c-keyw-name> = <c-keyw-name>arr</c-keyw-name>.<c-null>filter</c-null>( <c-keyw-name>val</c-keyw-name> => <c-keyw-name>val</c-keyw-name> &#60 0 );
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr_01</c-keyw-name> ); <c-cmt>// [6,7,8,9,10]</c-cmt>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr_02</c-keyw-name> ); <c-cmt>// [ ]</c-cmt>
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li>
+                                        <c-strong>filter( callback( val, i ) )</c-strong>, trong đó <c-bold>callback()</c-bold> là hàm xử lí logic cho từng phần tử, <c-bold>val</c-bold> là giá trị tại vị trí <c-bold>i</c-bold>.
+                                    </li>
+                                    <li>
+                                        <c-strong>filter()</c-strong> trả về một mảng chứa các phần tử mà hàm <c-bold>callback</c-bold> trả về <c-bold>true</c-bold>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </li><!-- ▲ filter ▲ -->
+
+                        <li>
+                            <h6>map</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>arr</c-keyw-name>.<c-null>map</c-null>((<c-keyw-name>val</c-keyw-name>, <c-keyw-name>i</c-keyw-name>) => {
+                                    <ul>
+                                        <li><c-keyw>console.log</c-keyw>( <c-keyw-name>val</c-keyw-name> );</li>
+                                    </ul>
+                                    });
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-cmt>
+                                        // kết quả
+                                        <br>"a"
+                                        <br>"b"
+                                        <br>"c"
+                                    </c-cmt>
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li><c-strong>map( callback( val, i ) )</c-strong>, trong đó <c-bold>callback</c-bold> là hàm xử lí logic cho từng phần tử, <c-bold>val</c-bold> là giá trị của <c-bold>phần tử</c-bold> tại vị trí <c-bold>i</c-bold>.</li>
+                                </ul>
+                            </div>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3]</c-string>,
+                                    <br><c-keyw-name>arr_01</c-keyw-name> = <c-keyw-name>arr</c-keyw-name>.<c-null>map</c-null>( <c-keyw-name>val</c-keyw-name> => <c-keyw-name>val</c-keyw-name> * 2 );
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr_01</c-keyw-name> ); <c-cmt>// [2, 4, 6]</c-cmt>
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li>
+                                        <c-strong>map( callback( val, i ) ),</c-strong> trả về một mảng với các giá trị đã thay đổi trong hàm <c-bold>callback</c-bold>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </li><!-- ▲ map ▲ -->
+
+                        <li>
+                            <h6>sort</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['c', 'b', 'a', 'd']</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>arr</c-keyw-name>.<c-null>sort</c-null>();
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["a", "b", "c", "d"]</c-cmt>
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li><c-strong>sort</c-strong> mặc định sắp xếp theo thứ tự <c-bold>tăng dần</c-bold>, dưới dạng <c-bold>chuỗi từ mã ASCII</c-bold>.</li>
+                                </ul>
+                            </div>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[3, 10, 1]</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>arr</c-keyw-name>.<c-null>sort</c-null>( ( <c-string>a</c-string>, <c-string>b</c-string> ) => <c-string>a</c-string> - <c-string>b</c-string> ); <c-cmt>// theo thứ tự tăng dần</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 3, 10]</c-cmt>
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li><c-strong>sort( callback( a, b ) )</c-strong>, <c-bold>callback</c-bold> là hàm xác định cách xắp xếp các phần tử.</li>
+                                    <li>Có 2 đối số, thường gọi tên là <c-bold>a</c-bold>, <c-bold>b</c-bold></li>
+                                    <li>Xắp xếp tăng dần: <c-bold>( a, b ) => a - b</c-bold></li>
+                                    <li>Xắp xếp giảm dần: <c-bold>( a, b ) => b - a</c-bold></li>
+                                </ul>
+                            </div>
+                        </li><!-- ▲ sort ▲ -->
+
+                        <li>
+                            <h6>join</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>["a", "b", "c", "d"]</c-string>;
+                                    <br>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>str</c-keyw-name> = <c-keyw-name>arr</c-keyw-name>.<c-null>join</c-null>( <c-string>'-'</c-string> ); <c-cmt>// chuỗi được nối lại bởi dấu -</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>str</c-keyw-name> ); <c-cmt>// "a-b-c-d"</c-cmt>
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li><c-strong>join( sep )</c-strong>, <c-bold>sep</c-bold> là kí tự để nối chuỗi, mặc định là dấu phẩy ( <c-bold>,</c-bold> )</li>
+                                    <li><c-strong>join()</c-strong> không làm ảnh hưởng mảng gốc, mà trả về một <c-bold>chuỗi mới</c-bold>.</li>
+                                </ul>
+                            </div>
+                        </li><!-- ▲ join ▲ -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_related" id="app_releated">
+            <div class="app_releated_item">
+                Bài trước: <a href="../">Kiểu dữ liệu - cơ bản.</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-4">Kiểu dữ liệu - nâng cao - Object.</a>
+            </div>
+        </div><!-- ▲ session releated ▲ -->
+
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div><!-- ▲ last access position ▲ -->
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</body>
+
+</html>

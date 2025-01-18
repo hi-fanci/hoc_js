@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <main class="app_wrap">
             <div class="app_slider">
 
-                <div class="item">
+                <div class="item in_center">
                     <div class="overflow">
                         <div class="item_content">
                             <h2>Kiểu dữ liệu là gì?</h2>
@@ -74,7 +74,7 @@
                                     <br><c-var-name>n</c-var-name> = -1.1 ; <c-cmt>// số thực âm 1.1</c-cmt>
                                 </li>
                             </ul>
-                            <p>NaN: là viết tắt của Not a Number, được sử dụng để đại diện cho những trường hợp tính toán sai hoặc kết quả của một phép tính không xác định.</p>
+                            <p><c-string>NaN</c-string>: là viết tắt của <c-string>Not a Number</c-string>, được sử dụng để đại diện cho những trường hợp tính toán sai hoặc kết quả của một phép tính không xác định.</p>
                             <ul class="pre">
                                 <li>
                                     <h5>lấy số 0 chia cho số 0</h5>
@@ -82,7 +82,7 @@
                                 </li>
                                 <li>
                                     <h5>lấy 1 chuỗi kí tự chia cho 1 số</h5>
-                                    <c-func>console.log</c-func>(<c-string>:"hi umi" / 100</c-string>); <c-cmt>// NaN</c-cmt>
+                                    <c-func>console.log</c-func>(<c-string>:"hihi" / 100</c-string>); <c-cmt>// NaN</c-cmt>
                                 </li>
                             </ul>
                             <!--  -->
@@ -94,20 +94,20 @@
                             </p>
                             <ul class="pre">
                                 <li>
-                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>; <c-cmt>//dùng dấu "</c-cmt>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name> = <c-string>"hihi"</c-string>; <c-cmt>//dùng dấu "</c-cmt>
                                 </li>
                                 <li>
-                                    <c-var-name>name</c-var-name> = <c-string>'hi umi'</c-string>; <c-cmt>//dùng dấu '</c-cmt>
+                                    <c-var-name>name</c-var-name> = <c-string>'hihi'</c-string>; <c-cmt>//dùng dấu '</c-cmt>
                                 </li>
                                 <li>
-                                    <c-var-name>name</c-var-name> = <c-string>`hi umi`</c-string>; <c-cmt>//dùng dấu `</c-cmt>
+                                    <c-var-name>name</c-var-name> = <c-string>`hihi`</c-string>; <c-cmt>//dùng dấu `</c-cmt>
                                 </li>
                             </ul>
-                            <p>Đặc biệt là dấu `` có thể thêm biến, hằng, biểu thức bên trong, bằng cách dùng <c-null>${}</c-null>.</p>
+                            <p>Đặc biệt là dấu <c-string>``</c-string> có thể thêm biến, hằng, biểu thức bên trong, bằng cách dùng <c-null>${}</c-null>.</p>
                             <ul class="pre">
                                 <li>
-                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>;
-                                    <br><c-func>console.log</c-func>(<c-string>`my name is <c-null>${</c-null><c-var-name> name</c-var-name><c-null> }</c-null>`</c-string>); <c-cmt>//my name is hi umi</c-cmt>
+                                    <c-key-word>let</c-key-word> <c-var-name>name</c-var-name> = <c-string>"hihi"</c-string>;
+                                    <br><c-func>console.log</c-func>(<c-string>`my name is <c-null>${</c-null><c-var-name> name</c-var-name><c-null> }</c-null>`</c-string>); <c-cmt>//my name is hihi</c-cmt>
                                 </li>
                                 <li>
                                     <c-key-word>let</c-key-word> <c-var-name>age</c-var-name> = <c-string>100</c-string>;
@@ -123,13 +123,13 @@
                             <!--  -->
 
                             <h3>Kiểu dữ liệu object</h3>
-                            <p><c-null>Object</c-null> là kiểu dữ liệu tham chiếu. Có thể hiểu <c-null>object</c-null> là một tập hợp gồm các cặp key - value (khóa - giá trị).</p>
+                            <p><c-null>Object</c-null> là kiểu dữ liệu tham chiếu. Có thể hiểu <c-null>object</c-null> là một tập hợp gồm các cặp <c-var>key</c-var> - <c-string>value</c-string> (khóa - giá trị).</p>
                             <ul class="pre">
                                 <li>
                                     <c-key-word>const</c-key-word> <c-var-name>person</c-var-name> = {
                                     <dl>
                                         <dt>name:</dt>
-                                        <dd>"hi umi",</dd>
+                                        <dd>"hihi",</dd>
                                     </dl>
                                     <dl>
                                         <dt>age:</dt>
@@ -141,8 +141,8 @@
                             <p>Bạn có thể lấy giá trị của <c-null>object</c-null> bằng 2 cách, dùng . hoặc [].</p>
                             <ul class="pre">
                                 <li>
-                                    <c-func>console.log</c-func>(<c-var-name>person</c-var-name>.<c-var>name</c-var>); <c-cmt>// "hi umi"</c-cmt>
-                                    <br><c-func>console.log</c-func>( <c-var-name>person</c-var-name>[ <c-var>name</c-var> ]); <c-cmt>// "hi umi"</c-cmt>
+                                    <c-func>console.log</c-func>(<c-var-name>person</c-var-name>.<c-var>name</c-var>); <c-cmt>// "hihi"</c-cmt>
+                                    <br><c-func>console.log</c-func>( <c-var-name>person</c-var-name>[ <c-var>name</c-var> ]); <c-cmt>// "hihi"</c-cmt>
                                 </li>
                             </ul>
                             <!--  -->
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="item in_center">
+                <div class="item">
                     <div class="overflow">
                         <div class="item_content">
                             <h2>Cách xác định kiểu dữ liệu của biến</h2>
@@ -164,7 +164,7 @@
                                     <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//undefined</c-cmt>
                                 </li>
                                 <li>
-                                    <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>;
+                                    <c-var-name>name</c-var-name> = <c-string>"hihi"</c-string>;
                                     <br><c-func>console.log</c-func>(<c-null>typeof</c-null> <c-var-name>name</c-var-name>); <c-cmt>//string</c-cmt>
                                 </li>
                                 <li>
@@ -187,7 +187,7 @@
                                     <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//undefined</c-cmt>
                                 </li>
                                 <li>
-                                    <c-var-name>name</c-var-name> = <c-string>"hi umi"</c-string>;
+                                    <c-var-name>name</c-var-name> = <c-string>"hihi"</c-string>;
                                     <br><c-func>console.log</c-func>(<c-null>typeof</c-null> (<c-var-name>name</c-var-name>)); <c-cmt>//string</c-cmt>
                                 </li>
                                 <li>

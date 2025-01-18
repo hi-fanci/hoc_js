@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Kiểu dữ liệu - cơ bản</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        const page_name = "data type - basic";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <ul class="app_menu_lists">
+                <li class="app_menu_item">
+                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Giới thiệu</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_init" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Tổng quan các loại dữ liệu</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_boolean" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu bool</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_null" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu null</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_undefined" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu undefined</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_number" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu number</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_string" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu string</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_object" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu object</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_intro">
+                    <h2>Kiểu dữ liệu trong Javascript</h2>
+                    <p>
+                        Kiểu dữ liệu là cách phân loại dữ liệu cho trình biên dịch hiểu về kiểu của biến đang dùng.
+                    </p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw>let</c-keyw> <c-keyw-name>xx</c-keyw-name> = 10;
+                        </li>
+                        <li>
+                            <c-keyw>console.log</c-keyw>( <c-null>typeof</c-null> <c-keyw-name>x</c-keyw-name> ); <c-cmt>// number</c-cmt>
+                        </li>
+                        <li>
+                            <br>
+                            <c-keyw-name>xx</c-keyw-name> = "I'm xx";
+                        </li>
+                        <li>
+                            <c-keyw>console.log</c-keyw>( <c-null>typeof</c-null> <c-keyw-name>x</c-keyw-name> ); <c-cmt>// string</c-cmt>
+                        </li>
+                    </ul>
+                </div><!-- ▲ main block ▲ -->
+
+                <div class="app_main_block" id="b_init">
+                    <h2>Tổng quan các loại dữ liệu</h2>
+                    <div class="block">
+                        <p>
+                            JavaScript có 8 kiểu dữ liệu cơ bản, trong đó, có 7 kiểu dữ liệu nguyên thủy ( <c-null>boolean, null, undefined, number, BigInt, string, symbol</c-null> ) và 1 kiểu dạng tham chiếu ( <c-null>object</c-null> ).
+                        </p>
+                        <div class="block_border">
+                            Vì mình đang hướng dẫn cơ bản nên bạn chỉ cần chú tâm đến các kiểu sau ( <c-null>boolean, null, undefined, number, string, object</c-null> ).
+                        </div>
+                    </div>
+                </div><!-- ▲ intro ▲ -->
+                <div class="app_main_block" id="b_boolean">
+                    <div class="block">
+                        <h3>bool ( kiểu logic )</h3>
+                        <p>Boolean là kiểu dữ liệu logic chỉ bao gồm hai giá trị là <txt-border>true</txt-border> ( đúng ) và <txt-border>false</txt-border> ( sai ), ví dụ.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>answer</c-keyw-name> = <c-string>( 1 + 1 )</c-string> == <c-string>2</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>answer</c-keyw-name> ); <c-cmt>// true</c-cmt>
+                            </li>
+                            <li>
+                                <br>
+                                <c-keyw-name>answer</c-keyw-name> = <c-string>( 1 - 1 )</c-string> == <c-string>100</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>answer</c-keyw-name> ); <c-cmt>// false</c-cmt>
+                            </li>
+                        </ul>
+                        <p>Ngoài ra, số 0 còn được hiểu ngầm là <txt-border>false</txt-border> và số 1 là <txt-border>true</txt-border>.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>bool</c-keyw-name> = <c-string>0</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>if</c-keyw>( <c-keyw-name>bool</c-keyw-name> ) {
+                                <dl><c-keyw>console.log</c-keyw>( <c-string>"true"</c-string> );</dl>
+                                } else {
+                                <dl><c-keyw>console.log</c-keyw>( <c-string>"false"</c-string> );</dl>
+                                }
+                            </li>
+                            <li>
+                                <c-cmt>// "false"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ boolean ▲ -->
+                <div class="app_main_block" id="b_null">
+                    <div class="block">
+                        <h3>null</h3>
+                        <p>Null là một kiểu dữ liệu đặc biệt, chỉ bao gồm một giá trị là <txt-border>null</txt-border>, được hiểu là không có giá trị.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-null>null</c-null>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// null</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ null ▲ -->
+                <div class="app_main_block" id="b_undefined">
+                    <div class="block">
+                        <h3>undefined</h3>
+                        <p>Undefined củng là một kiểu dữ liệu đặc biệt trong JavaScript, chỉ bao gồm một giá trị <txt-border>undefined</txt-border>.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-null>undefined</c-null>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// undefined</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ undefined ▲ -->
+                <div class="app_main_block" id="b_number">
+                    <div class="block">
+                        <h3>number</h3>
+                        <p>
+                            Number là kiểu dữ liệu dạng <txt-border>số</txt-border> (tương tự trong toán học). Number trong JavaScript không có cú pháp gì đặc biệt. Bạn chỉ cần viết số ra, có hai loại số là: <txt-border>int</txt-border> ( số nguyên ) và <txt-border>float</txt-border> ( số thực ).
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>x</c-keyw-name> = <c-string>1</c-string>, <c-cmt>// số nguyên dương</c-cmt>
+                                <br><c-keyw-name>x</c-keyw-name> = <c-string>1.11</c-string>, <c-cmt>// số thực dương</c-cmt>
+                                <br><c-keyw-name>x</c-keyw-name> = <c-string>-1</c-string>, <c-cmt>// số nguyên âm</c-cmt>
+                                <br><c-keyw-name>x</c-keyw-name> = <c-string>-1.11</c-string>, <c-cmt>// số thực âm</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ number ▲ -->
+                <div class="app_main_block" id="b_string">
+                    <div class="block">
+                        <h3>string</h3>
+                        <p>
+                            String là kiểu dữ liệu dùng để biểu diễn <txt-border>chữ</txt-border>, văn bản, đoạn văn bản,...
+                            <br>Có ba cách để biểu diễn string trong JavaScript.
+                        </p>
+                        <div class="block_border">
+                            <h6>Dùng dấu nháy đơn <txt-border>'</txt-border></h6>
+                            <h6>Dùng dấu nháy đôi <txt-border>"</txt-border></h6>
+                            <h6>Dùng dấu backtick <txt-border>`</txt-border></h6>
+                        </div>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>my_name</c-keyw-name> = <c-string>'Anna'</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>my_name</c-keyw-name> = <c-string>`Anna`</c-string>;
+                            </li>
+                        </ul>
+
+                        <p>Đặc biệt, đối với dấu <txt-border>`</txt-border>, bạn có thể sử dụng biến, hằng hoặc thậm chí viết một biểu thức trong đó, với cú pháp <txt-border>${...}</txt-border>, ví dụ:</p>
+                        <ul class="pre">
+                            <li>
+                                <c-cmt>// Sử dụng biến</c-cmt>
+                                <br><c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-string>`My name is <c-keyw-name>${ my_name }</c-keyw-name>`</c-string> ); <c-cmt>// "My name is John"</c-cmt>
+                            </li>
+                            <li>
+                                <br>
+                                <c-cmt>// Sử dụng với biểu thức</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-string>`1 + 1 = <c-keyw-name>${ 1 + 1 }</c-keyw-name>`</c-string> ); <c-cmt>// "1 + 1 = 2"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ string ▲ -->
+                <div class="app_main_block" id="b_object">
+                    <div class="block">
+                        <h3>object</h3>
+                        <p>
+                            Object là kiểu dữ liệu tham chiếu, là một tập hợp gồm các cặp <txt-border>key - value</txt-border> ( khóa - giá trị ), được ngăn cách bởi dấu <txt-border>,</txt-border>.
+                            <br>Trong đó, <txt-border>key</txt-border> có thể là <txt-border>string</txt-border>, <txt-border>value</txt-border> có thể là bất kì kiểu dữ liệu nào.
+                        </p>
+
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_self</c-keyw-name> = {
+                                <dl>
+                                    <dt>name</dt>
+                                    <dd>"John"</dd>
+                                </dl>
+                                <dl>
+                                    <dt>age</dt>
+                                    <dd>100</dd>
+                                </dl>
+                                };
+                            </li>
+                            <li>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.name ); <c-cmt>// "John"</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.age ); <c-cmt>// 100</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ object ▲ -->
+            </div>
+        </div>
+
+        <div class="app_related">
+            <div class="app_releated_item">
+                Bài trước: <a href="../">Biến và Hằng.</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-3/">Kiểu dữ liệu - nâng cao.</a>
+            </div>
+        </div><!-- ▲ session releated ▲ -->
+
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div><!-- ▲ last access position ▲ -->
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Kiểu dữ liệu - nâng cao - object</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        const page_name = "data type - advanced - object";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <ul class="app_menu_lists">
+                <li class="app_menu_item">
+                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Giới thiệu</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_init" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Tổng quan các loại dữ liệu</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_boolean" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu bool</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_null" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu null</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_undefined" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu undefined</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_number" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu number</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_string" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu string</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_object" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Kiểu object</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#app_releated" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Bài học</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_intro">
+                    <h2>Object</h2>
+                    <div class="block">
+                        <p>Object trong JavaScript là một khái niệm trừu tượng dùng để biểu diễn một vật thể ( cụ thể ). Trong đó bao gồm các thuộc tính , phương thức dùng để miêu tả đặc điểm, tính chất của đối tượng.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_self</c-keyw-name> = {
+                                <dl>
+                                    <dt>name</dt>
+                                    <dd>"John"</dd>
+                                </dl>
+                                <dl>
+                                    <dt>age</dt>
+                                    <dd>100</dd>
+                                </dl>
+                                };
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ▲ intro ▲ -->
+
+                <div class="app_main_block" id="b_init">
+                    <h3>Khai báo</h3>
+                    <div class="block">
+                        <p>
+                            Để khai báo một object, mình có hai cách như sau.
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-cmt>// khai báo với object rỗng, không chứa thuộc tính</c-cmt>
+                                <br><c-keyw>let</c-keyw> <c-keyw-name>object_01</c-keyw-name> = {};
+                            </li>
+                            <li>
+                                <br><c-cmt>// dùng hàm khởi tạo của object</c-cmt>
+                                <br><c-keyw>let</c-keyw> <c-keyw-name>object_02</c-keyw-name> = <c-keyw>new</c-keyw> <c-null>Object</c-null>();
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="app_main_block" id="b_init">
+                    <h3>Khởi tạo</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>{ }</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>obj</c-keyw-name> = { };
+                                    <br>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>xxx</c-keyw-name> = {
+                                    <dl>
+                                        <dt>name</dt>
+                                        <dd>"John"</dd>
+                                    </dl>
+                                    };
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Cách này được phổ biến do ngắn gọn, sử dụng.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ init ▲ -->
+                <!-- ▲ init ▲ -->
+                <div class="app_main_block" id="b_access">
+                    <h3>Cách truy cập vào thuộc tính Object</h3>
+                    <div class="block">
+                        <p>Mình có một Object tên là <txt-border>my_self</txt-border>, bao gồm các thuộc tính là <txt-border>name</txt-border>( tên ), <txt-border>age</txt-border>( tuổi ), <txt-border>girl friend</txt-border>( ngừi iu ).</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_self</c-keyw-name> = {
+                                <dl>
+                                    <dt>name</dt>
+                                    <dd>'John'</dd>
+                                </dl>
+                                <dl>
+                                    <dt>age</dt>
+                                    <dd>100</dd>
+                                </dl>
+                                <dl>
+                                    <dt>'girl friend'</dt>
+                                    <dd>false</dd>
+                                </dl>
+                                };
+                            </li>
+                        </ul>
+                        <p>Để truy cập vào Object thì mình có các cách như sau.</p>
+                    </div>
+                    <div class="block">
+                        <h5>Sử dụng toán tử <txt-border>.</txt-border> kèm tên thuộc tính.</h5>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.name ); <c-cmt>// "John"</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.age ); <c-cmt>// 100</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.'girl friend' ); <c-cmt>// Uncaught SyntaxError: Unexpected string</c-cmt>
+                            </li>
+                        </ul>
+                        <p>Toán tử <txt-border>.</txt-border> chỉ dùng được với cả thuộc tính không chứa kí tự đặc biêt, trừ <txt-border>_</txt-border> và <txt-border>$</txt-border>.</p>
+                    </div>
+                    <div class="block">
+                        <h5>Sử dụng toán tử <txt-border>[]</txt-border> chứa tên thuộc tính.</h5>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ 'name' ] ); <c-cmt>// "John"</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.[ 'age' ] ); <c-cmt>// 100</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ 'girl friend' ] ); <c-cmt>// false</c-cmt>
+                            </li>
+                        </ul>
+                        <p>Nếu <txt-border>key</txt-border> là một chuỗi có dấu cách, mình cần phải có dấu nháy <txt-border>'</txt-border>, <txt-border>"</txt-border>, <txt-border>`</txt-border> để hiểu đó là một chuỗi.</p>
+                    </div>
+                    <div class="block">
+                        <h5>Sử dụng biến là tên của thuộc tính.</h5>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>prop_name</c-keyw-name> = <c-string>'name'</c-string>;
+                                <br><c-keyw>let</c-keyw> <c-keyw-name>prop_age</c-keyw-name> = <c-string>'age'</c-string>;
+                                <br><c-keyw>let</c-keyw> <c-keyw-name>prop_girl_friend</c-keyw-name> = <c-string>'girl friend'</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ prop_name ] ); <c-cmt>// "John"</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ prop_age ] ); <c-cmt>// 100</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ prop_girl_friend ] ); <c-cmt>// false</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ access ▲ -->
+                <div class="app_main_block" id="b_use">
+                    <h3>Cách sử dụng Object</h3>
+                    <div class="block">
+                        <h5>Cách đặt tên thuộc tính.</h5>
+                        <p>Tên thuộc tính của object chỉ được bắt đầu bằng <txt-border>a-zA-Z</txt-border>, <txt-border>_</txt-border> và <txt-border>$</txt-border>, nếu ở dạng chuỗi thì không vấn đề gì.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_self</c-keyw-name> = {
+                                <dl>
+                                    <dt>name</dt>
+                                    <dd>"John"</dd>
+                                </dl>
+                                <dl>
+                                    <dt>_age</dt>
+                                    <dd>100</dd>
+                                </dl>
+                                <dl>
+                                    <dt>$salary</dt>
+                                    <dd>'1000$'</dd>
+                                </dl>
+                                <dl>
+                                    <dt>'!@#$%^&*() is good'</dt>
+                                    <dd>true</dd>
+                                </dl>
+                                <dl>
+                                    <dt>0or1</dt>
+                                    <dd>'1000$' <c-cmt>// Uncaught SyntaxError: Invalid or unexpected token</c-cmt></dd>
+                                </dl>
+                                <dl>
+                                    <dt>!@#special</dt>
+                                    <dd>'1000$' <c-cmt>// Uncaught SyntaxError: Unexpected token '!' </c-cmt></dd>
+                                </dl>
+                                };
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ 'name' ] ); <c-cmt>// "John"</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ '_age' ] ); <c-cmt>// 100</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ '$salary' ] ); <c-cmt>// '1000$'</c-cmt>
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>[ '!@#$%^&*() is good' ] ); <c-cmt>// true</c-cmt>
+                            </li>
+                        </ul>
+                        <p>Hai thuộc tính <txt-border>0or1</txt-border> và <txt-border>!@#special</txt-border> sẽ bị lỗi như trên, chỉ cần ném nó vào một <txt-border>string</txt-border> là xong.</p>
+                        <h6>Ngoài ra, tên thuộc tính không được trùng với từ khoá có sẳn của Javascript, tương tự <a href="../bai-1/#b_rule" class="link">cách đặt tên biến</a>.</h6>
+                    </div>
+                </div><!-- ▲ undefined ▲ -->
+                <div class="app_main_block" id="b_number">
+                    <div class="block">
+                        <h3>number</h3>
+                        <p>
+                            Number là kiểu dữ liệu dạng <txt-border>số</txt-border> (tương tự trong toán học). Number trong JavaScript không có cú pháp gì đặc biệt. Mình chỉ cần viết số ra, có hai loại số là: <txt-border>int</txt-border> ( số nguyên ) và <txt-border>float</txt-border> ( số thực ).
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>x</c-keyw-name> = <c-string>1</c-string>, <c-cmt>// số nguyên dương</c-cmt>
+                                <br><c-keyw-name>x</c-keyw-name> = <c-string>1.11</c-string>, <c-cmt>// số thực dương</c-cmt>
+                                <br><c-keyw-name>x</c-keyw-name> = <c-string>-1</c-string>, <c-cmt>// số nguyên âm</c-cmt>
+                                <br><c-keyw-name>x</c-keyw-name> = <c-string>-1.11</c-string>, <c-cmt>// số thực âm</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ number ▲ -->
+                <div class="app_main_block" id="b_string">
+                    <div class="block">
+                        <h3>string</h3>
+                        <p>
+                            String là kiểu dữ liệu dùng để biểu diễn <txt-border>chữ</txt-border>, văn bản, đoạn văn bản,...
+                            <br>Có ba cách để biểu diễn string trong JavaScript.
+                        </p>
+                        <div class="block_border">
+                            <h6>Dùng dấu nháy đơn <txt-border>'</txt-border></h6>
+                            <h6>Dùng dấu nháy đôi <txt-border>"</txt-border></h6>
+                            <h6>Dùng dấu backtick <txt-border>`</txt-border></h6>
+                        </div>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>my_name</c-keyw-name> = <c-string>'Anna'</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>my_name</c-keyw-name> = <c-string>`Anna`</c-string>;
+                            </li>
+                        </ul>
+
+                        <p>Đặc biệt, đối với dấu <txt-border>`</txt-border>, mình có thể sử dụng biến, hằng hoặc thậm chí viết một biểu thức trong đó, với cú pháp <txt-border>${...}</txt-border>, ví dụ:</p>
+                        <ul class="pre">
+                            <li>
+                                <c-cmt>// Sử dụng biến</c-cmt>
+                                <br><c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-string>`My name is <c-keyw-name>${ my_name }</c-keyw-name>`</c-string> ); <c-cmt>// "My name is John"</c-cmt>
+                            </li>
+                            <li>
+                                <br>
+                                <c-cmt>// Sử dụng với biểu thức</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-string>`1 + 1 = <c-keyw-name>${ 1 + 1 }</c-keyw-name>`</c-string> ); <c-cmt>// "1 + 1 = 2"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ string ▲ -->
+                <div class="app_main_block" id="b_object">
+                    <div class="block">
+                        <h3>object</h3>
+                        <p>
+                            Object là kiểu dữ liệu tham chiếu, là một tập hợp gồm các cặp <txt-border>key - value</txt-border> ( khóa - giá trị ), được ngăn cách bởi dấu <txt-border>,</txt-border>.
+                            <br>Trong đó, <txt-border>key</txt-border> có thể là <txt-border>string</txt-border>, <txt-border>value</txt-border> có thể là bất kì kiểu dữ liệu nào.
+                        </p>
+
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_self</c-keyw-name> = {
+                                <dl>
+                                    <dt>name</dt>
+                                    <dd>"John"</dd>
+                                </dl>
+                                <dl>
+                                    <dt>age</dt>
+                                    <dd>100</dd>
+                                </dl>
+                                };
+                            </li>
+                            <li>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.name ); <c-cmt>// "John"</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>my_self</c-keyw-name>.age ); <c-cmt>// 100</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ object ▲ -->
+            </div>
+        </div>
+
+        <div class="app_related" id="app_releated">
+            <div class="app_releated_item">
+                Bài trước: <a href="../">Kiểu dữ liệu - cơ bản.</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-3/">Kiểu dữ liệu - nâng cao - Object.</a>
+            </div>
+        </div><!-- ▲ session releated ▲ -->
+
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div><!-- ▲ last access position ▲ -->
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</body>
+
+</html>

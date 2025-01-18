@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Biến và Hằng trong JavaScript</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        const page_name = "let-and-const";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <ul class="app_menu_lists">
+                <li class="app_menu_item">
+                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Giới thiệu biến</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_init" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Cách khai báo biến</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_rule" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Quy tắc đặt tên của biến</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_update" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Cách thay đổi giá trị của biến</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_error" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Một số lỗi của biến</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_intro2" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Giới thiệu hằng</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_init2" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Cách khai báo hằng</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_rule2" class="app_menu_dot js_goto"></a>
+                    <span class="app_menu_title">Quy tắc đặt tên của hằng</span>
+                </li>
+                <li class="app_menu_item">
+                    <a href="#b_error2" class="app_menu_dot js_goto"></a>
+                    <div class="app_menu_title">Một số lỗi của hằng</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <!-- --------- let -------- -->
+                <div class="app_main_block" id="b_intro">
+                    <h2>Biến trong Javascript</h2>
+                    <p>
+                        Biến là một tên đại diện cho một giá trị và giá trị này có thể thay đổi.
+                    </p>
+                    <p>
+                        Ví dụ, <c-keyw-name>_x</c-keyw-name> là một biến chỉ thời gian bao gồm giờ và phút, giá trị cuả <c-keyw-name>_x</c-keyw-name> hiện tại là <span class="time_current c-string"></span>, thì 10 phút nữa, giá trị của <c-keyw-name>_x</c-keyw-name> sẽ là <span class="time_in_5min c-string"></span>
+                    </p>
+                </div>
+
+                <div class="app_main_block" id="b_init">
+                    <h2>Cách khai báo biến</h2>
+                    <div class="block">
+                        <p>
+                            Để khai báo biến trong JavaScript, bạn dùng từ khóa <c-keyw>let</c-keyw> (ngoài ra còn có từ khóa <c-keyw>var</c-keyw>, nhưng hiện tại thì rất ít người dùng).
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>variable_name</c-keyw-name>;
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>
+                            Ví dụ, bạn muốn khai báo một biến tên là "my_name".
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name>;
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Việc khởi tạo biến đã thành công, bây giờ, bạn có thể gán giá trị cho biến "my_name", bằng cách dùng toán tử gán ( <c-null>=</c-null> ).</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name>;
+                            </li>
+                            <li>
+                                <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// "John"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Để ngắn gọn hơn, bạn có thể khai báo và gán giá trị cùng lúc.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// "John"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Tương tư, bạn củng có thể khai báo nhiều biến và giá trị của nó cùng lúc thông qua dấu ( <c-null>,</c-null> ).</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>,
+                                <br><c-keyw-name>my_age</c-keyw-name> = <c-string>20</c-string>,
+                                <br><c-keyw-name>my_gender</c-keyw-name> = <c-string>"man"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// "John"</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>my_age</c-keyw-name> ); <c-cmt>// 20</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>my_gender</c-keyw-name> ); <c-cmt>// "man"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_rule">
+                    <h2>Quy tắc đặt tên của biến</h2>
+                    <div class="block">
+                        <h6>Bắt đầu bằng chữ cái ( <c-null>a-zA-Z</c-null> ), kí tự ( <c-null>_</c-null> ), kí tự ( <c-null>$</c-null> ).</h6>
+                        <h6>Không có các kí tự đặc biệt ( <c-null>!@#%^&*()-=....</c-null> ).</h6>
+                        <h6>Không bắt đầu bằng các số ( <c-null>0-9</c-null> ).</h6>
+                        <h6>Không sử dụng từ khoá có sẳn của JavaScript.</h6>
+                        <h6><c-null>break, case, catch, class, const, continue, debugger, default, delete, do, else, enum, export, extends, false, finally, for, function, if, implements, import, in, instanceof, interface, let, new, null, package, private, protected, public, return, static, super, switch, this, throw, true, try, typeof, var, void, while, with, yield</c-null></h6>
+                    </div>
+                    <div class="block">
+                        <p>Tên biến trong JavaScript có phân biệt chữ thường và CHỮ HOA.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>,
+                                <br><c-keyw-name>MY_NAME</c-keyw-name> = <c-string>"Anna"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// "John"</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>MY_NAME</c-keyw-name> ); <c-cmt>// "Anna"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_update">
+                    <h2>Cách thay đổi giá trị của biến</h2>
+                    <div class="block">
+                        <p>Để thay đổi giá trị của biến, bạn chỉ cần gán giá trị mới cho nó.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <br>
+                                <c-cmt>// thay đổi giá trị của my_name</c-cmt>
+                                <c-keyw-name>my_name</c-keyw-name> = <c-string>"Anna"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// "Anna"</c-cmt>
+                            </li>
+                        </ul>
+                        <!--  -->
+                    </div>
+                    <div class="block">
+                        <p>Bạn củng có thể thay đổi giá trị của biến này bằng một biến khác.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>,
+                                <br><c-keyw-name>your_name</c-keyw-name> = <c-string>"Anna"</c-string>;
+                            </li>
+                            <li>
+                                <br>
+                                <c-cmt>// thay đổi giá trị của my_name</c-cmt>
+                                <br><c-keyw-name>my_name</c-keyw-name> = <c-keyw-name>your_name</c-keyw-name>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>my_name</c-keyw-name> ); <c-cmt>// "Anna"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_error">
+                    <h2>Một số lỗi của biến</h2>
+                    <div class="block">
+                        <p>Trong một vùng phạm vi thực thế nhất định ( <c-null>scope block</c-null> ), thì việc khai báo một tên biến nhiều lần sẽ gây ra lỗi.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"John"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>my_name</c-keyw-name> = <c-string>"Anna"</c-string>;
+                            </li>
+                            <li>
+                                <c-cmt>// Uncaught SyntaxError: Identifier 'my_name' has already been declared.</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- --------- const -------- -->
+                <div class="app_main_block" id="b_intro2">
+                    <h2>Hằng trong Javascript</h2>
+                    <p>
+                        Hằng là một tên đại diện cho một giá trị và giá trị này không thay đổi.
+                    </p>
+                    <p>
+                        Ví dụ, số <c-keyw-name>PI</c-keyw-name> trong toán học có giá trị không đổi là <c-string>3.14</c-string>, do vậy <c-keyw-name>PI</c-keyw-name> được gọi là một hằng số.
+                    </p>
+                </div>
+
+                <div class="app_main_block" id="b_init2">
+                    <h2>Cách khai báo hằng</h2>
+                    <div class="block">
+                        <p>
+                            Để khai báo hằng trong JavaScript, bạn dùng từ khóa <c-keyw>const</c-keyw>, và hằng phải có giá trị đi kèm, nếu không sẽ lỗi.
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>variable_name</c-keyw-name> = <c-string>"value"</c-string>;
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>
+                            Ví dụ, bạn muốn khai báo một hằng tên là "PI".
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>PI</c-keyw-name> = <c-string>3.14</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>PI</c-keyw-name> ); <c-cmt>// 3.14</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Bạn củng có thể khai báo nhiều hằng thông qua dấu ( <c-null>,</c-null> ).</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>PI</c-keyw-name> = <c-string>3.14</c-string>,
+                                <br><c-keyw-name>VN</c-keyw-name> = <c-string>"Việt Nam"</c-string>,
+                                <br><c-keyw-name>EN</c-keyw-name> = <c-string>"English"</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>PI</c-keyw-name> ); <c-cmt>// 3.14</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>VN</c-keyw-name> ); <c-cmt>// "Việt Nam"</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>EN</c-keyw-name> ); <c-cmt>// "English"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_rule2">
+                    <h2>Quy tắc đặt tên của hằng</h2>
+                    <div class="block">
+                        <p>Tương tự <span class="link" data-goto="#b_rule">quy tắc đặt tên của biến</span>.</p>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_error2">
+                    <h2>Một số lỗi của hằng</h2>
+                    <div class="block">
+                        <p>Khai báo không có giá trị khởi tạo.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>variable_name</c-keyw-name>;
+                                <br><c-cmt>Uncaught SyntaxError: Missing initializer in const declaration </c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Thay đổi giá trị của hằng.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>PI</c-keyw-name> = <c-string>3.14</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>PI</c-keyw-name> = <c-string>314</c-string>;
+                                <br><c-cmt>// Uncaught TypeError: Assignment to constant variable.</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_related">
+            <div class="app_releated_item">
+                Bài trước: <a href="../">Mục lục.</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-2/">Kiểu dữ liệu - cơ bản.</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script>
+        ; (function () {
+            const handleMin2Txt = () => {
+                const time_current_txt = $('.time_current');
+                const time_in_5min_txt = $('.time_in_5min');
+                const time_current = new Date();
+                const time_in_5min = new Date(Date.now() + 10 * 60 * 1000);
+
+                time_current_txt.text(`"${time_current.getHours()}:${("0" + time_current.getMinutes()).slice(-2)}"`);
+                time_in_5min_txt.text(`"${time_in_5min.getHours()}:${("0" + time_in_5min.getMinutes()).slice(-2)}"`);
+            };
+            handleMin2Txt();
+        })();
+    </script>
+</body>
+
+</html>

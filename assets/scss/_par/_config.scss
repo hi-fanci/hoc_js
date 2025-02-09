@@ -65,11 +65,6 @@ c-strong {
     font-weight: 700;
 }
 
-.c-bold,
-c-bold {
-    font-weight: 700;
-}
-
 .c-note,
 c-note {
     &::before {
@@ -78,4 +73,24 @@ c-note {
         padding-right: 4px;
         font-weight: 700;
     }
+}
+
+.txt-bold,
+txt-bold {
+    font-weight: 700;
+}
+
+.txt_border,
+txt-border {
+    display: inline-block;
+
+    font-family: var(--f-code);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--c-key-word-name);
+
+    border: 1px solid var(--c-key-word-name);
+    border-radius: 4px;
+
+    padding: 0px 8px;
 }

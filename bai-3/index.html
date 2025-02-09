@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 3: Kiểu dữ liệu - nâng cao - mảng</title>
+    <title>Bài 3: Mảng - nâng cao</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <script>
@@ -15,52 +15,47 @@
 <body>
     <div class="app">
         <div class="app_menu">
-            <ul class="app_menu_lists">
-                <li class="app_menu_item">
-                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Giới thiệu</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_init" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Khởi tạo</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_get_length" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Lấy độ dài của mảng</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_access" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Truy cập vào phần tử Array</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_add" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Thêm phần tử</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_update" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Cập nhật giá trị của phần tử</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_clone" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Clone mảng mới</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_for_loop" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Vòng lặp qua mảng</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_finding" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Tìm kiếm trong mảng</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_other" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Các phương thức khác</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#app_releated" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Bài học</span>
-                </li>
-            </ul>
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link is_open js_goto">Giới thiệu</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Khởi tạo</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_get_length" class="app_menu_link js_goto">Lấy độ dài của mảng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_access" class="app_menu_link js_goto">Truy cập vào phần tử Array</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_add" class="app_menu_link js_goto">Thêm phần tử</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Cập nhật giá trị của phần tử</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_clone" class="app_menu_link js_goto">Clone mảng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_for_loop" class="app_menu_link js_goto">Vòng lặp qua mảng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_finding" class="app_menu_link js_goto">Tìm kiếm trong mảng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_other" class="app_menu_link js_goto">Các phương thức khác</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="app_main">
@@ -69,7 +64,7 @@
                     <h2>Array - mảng</h2>
                     <div class="block">
                         <p>
-                            Trong JavaScript, <c-strong>mảng (array)</c-strong> là một cấu trúc dữ liệu dùng để lưu trữ một tập hợp các giá trị. Các giá trị trong mảng có thể là bất kỳ kiểu dữ liệu nào như số, chuỗi, đối tượng, hoặc thậm chí là các mảng khác. Các phần tử trong mảng được lưu trữ theo <c-bold>chỉ mục (index)</c-bold>, với chỉ mục bắt đầu từ <c-bold>0</c-bold>.
+                            Trong JavaScript, <c-strong>mảng (array)</c-strong> là một cấu trúc dữ liệu dùng để lưu trữ một tập hợp các giá trị. Các giá trị trong mảng có thể là bất kỳ kiểu dữ liệu nào như số, chuỗi, đối tượng, hoặc thậm chí là các mảng khác. Các phần tử trong mảng được lưu trữ theo <txt-bold>chỉ mục (index)</txt-bold>, bắt đầu từ <txt-bold>0</txt-bold>.
                         </p>
 
                         <ul class="pre">
@@ -92,7 +87,7 @@
                                     <br><c-keyw>let</c-keyw> <c-keyw-name>xxx</c-keyw-name> = <c-string>['a', 'b', 'c']</c-string>;
                                 </li>
                             </ul>
-                            <p><c-note></c-note>Cách này được phổ biến hơn do ngắn gọn, sử dụng.</p>
+                            <p><c-note></c-note>Cách này được phổ biến do ngắn gọn, dễ sử dụng.</p>
                         </li>
                         <li>
                             <h6>new Array()</h6>
@@ -147,7 +142,7 @@
                                     <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name>[10] ); <c-cmt>// undefined</c-cmt>
                                 </li>
                             </ul>
-                            <p><c-note></c-note>Nếu ví trí là <c-bold>số âm</c-bold>, hoặc <c-bold>lớn hơn</c-bold> độ dài của mảng, thì kết quả trả về là <c-bold>undefined</c-bold>, cách lấy độ dài của mảng <a href="#b_get_length" class="js_goto">ở đây</a>.</p>
+                            <p><c-note></c-note>Nếu ví trí là <txt-bold>số âm</txt-bold>, hoặc <txt-bold>lớn hơn</txt-bold> độ dài của mảng, thì kết quả trả về là <txt-bold>undefined</txt-bold>, cách lấy độ dài của mảng <a href="#b_get_length" class="js_goto">ở đây</a>.</p>
                         </li>
                     </ul>
                 </div>
@@ -170,7 +165,7 @@
                                     <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["a", "b", "c", "d",,,,,,, "e"]</c-cmt>
                                 </li>
                             </ul>
-                            <p><c-note></c-note>Những vị trí ở khoảng giữa chưa có giá trị thì mặc định sẽ là <c-bold>undefined</-bold>.</p>
+                            <p><c-note></c-note>Những vị trí ở khoảng giữa chưa có giá trị thì mặc định sẽ là <txt-bold>undefined</-bold>.</p>
                         </li>
                         <li>
                             <h6>push( )</h6>
@@ -186,7 +181,7 @@
                                     <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["a", "b", "c", "d"]</c-cmt>
                                 </li>
                             </ul>
-                            <p><c-note></c-note><c-strong>.push()</c-strong> sẽ thêm <c-bold>phần tử mới</c-bold> vào ngay sau <c-bold>phần tử cuối cùng</c-bold> của mảng.</p>
+                            <p><c-note></c-note><c-strong>.push()</c-strong> sẽ thêm <txt-bold>phần tử mới</txt-bold> vào ngay sau <txt-bold>phần tử cuối cùng</txt-bold> của mảng.</p>
                         </li>
                     </ul>
                 </div>
@@ -215,7 +210,7 @@
                 <!-- ▲ update ▲ -->
 
                 <div class="app_main_block" id="b_clone">
-                    <h3>Clone mảng mới</h3>
+                    <h3>Clone mảng</h3>
                     <ul class="counter">
                         <li>
                             <h6>slice( )</h6>
@@ -238,7 +233,7 @@
                             </ul>
                         </li>
                         <li>
-                            <h6>spread[ ...array ]</h6>
+                            <h6>spread [ ...array ]</h6>
                             <ul class="pre">
                                 <li>
                                     <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3]</c-string>;
@@ -256,7 +251,7 @@
                                     <c-keyw>console.log</c-keyw>( <c-keyw-name>new_arr</c-keyw-name> ); <c-cmt>// [100, 2, 3]</c-cmt>
                                 </li>
                             </ul>
-                            <p><c-note></c-note>Thao tác trên <c-bold>mảng clone</c-bold> sẽ không ảnh hưởng đến <c-bold>mảng gốc</c-bold>.</p>
+                            <p><c-note></c-note>Thao tác trên <txt-bold>mảng clone</txt-bold> sẽ không ảnh hưởng đến <txt-bold>mảng gốc</txt-bold>.</p>
                         </li>
                     </ul>
                 </div>
@@ -339,7 +334,7 @@
                                 </li>
                             </ul>
                             <p>
-                                <c-note></c-note><c-strong>indexOf( value, from )</c-strong> trả về vị trí đầu tiên mà <c-bold>value</c-bold> được tìm thấy bắt đầu từ vị trí <c-bold>from</c-bold>, mặc định là <c-bold>0</c-bold>.
+                                <c-note></c-note><c-strong>indexOf( value, from )</c-strong> trả về vị trí đầu tiên mà <txt-bold>value</txt-bold> được tìm thấy bắt đầu từ vị trí <txt-bold>from</txt-bold>, mặc định là <txt-bold>0</txt-bold>.
                             </p>
                         </li>
                         <li>
@@ -358,7 +353,7 @@
                                 </li>
                             </ul>
                             <p>
-                                <c-note></c-note><c-strong>includes( value, from )</c-strong> trả về <c-bold>true</c-bold> nếu <c-bold>value</c-bold> được tìm thấy bắt đầu từ vị trí <c-bold>from</c-bold>, mặc định là <c-bold>0</c-bold>, không thì <c-bold>false</c-bold>.
+                                <c-note></c-note><c-strong>includes( value, from )</c-strong> trả về <txt-bold>true</txt-bold> nếu <txt-bold>value</txt-bold> được tìm thấy bắt đầu từ vị trí <txt-bold>from</txt-bold>, mặc định là <txt-bold>0</txt-bold>, không thì <txt-bold>false</txt-bold>.
                             </p>
                         </li>
                     </ul>
@@ -381,7 +376,7 @@
                                     <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 2, 5]</c-cmt>
                                 </li>
                             </ul>
-                            <p><c-note></c-note><c-strong>splice(from, counter)</c-strong>, trong đó <c-bold>from</c-bold> là vị trí bắt đầu xoá, <c-bold>counter</c-bold> là số lượng phần tử bị xoá.</p>
+                            <p><c-note></c-note><c-strong>splice(from, counter)</c-strong>, trong đó <txt-bold>from</txt-bold> là vị trí bắt đầu xoá, <txt-bold>counter</txt-bold> là số lượng phần tử bị xoá.</p>
                             <ul class="pre">
                                 <li>
                                     <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[1, 2, 3, 4, 5, 6, 7 ,8, 9, 10]</c-string>;
@@ -420,10 +415,10 @@
                                 <c-note></c-note>
                                 <ul class="lists">
                                     <li>
-                                        <c-strong>filter( callback( val, i ) )</c-strong>, trong đó <c-bold>callback()</c-bold> là hàm xử lí logic cho từng phần tử, <c-bold>val</c-bold> là giá trị tại vị trí <c-bold>i</c-bold>.
+                                        <c-strong>filter( callback( val, i ) )</c-strong>, trong đó <txt-bold>callback()</txt-bold> là hàm xử lí logic cho từng phần tử, <txt-bold>val</txt-bold> là giá trị tại vị trí <txt-bold>i</txt-bold>.
                                     </li>
                                     <li>
-                                        <c-strong>filter()</c-strong> trả về một mảng chứa các phần tử mà hàm <c-bold>callback</c-bold> trả về <c-bold>true</c-bold>.
+                                        <c-strong>filter()</c-strong> trả về một mảng chứa các phần tử mà hàm <txt-bold>callback</txt-bold> trả về <txt-bold>true</txt-bold>.
                                     </li>
                                 </ul>
                             </div>
@@ -455,7 +450,7 @@
                             <div class="block_note">
                                 <c-note></c-note>
                                 <ul class="lists">
-                                    <li><c-strong>map( callback( val, i ) )</c-strong>, trong đó <c-bold>callback</c-bold> là hàm xử lí logic cho từng phần tử, <c-bold>val</c-bold> là giá trị của <c-bold>phần tử</c-bold> tại vị trí <c-bold>i</c-bold>.</li>
+                                    <li><c-strong>map( callback( val, i ) )</c-strong>, trong đó <txt-bold>callback</txt-bold> là hàm xử lí logic cho từng phần tử, <txt-bold>val</txt-bold> là giá trị của <txt-bold>phần tử</txt-bold> tại vị trí <txt-bold>i</txt-bold>.</li>
                                 </ul>
                             </div>
                             <ul class="pre">
@@ -472,7 +467,7 @@
                                 <c-note></c-note>
                                 <ul class="lists">
                                     <li>
-                                        <c-strong>map( callback( val, i ) ),</c-strong> trả về một mảng với các giá trị đã thay đổi trong hàm <c-bold>callback</c-bold>.
+                                        <c-strong>map( callback( val, i ) ),</c-strong> trả về một mảng với các giá trị đã thay đổi trong hàm <txt-bold>callback</txt-bold>.
                                     </li>
                                 </ul>
                             </div>
@@ -495,7 +490,7 @@
                             <div class="block_note">
                                 <c-note></c-note>
                                 <ul class="lists">
-                                    <li><c-strong>sort</c-strong> mặc định sắp xếp theo thứ tự <c-bold>tăng dần</c-bold>, dưới dạng <c-bold>chuỗi từ mã ASCII</c-bold>.</li>
+                                    <li><c-strong>sort</c-strong> mặc định sắp xếp theo thứ tự <txt-bold>tăng dần</txt-bold>, dưới dạng <txt-bold>chuỗi từ mã ASCII</txt-bold>.</li>
                                 </ul>
                             </div>
                             <ul class="pre">
@@ -513,10 +508,10 @@
                             <div class="block_note">
                                 <c-note></c-note>
                                 <ul class="lists">
-                                    <li><c-strong>sort( callback( a, b ) )</c-strong>, <c-bold>callback</c-bold> là hàm xác định cách xắp xếp các phần tử.</li>
-                                    <li>Có 2 đối số, thường gọi tên là <c-bold>a</c-bold>, <c-bold>b</c-bold></li>
-                                    <li>Xắp xếp tăng dần: <c-bold>( a, b ) => a - b</c-bold></li>
-                                    <li>Xắp xếp giảm dần: <c-bold>( a, b ) => b - a</c-bold></li>
+                                    <li><c-strong>sort( callback( a, b ) )</c-strong>, <txt-bold>callback</txt-bold> là hàm xác định cách xắp xếp các phần tử.</li>
+                                    <li>Có 2 đối số, thường gọi tên là <txt-bold>a</txt-bold>, <txt-bold>b</txt-bold></li>
+                                    <li>Xắp xếp tăng dần: <txt-bold>( a, b ) => a - b</txt-bold></li>
+                                    <li>Xắp xếp giảm dần: <txt-bold>( a, b ) => b - a</txt-bold></li>
                                 </ul>
                             </div>
                         </li><!-- ▲ sort ▲ -->
@@ -537,8 +532,8 @@
                             <div class="block_note">
                                 <c-note></c-note>
                                 <ul class="lists">
-                                    <li><c-strong>join( sep )</c-strong>, <c-bold>sep</c-bold> là kí tự để nối chuỗi, mặc định là dấu phẩy ( <c-bold>,</c-bold> )</li>
-                                    <li><c-strong>join()</c-strong> không làm ảnh hưởng mảng gốc, mà trả về một <c-bold>chuỗi mới</c-bold>.</li>
+                                    <li><c-strong>join( sep )</c-strong>, <txt-bold>sep</txt-bold> là kí tự để nối chuỗi, mặc định là dấu phẩy ( <txt-bold>,</txt-bold> )</li>
+                                    <li><c-strong>join()</c-strong> không làm ảnh hưởng mảng gốc, mà trả về một <txt-bold>chuỗi mới</txt-bold>.</li>
                                 </ul>
                             </div>
                         </li><!-- ▲ join ▲ -->
@@ -547,12 +542,12 @@
             </div>
         </div>
 
-        <div class="app_related" id="app_releated">
+        <div class="app_related">
             <div class="app_releated_item">
-                Bài trước: <a href="../">Kiểu dữ liệu - cơ bản.</a>
+                Bài trước: <a href="../2">Kiểu dữ liệu - cơ bản.</a>
             </div>
             <div class="app_releated_item">
-                Bài tiếp: <a href="../bai-4">Kiểu dữ liệu - nâng cao - Object.</a>
+                Bài tiếp: <a href="../bai-4">Object - nâng cao.</a>
             </div>
         </div><!-- ▲ session releated ▲ -->
 

@@ -15,40 +15,41 @@
 <body>
     <div class="app">
         <div class="app_menu">
-            <ul class="app_menu_lists">
-                <li class="app_menu_item">
-                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Giới thiệu</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_init" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Tổng quan các loại dữ liệu</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_boolean" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Kiểu bool</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_null" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Kiểu null</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_undefined" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Kiểu undefined</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_number" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Kiểu number</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_string" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Kiểu string</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_object" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Kiểu object</span>
-                </li>
-            </ul>
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link is_open js_goto">Giới thiệu</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Tổng quan các loại dữ liệu</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_boolean" class="app_menu_link js_goto">Kiểu bool</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_null" class="app_menu_link js_goto">Kiểu null</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_undefined" class="app_menu_link js_goto">Kiểu undefined</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_number" class="app_menu_link js_goto">Kiểu number</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_string" class="app_menu_link js_goto">Kiểu string</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_object" class="app_menu_link js_goto">Kiểu object</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="app_main">
@@ -220,8 +221,8 @@
                             <li>
                                 <c-keyw>let</c-keyw> <c-keyw-name>my_self</c-keyw-name> = {
                                 <dl>
-                                    <dt>name</dt>
-                                    <dd>"John"</dd>
+                                    <dt>name:</dt>
+                                    <c-string>'John'</c-string>
                                 </dl>
                                 <dl>
                                     <dt>age</dt>
@@ -241,10 +242,10 @@
 
         <div class="app_related">
             <div class="app_releated_item">
-                Bài trước: <a href="../">Biến và Hằng.</a>
+                Bài trước: <a href="../bai-1">Biến và Hằng.</a>
             </div>
             <div class="app_releated_item">
-                Bài tiếp: <a href="../bai-3/">Kiểu dữ liệu - nâng cao.</a>
+                Bài tiếp: <a href="../bai-3/">Mảng - nâng cao.</a>
             </div>
         </div><!-- ▲ session releated ▲ -->
 

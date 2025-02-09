@@ -15,44 +15,44 @@
 <body>
     <div class="app">
         <div class="app_menu">
-            <ul class="app_menu_lists">
-                <li class="app_menu_item">
-                    <a href="#b_intro" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Giới thiệu biến</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_init" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Cách khai báo biến</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_rule" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Quy tắc đặt tên của biến</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_update" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Cách thay đổi giá trị của biến</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_error" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Một số lỗi của biến</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_intro2" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Giới thiệu hằng</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_init2" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Cách khai báo hằng</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_rule2" class="app_menu_dot js_goto"></a>
-                    <span class="app_menu_title">Quy tắc đặt tên của hằng</span>
-                </li>
-                <li class="app_menu_item">
-                    <a href="#b_error2" class="app_menu_dot js_goto"></a>
-                    <div class="app_menu_title">Một số lỗi của hằng</div>
-                </li>
-            </ul>
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="app_main">
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="app_main_block" id="b_update">
-                    <h2>Cách thay đổi giá trị của biến</h2>
+                    <h2>Thay đổi giá trị của biến</h2>
                     <div class="block">
                         <p>Để thay đổi giá trị của biến, bạn chỉ cần gán giá trị mới cho nó.</p>
                         <ul class="pre">
@@ -257,7 +257,7 @@
                                 <br><c-keyw-name>EN</c-keyw-name> = <c-string>"English"</c-string>;
                             </li>
                             <li>
-                                <c-keyw>console.log</c-keyw>( <c-keyw-name>PI</c-keyw-name> ); <c-cmt>// 3.14</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>PI</c-keyw-name> ); <c-cmt>// 3.14</c-cmt>
                                 <br><c-keyw>console.log</c-keyw>( <c-keyw-name>VN</c-keyw-name> ); <c-cmt>// "Việt Nam"</c-cmt>
                                 <br><c-keyw>console.log</c-keyw>( <c-keyw-name>EN</c-keyw-name> ); <c-cmt>// "English"</c-cmt>
                             </li>
@@ -268,7 +268,7 @@
                 <div class="app_main_block" id="b_rule2">
                     <h2>Quy tắc đặt tên của hằng</h2>
                     <div class="block">
-                        <p>Tương tự <span class="link" data-goto="#b_rule">quy tắc đặt tên của biến</span>.</p>
+                        <p>Tương tự <a class="link js_goto" href="#b_rule">quy tắc đặt tên của biến</a>.</p>
                     </div>
                 </div>
 
@@ -299,7 +299,7 @@
             </div>
         </div>
 
-        <div class="app_related">
+        <div class="app_related" id="related">
             <div class="app_releated_item">
                 Bài trước: <a href="../">Mục lục.</a>
             </div>

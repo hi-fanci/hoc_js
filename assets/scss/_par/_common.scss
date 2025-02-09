@@ -131,23 +131,7 @@ dl {
 
     dt {
         flex-shrink: 0;
-        color: var(--c-variable);
         padding-right: 8px;
-
-        &::after {
-            content: ":";
-            padding-left: 4px;
-            display: inline-block;
-        }
-    }
-
-    dd {
-        color: var(--c-string);
-
-        &::after {
-            content: ",";
-            display: inline-block;
-        }
     }
 }
 
@@ -256,19 +240,4 @@ dl {
             translate: -50% 0;
         }
     }
-}
-
-.txt_border,
-txt-border {
-    display: inline-block;
-
-    font-family: var(--f-code);
-    font-weight: 700;
-    line-height: 1.35;
-    color: var(--c-nav-link);
-
-    border: 1px solid var(--c-nav-link);
-    border-radius: 4px;
-
-    padding: 0px 8px;
 }

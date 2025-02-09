@@ -23,8 +23,9 @@
 - bài 2: kiểu dữ liệu - cơ bản - string - number - boolean - null - undefined 
 - bài 3: kiểu dữ liệu - nâng cao - array
 - bài 4: kiểu dữ liệu - nâng cao - object
-- bài 5: function - cơ bản - setTimeout
-- bài 6: function - cơ bản - setInterval
-- bài 7: function - nâng cao - requestAnimationFrame
-- bài 8: function - nâng cao - promise, async/await
-- bài 9: class - cơ bản
+- bài 5: setTimeout - cơ bản
+- bài 6: setInterval - cơ bản
+- bài 7: localStorage
+- bài 8: jQuery cơ bản
+- bài 9: jQuery nâng cao - ứng dụng
+- bài 10:

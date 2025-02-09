@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7: localStorage - cơ bản</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        const page_name = "localStorage";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link is_open js_goto">Giới thiệu</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Khởi tạo</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_get" class="app_menu_link js_goto">Lấy giá trị theo từ khoá</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_delete" class="app_menu_link js_goto">Xoá giá trị theo từ khoá</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_clear" class="app_menu_link js_goto">Xoá tất cả dữ liệu của trang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_intro">
+                    <h2>localStorage</h2>
+                    <div class="block">
+                        <p>
+                            <txt-bold>localStorage</txt-bold> là một <txt-bold>API</txt-bold> cho phép lưu trữ dữ liệu dưới dạng chuỗi là một <txt-bold>JSON</txt-bold>, gồm cặp <txt-bold>key-value (khóa-giá trị)</txt-bold> trong trình duyệt của người dùng.
+                            <br>Tối đa là <txt-bold>5mb</txt-bold> cho mỗi tên miền, tuỳ thuộc vào trình duyệt.
+                            <br>Dữ liệu được lưu trữ trong <txt-bold>localStorage</txt-bold> sẽ tồn tại cho đến khi người dùng xóa nó bằng cách thủ công hoặc qua mã JavaScript.
+                            <br>Điều này có nghĩa là dữ liệu sẽ không bị mất khi tải lại trang hoặc đóng trình duyệt.
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>localStorage</c-keyw-name>.setItem( <c-keyw-name>'key'</c-keyw-name>, <c-string>'value'</c-string> );
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ▲ intro ▲ -->
+
+                <div class="app_main_block" id="b_init">
+                    <h3>Khởi tạo</h3>
+                    <ul class="counter">
+                        <li>
+                            <h6>Trực tiếp</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw-name>localStorage</c-keyw-name>.setItem( <c-keyw-name>'say'</c-keyw-name>, <c-string>'hello world'</c-string> );
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Cách này phổ biến vì ngắn gọn, dễ sử dụng.</p>
+                        </li>
+                        <li>
+                            <h6>Dùng biến</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>let</c-keyw> <c-keyw-name>key</c-keyw-name> = <c-string>'say'</c-string>;
+                                    <br><c-keyw>let</c-keyw> <c-keyw-name>val</c-keyw-name> = <c-string>'hello world'</c-string>;
+                                </li>
+                                <li>
+                                    <c-keyw-name>localStorage</c-keyw-name>.setItem( <c-keyw-name>key</c-keyw-name>, <c-keyw-name>val</c-keyw-name> );
+                                </li>
+                            </ul>
+                            <p><c-note></c-note>Cách này tối ưu hơn và dễ bảo trì.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ▲ init ▲ -->
+
+                <div class="app_main_block" id="b_get">
+                    <h3>Lấy giá trị theo từ khoá từ localStorage</h3>
+                    <div class="block">
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem(<c-string>'say'</c-string>);
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// "hello world"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ get ▲ -->
+
+                <div class="app_main_block" id="b_delete">
+                    <h3>Xoá giá trị theo từ khoá từ localStorage</h3>
+                    <div class="block">
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>localStorage</c-keyw-name>.removeItem(<c-string>'say'</c-string>);
+                            </li>
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem(<c-string>'say'</c-string>);
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// null</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ delete ▲ -->
+
+                <div class="app_main_block" id="b_clear">
+                    <h3>Xoá tất cả dữ liệu của trang trong localStorage</h3>
+                    <div class="block">
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>localStorage</c-keyw-name>.clear();
+                            </li>
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem(<c-string>'say'</c-string>);
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// null</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- ▲ clear ▲ -->
+            </div>
+        </div>
+
+        <div class="app_related">
+            <div class="app_releated_item">
+                Bài trước: <a href="../bai-6">Hàm setInterval - cơ bản.</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-8">jQuery - cơ bản.</a>
+            </div>
+        </div><!-- ▲ session releated ▲ -->
+
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div><!-- ▲ last access position ▲ -->
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</body>
+
+</html>

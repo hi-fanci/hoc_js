@@ -26,6 +26,6 @@
 - bài 5: setTimeout - cơ bản
 - bài 6: setInterval - cơ bản
 - bài 7: localStorage
-- bài 8: jQuery cơ bản
-- bài 9: jQuery nâng cao - ứng dụng
+- bài 8: jQuery cơ bản, .append(), .html(), .text(), .value(), .attr(), .addClass(), .removeClass(), .animate(), .slideUp(), .slideDown(), .eq(), .index()
+- bài 9: hiệu ứng cơ bản
 - bài 10:

@@ -67,6 +67,25 @@ c-note::before {
   font-weight: 700;
 }
 
+.c-tag,
+c-tag {
+  color: var(--c-key-word-name);
+  font-weight: 700;
+}
+.c-tag::before, .c-tag::after,
+c-tag::before,
+c-tag::after {
+  display: inline-block;
+}
+.c-tag::before,
+c-tag::before {
+  content: "<";
+}
+.c-tag::after,
+c-tag::after {
+  content: ">";
+}
+
 .txt-bold,
 txt-bold {
   font-weight: 700;
@@ -202,6 +221,7 @@ dl dt {
   width: 100%;
   background-color: #202734;
   border-radius: 10px;
+  position: relative;
   margin-top: 24px;
   margin-bottom: 24px;
   padding: 16px 24px;
@@ -260,6 +280,20 @@ dl dt {
 
 .block {
   padding-bottom: 32px;
+}
+.block_child {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.block_run {
+  border: 1px solid var(--c-default);
+  border-radius: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+.block_run .pre {
+  margin: 0;
 }
 .block_border {
   border: 1px solid var(--c-default);
@@ -424,12 +458,12 @@ dl dt {
 }
 
 .app_main {
-  max-width: 768px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 .app_main_content {
-  padding: 48px 60px 24px 16px;
+  padding: 48px 16px 24px;
 }
 .app_main_block {
   min-height: 480px;

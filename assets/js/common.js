@@ -1,6 +1,5 @@
 (function () {
     const html = $("html");
-
     //
     const app_opts = {
         _is_active: "is_active",

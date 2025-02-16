@@ -140,6 +140,7 @@ dl {
     background-color: #202734;
     border-radius: 10px;
 
+    position: relative;
     margin-top: 24px;
     margin-bottom: 24px;
     padding: 16px 24px;
@@ -211,6 +212,24 @@ dl {
 
 .block {
     padding-bottom: 32px;
+
+    &_child {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    &_run {
+        border: 1px solid var(--c-default);
+        border-radius: 8px;
+
+        margin-top: 16px;
+        margin-bottom: 16px;
+        padding: 16px;
+
+        .pre {
+            margin: 0;
+        }
+    }
 
     &_border {
         border: 1px solid var(--c-default);

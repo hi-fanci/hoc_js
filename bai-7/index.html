@@ -103,6 +103,17 @@
                                 <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// "hello world"</c-cmt>
                             </li>
                         </ul>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>key</c-keyw-name> = <c-string>'say'</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem( <c-keyw-name>key</c-keyw-name> );
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// "hello world"</c-cmt>
+                            </li>
+                        </ul>
                     </div>
                 </div><!-- ▲ get ▲ -->
 
@@ -120,6 +131,21 @@
                                 <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// null</c-cmt>
                             </li>
                         </ul>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>key</c-keyw-name> = <c-string>'say'</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>localStorage</c-keyw-name>.removeItem( <c-keyw-name>key</c-keyw-name> );
+                            </li>
+                            <li>
+                                <br>
+                                <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem( <c-keyw-name>key</c-keyw-name> );
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// null</c-cmt>
+                            </li>
+                        </ul>
                     </div>
                 </div><!-- ▲ delete ▲ -->
 
@@ -132,6 +158,21 @@
                             </li>
                             <li>
                                 <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem(<c-string>'say'</c-string>);
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// null</c-cmt>
+                            </li>
+                        </ul>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>let</c-keyw> <c-keyw-name>key</c-keyw-name> = <c-string>'say'</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>localStorage</c-keyw-name>.clear();
+                            </li>
+                            <li>
+                                <br>
+                                <c-keyw>let</c-keyw> <c-keyw-name>say</c-keyw-name> = <c-keyw-name>localStorage</c-keyw-name>.getItem( <c-keyw-name>key</c-keyw-name> );
                             </li>
                             <li>
                                 <c-keyw>console.log</c-keyw>( <c-keyw-name>say</c-keyw-name> ); <c-cmt>// null</c-cmt>

@@ -75,6 +75,26 @@ c-note {
     }
 }
 
+.c-tag,
+c-tag {
+    color: var(--c-key-word-name);
+    font-weight: 700;
+
+    &::before,
+    &::after {
+
+        display: inline-block;
+    }
+
+    &::before {
+        content: '\003C';
+    }
+
+    &::after {
+        content: '\003E';
+    }
+}
+
 .txt-bold,
 txt-bold {
     font-weight: 700;

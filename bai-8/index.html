@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: jQuery - cơ bản</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        const page_name = "jquery - base";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link is_open js_goto">Giới thiệu</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Khởi tạo</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_get" class="app_menu_link js_goto">Lấy giá trị theo từ khoá</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_delete" class="app_menu_link js_goto">Xoá giá trị theo từ khoá</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_clear" class="app_menu_link js_goto">Xoá tất cả dữ liệu của trang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_intro">
+                    <h2>jQuery</h2>
+                    <div class="block">
+                        <p><txt-bold>jQuery</txt-bold> là một <txt-bold>thư viện JavaScript</txt-bold> phổ biến, được thiết kế để đơn giản hóa việc lập trình JavaScript trên các trang web.</p>
+                        <p>Nó giúp lập trình viên thao tác với <txt-bold>HTML, CSS, sự kiện, AJAX, và DOM</txt-bold> dễ dàng hơn thông qua một cú pháp ngắn gọn và dễ sử dụng.</p>
+                        <ul class="pre">
+                            <li>
+                                $(<c-null>window</c-null>).on( <c-string>'load'</c-string>, <c-keyw-name>function</c-keyw-name>() {
+                                <ul>
+                                    <li>
+                                        $(<c-string>'button'</c-string>).on( <c-string>'click'</c-string>, <c-keyw-name>function</c-keyw-name>() {
+                                        <ul>
+                                            <li>
+                                                <c-keyw>console.log</c-keyw>( <c-string>'button clicked'</c-string> );
+                                            </li>
+                                        </ul>
+                                        });
+                                    </li>
+                                </ul>
+                                });
+                            </li>
+                        </ul>
+                        <ul class="lists">
+                            <li><txt-bold>$( )</txt-bold> đồng nghĩa với một hàm jQuery().</li>
+                            <li><txt-bold>$(window).on( 'load', function() {...})</txt-bold> để đảm bảo mã chỉ chạy sau khi toàn bộ trang web đã được tải xong.</li>
+                            <li><txt-bold>$('button').on( 'click', function() {...})</txt-bold> để xử lí hành động khi người dùng nhấn vào nút.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ▲ intro ▲ -->
+
+                <div class="app_main_block" id="b_intro">
+                    <h2>Thêm jQuery vào site</h2>
+                    <div class="block">
+                        <p>Để sử dụng jQuery bạn phải thêm thư viện vào web của mình, có 2 cái là .</p>
+                        <ul class="counter">
+                            <li>
+                                <h6>Google CDN</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-string>&#60;script src="https://code.jquery.com/jquery-3.6.0.min.js"&#62;&#60;/script&#62;</c-string>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6>Tải về cục bộ</h6>
+                                <p>Mình có thể tải jQuery <a href="https://code.jquery.com/jquery-3.7.1.min.js" target="_blank" rel="noopener noreferrer">ở đây</a>.</p>
+                                <ul class="pre">
+                                    <li>
+                                        <c-string>&#60;script src="./[...path]/jquery-3.6.0.min.js"&#62;&#60;/script&#62;</c-string>
+                                    </li>
+                                </ul>
+                                <p><c-note></c-note> đảm bảo đường dẫn <txt-bold>[...path]</txt-bold> là chính xác.</p>
+                            </li>
+                    </div>
+                    </ul>
+                </div>
+                <!-- ▲ intro ▲ -->
+
+                <div class="app_main_block" id="b_selector">
+                    <h3>Bộ chọn ( selector )</h3>
+                    <div class="block">
+                        <ul class="counter">
+                            <li>
+                                <h6>Chọn theo html tag</h6>
+                                <ul class="pre">
+                                    <li>
+                                        $(<c-string>'tag-name'</c-string>)
+                                        <br><c-cmt>// $('html'), $('body'), $('p')</c-cmt>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <h6>Chọn theo id</h6>
+                                <ul class="pre">
+                                    <li>
+                                        $(<c-string>'#id'</c-string>)
+                                        <br><c-cmt>// $('#wraper'), $('#input'), $('#btn')</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6>Chọn theo class</h6>
+                                <ul class="pre">
+                                    <li>
+                                        $(<c-string>'.class'</c-string>)
+                                        <br><c-cmt>// $('.toggler'), $('.confirm'), $('.submit')</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6>Chọn nhiều</h6>
+                                <ul class="pre">
+                                    <li>
+                                        $(<c-string>'tag, #id, .class'</c-string>)
+                                        <br><c-cmt>// $('html, #wraper, .toggler')</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="block_note">
+                            <c-note></c-note>
+                            <ul class="lists">
+                                <li><txt-bold>Bộ chọn trong jQuery</txt-bold> củng tương tự như <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank" rel="noopener noreferrer">bộ chọn trong css</a>.</li>
+                                <li>Phần tử được chọn luôn ở kiểu <txt-bold>string</txt-bold>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ▲ selector ▲ -->
+
+                <div class="app_main_block" id="b_use">
+                    <h3>Thao tác với HTML</h3>
+                    <p>Có rất nhiều hàm dựng sẳn trong jQuery, mình chỉ bày các hàm cơ bản thường gặp.</p>
+                    <div class="block">
+                        <h5>append()</h5>
+                        <p>Hàm này dùng để <txt-bold>thêm nội dung mới</txt-bold> vào cuối.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-tag>p</c-tag>
+                                <ul>
+                                    <li>
+                                        <c-tag>span</c-tag>
+                                        <c-string>This is text.</c-string>
+                                        <c-tag>/span</c-tag>
+                                    </li>
+                                </ul>
+                                <c-tag>/p</c-tag>
+                            </li>
+                        </ul>
+
+                        <ul class="pre">
+                            <li>
+                                $(<c-string>'p'</c-string>).append('<c-string>This is new text</c-string>');
+                            </li>
+                        </ul>
+                        <ul class="pre">
+                            <li>
+                                <c-tag>p</c-tag>
+                                <ul>
+                                    <li>
+                                        <c-tag>span</c-tag>
+                                        <c-string>This is text.</c-string>
+                                        <c-string>This is new text</c-string>
+                                        <c-tag>/span</c-tag>
+                                    </li>
+                                </ul>
+                                <c-tag>/p</c-tag>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="counter">
+                        <li>
+                            <h6>.append( )</h6>
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>'p'</c-string>).append('<c-string>This is new text</c-string>'');
+                                </li>
+                            </ul>
+                            <p><c-note></c-note> hàm này <txt-bold>giữ nguyên nội dung</txt-bold> của thẻ và <txt-bold>thêm nội dung mới</txt-bold> vào ở cuối.</p>
+                        </li>
+                        <li>
+                            <h6>Thêm, thay đổi nội dung của phần tử.</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-cmt>// Sử dụng hàm html()</c-cmt>
+                                    <br>
+                                    $(<c-string>'p'</c-string>).html('<c-string>&#60;span&#62;This is new text&#60;/span&#62;</c-string>'');
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-cmt>// Sử dụng hàm text()</c-cmt>
+                                    <br>
+                                    $(<c-string>'p'</c-string>).text('<c-string>This is new text</c-string>'');
+                                </li>
+                            </ul>
+                            <div class="block_note">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li>Cả 2 hàm này đều dùng để <txt-bold>thay đổi toàn bộ</txt-bold> nội dung của thẻ và thay bằng <txt-bold>nội dung mới</txt-bold>.</li>
+                                    <li>Hàm <txt-bold>text()</txt-bold> chỉ có thể thêm mới dưới kiểu <txt-bold>chuỗi</txt-bold>, hàm <txt-bold>html()</txt-bold> thì có thể thêm các <txt-bold>tag</txt-bold> tuỳ ý.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <h6>Lấy nội dung của phần tử.</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw-name>&lt;p&gt;</c-keyw-name><c-keyw-name>&lt;span&gt;<c-string>This is text</c-string>&lt;/span&gt;</c-keyw-name><c-keyw-name>&lt;/p&gt;</c-keyw-name>
+                                </li>
+                            </ul>
+                            <ul class="pre">
+                                <li>
+                                    <c-cmt>// Sử dụng hàm html()</c-cmt>
+                                    <br>
+                                    $(<c-string>'p'</c-string>).html();
+                                    <br><c-cmt>// &lt;span&gt;This is text&lt;/span&gt;</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    <c-cmt>// Sử dụng hàm text()</c-cmt>
+                                    <br>
+                                    $(<c-string>'p'</c-string>).text();
+                                    <br><c-cmt>// 'This is text'</c-cmt>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h6>Thay đổi thuộc tính của phần tử.</h6>
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>'p'</c-string>).attr(<c-keyw-name>'data-name'</c-keyw-name>, <c-string>'This is new value'</c-string>);
+                                </li>
+                            </ul>
+                            <p><c-note></c-note> hàm này dùng để <txt-bold>thay đổi</txt-bold> giá trị của các thuộc tính trên thẻ, như <txt-bold>src, data-, href, ... </txt-bold>.</p>
+                        </li>
+
+                        <li>
+                            <h6>Chọn theo class</h6>
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>'.class'</c-string>)
+                                    <br><c-cmt>// $('.toggler'), $('.confirm'), $('.submit')</c-cmt>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h6>Chọn nhiều</h6>
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>'tag, #id, .class'</c-string>)
+                                    <br><c-cmt>// $('html, #wraper, .toggler')</c-cmt>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="block_note">
+                        <c-note></c-note>
+                        <ul class="lists">
+                            <li><txt-bold>Bộ chọn trong jQuery</txt-bold> củng tương tự như <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank" rel="noopener noreferrer">bộ chọn trong css</a>.</li>
+                            <li>Phần tử được chọn luôn ở kiểu <txt-bold>string</txt-bold>.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ▲ use ▲ -->
+        </div>
+    </div>
+
+    <div class="app_related">
+        <div class="app_releated_item">
+            Bài trước: <a href="../bai-6">Hàm setInterval - cơ bản.</a>
+        </div>
+        <div class="app_releated_item">
+            Bài tiếp: <a href="../bai-8">jQuery - cơ bản.</a>
+        </div>
+    </div><!-- ▲ session releated ▲ -->
+
+    <div class="app_last_pos">
+        <div class="app_last_pos_mask"></div>
+        <div class="app_last_pos_btn">
+            <span class="app_last_pos_close"></span>
+            <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+        </div>
+    </div><!-- ▲ last access position ▲ -->
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - mảng 3</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_main">
+            <div class="app_main_content">
+                <h2>Bài 3: Á đũuu</h2>
+
+                <p>
+                    <c-note></c-note> bài này làm dựa trên 1 mảng từ câu a, sử dụng liên tục cho các câu tiếp theo.
+                    <br>Do dùng chung nên mặc định '<txt-bold>Đáp án của bạn là</txt-bold>' giá trị của mảng tại thời điểm hiện tại.<br><br>
+                </p>
+                <h6>Đề: Cho chuỗi sau <txt-bold>'Lorem ipsum dolor sit amet consectetur aspetnatur etit'</txt-bold>.</h6>
+
+                <ul class="alpha">
+                    <li>
+                        Đầu tiên, biến chuỗi thành mảng, phân cách bởi dấu space ' '.
+                        <br>Đáp án: <txt-bold>['Lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'aspetnatur', 'etit']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_a"></span></p>
+                    </li>
+                    <li>
+                        Kế tiếp, xoá các từ có chứa kí tự 'et'.
+                        <br>Đáp án: <txt-bold>['Lorem', 'ipsum', 'dolor', 'sit']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_b"></span></p>
+                    </li>
+                    <li>
+                        Thêm các từ sau vào cuối mảng 'laborum', 'iure', 'nesciunt', 'ducimus'.
+                        <br>Đáp án: <txt-bold>['Lorem', 'ipsum', 'dolor', 'sit', 'laborum', 'iure', 'nesciunt', 'ducimus']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_c"></span></p>
+                    </li>
+                    <li>
+                        Tiếp theo, xoá các từ ở vị trí chẵn.
+                        <br>Đáp án: <txt-bold>['ipsum', 'sit', 'iure', 'ducimus']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_d"></span></p>
+                    </li>
+                    <li>
+                        Lại thêm vào đầu mảng các từ sau 'Voluptate', 'exercitationem', 'neque'.
+                        <br>Đáp án: <txt-bold>['Voluptate', 'exercitationem', 'neque', 'ipsum', 'sit', 'iure', 'ducimus']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_e"></span></p>
+                    </li>
+                    <li>
+                        Sau đó, biến mảng thành số là tổng các kí tự của từ đó, ví dụ: 'Voluptate' = 9, 'neque' = 5.
+                        <br>Đáp án: <txt-bold>[9, 14, 5, 5, 3, 4, 7]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_f"></span></p>
+                    </li>
+                    <li>
+                        Tiếp theo, loại bỏ các số nhỏ hơn bằng 4 và lớn hơn bằng 9.
+                        <br>Đáp án: <txt-bold>[5, 5, 7]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_g"></span></p>
+                    </li>
+                    <li>
+                        Kế tiếp, nhân đôi các giá trị trong mảng.
+                        <br>Đáp án: <txt-bold>[10, 10, 14]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_h"></span></p>
+                    </li>
+                    <li>
+                        Tiếp tục, thêm vào cuối mảng các số nguyên bắt đầu từ 0, tới bằng giá trị ở vị trí 0 giảm đi 4.
+                        <br>Đáp án: <txt-bold>[10, 10, 14, 0, 1, 2, 3, 4, 5, 6]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_i"></span></p>
+                    </li>
+                    <li>
+                        Xong rồi thì xắp xếp mảng theo thứ tự từ bé đến lớn.
+                        <br>Đáp án: <txt-bold>[0, 1, 2, 3, 4, 5, 6, 10, 10, 14]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_j"></span></p>
+                    </li>
+                    <li>
+                        Cuối cùng, nối mảng lại bằng dấu '+', số lượng dấu '+' dựa trên giá trị tại vị trí đó trong mảng.
+                        <br>Đáp án: 0+1++2+++3++++4+++++5++++++6++++++++++10++++++++++10++++++++++++++14
+                        <p>Đáp án của bạn là: <span class="ans_k"></span></p>
+                    </li>
+                </ul>
+                <a class="link" href="./b4.html">Bài 4</a>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        const orig_txt = 'Lorem ipsum dolor sit amet consectetur aspetnatur etit';
+        let arr = orig_txt.split(' ');
+        const renderAnswer = (e, t) => {
+            const p = $(`.ans_${e}`);
+            if (p.length > 0) p.text(t);
+        }
+
+        // a. Đầu tiên, biến chuỗi thành mảng, phân cách bởi dấu space ' '.
+        const AnswerA = () => {
+            renderAnswer('a', arr);
+        }; AnswerA();
+
+        // b. Kế tiếp, xoá các từ có chứa kí tự 'et'.
+        const AnswerB = () => {
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('b', arr);
+        }; AnswerB();
+
+        // c. Thêm các từ sau vào cuối mảng 'laborum', 'iure', 'nesciunt', 'ducimus'.
+        const AnswerC = () => {
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('c', arr);
+        }; AnswerC();
+
+        // d. Tiếp theo, xoá các từ ở vị trí chẵn.
+        const AnswerD = () => {
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('d', arr);
+        }; AnswerD();
+
+        // e. lại thêm vào đầu mảng các từ sau 'Voluptate', 'exercitationem', 'neque'.
+        const AnswerE = () => {
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('e', arr);
+        }; AnswerE();
+
+        // f. Sau đó, biến mảng thành số là tổng các kí tự của từ đó, ví dụ: 'Voluptate' = 9, 'exercitationem' = 14.
+        const AnswerF = () => {
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            renderAnswer('f', arr);
+        }; AnswerF();
+
+        // g. Tiếp theo, loại bỏ các số nhỏ hơn bằng 4 và lớn hơn bằng 9.
+        const AnswerG = () => {
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            renderAnswer('g', arr);
+        }; AnswerG();
+
+        // h. Kế tiếp, nhân đôi các giá trị trong mảng.
+        const AnswerH = () => {
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            renderAnswer('h', arr);
+        }; AnswerH();
+
+        // i. Tiếp tục, thêm vào cuối mảng các số nguyên bắt đầu từ 0, tới bằng giá trị ở vị trí 0 giảm đi 4.
+        const AnswerI = () => {
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            renderAnswer('i', arr);
+        }; AnswerI();
+
+        // j. Xong rồi thì xắp xếp mảng theo thứ tự từ bé đến lớn.
+        const AnswerJ = () => {
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            renderAnswer('j', arr);
+        }; AnswerJ();
+
+        // k. Cuối cùng, nối mảng lại bằng dấu '+', số lượng dấu '+' dựa trên giá trị tại vị trí đó trong mảng.
+        const AnswerK = () => {
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            renderAnswer('k', arr);
+        }; AnswerK();
+    </script>
+</body>
+
+</html>

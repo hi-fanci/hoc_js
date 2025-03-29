@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - mảng 4</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_main">
+            <div class="app_main_content">
+                <h2>Bài 4: Lời gì á chồn</h2>
+                <h6>Đề: Nô hóp, dùng mảng để vẽ ra hình tương tự.</h6>
+
+                <ul class="alpha">
+                    <li>
+                        <p class="txt-bold">
+                            ********<br>
+                            ********<br>
+                            ********<br>
+                            ********
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_a"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *<br>
+                            **<br>
+                            ***<br>
+                            ****
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_b"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            * * * *<br>
+                            * * *<br>
+                            * *<br>
+                            *
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_c"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *<br>
+                            *--*<br>
+                            *--*--*
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_d"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *--*--*--*--*<br>
+                            *--*--*--*--*<br>
+                            *--*--*--*--*<br>
+                            *--*--*--*--*<br>
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_e"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *<br>
+                            *--*<br>
+                            *--*--*<br>
+                            *--*--*--*<br>
+                            *--*--*<br>
+                            *--*<br>
+                            *
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_f"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *------*--*--*--*<br>
+                            *--*------*--*--*<br>
+                            *--*--*------*--*<br>
+                            *--*--*--*------*<br>
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_g"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *--*--*--*<br>
+                            *--*<br>
+                            *--*--*--*<br>
+                            *--*<br>
+                            *--*--*--*<br>
+                            *--*<br>
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_h"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *--*--*--*--*--*--*--*--*--*<br>
+                            *<br>
+                            *--*--*--*--*--*--*--*<br>
+                            *--*--*<br>
+                            *--*--*--*--*--*<br>
+                            *--*--*--*--*<br>
+                            *--*--*--*<br>
+                            *--*--*--*--*--*--*<br>
+                            *--*<br>
+                            *--*--*--*--*--*--*--*--*<br>
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_i"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *--*<br>
+                            *<br>
+                            *--*--*--*<br>
+                            *--*<br>
+                            *--*--*--*--*--*<br>
+                            *--*--*<br>
+                            *--*--*--*--*--*--*--*<br>
+                            *--*--*--*<br>
+                            *--*--*--*--*--*--*--*--*--*<br>
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_j"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="txt-bold">
+                            *--*--*--*--*--*--*--*--*--*<br>
+                            *--+--+--+--+--+--+--+--+--*<br>
+                            *--+--+--+--+--+--+--+--+--*<br>
+                            *--+--+--+--+--+--+--+--+--*<br>
+                            *--+--+--+--+--+--+--+--+--*<br>
+                            *--+--+--+--+--+--+--+--+--*<br>
+                            *--*--*--*--*--*--*--*--*--*<br>
+                        </p>
+                        <div>
+                            Đáp án của bạn là:
+                            <p class="ans_k"></p>
+                        </div>
+                    </li>
+
+                </ul>
+                <a class="link" href="./b5.html">Bài 5</a>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        const renderAnswer = (e, arr) => {
+            const p = $(`.ans_${e}`);
+            if (p.length > 0) p.html(arr.join('<br>'));
+        }
+
+        /* a. 
+        ********
+        ********
+        ********
+        ********
+        */
+        const AnswerA = () => {
+            let arr = [];
+            for (let i = 0; i < 4; i++) {
+                let row = '';
+                for (let j = 0; j < 8; j++) {
+                    row += "*";
+                }
+                arr.push(row);
+            }
+            renderAnswer('a', arr);
+        }; AnswerA();
+
+        /* b.
+
+        *
+        **
+        ***
+        ****
+
+        */
+        const AnswerB = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('b', arr);
+        }; AnswerB();
+
+        /* c.
+        
+        * * * *
+        * * *
+        * *
+        *
+
+        */
+        const AnswerC = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('c', arr);
+        }; AnswerC();
+
+        /* d.
+
+        *
+        *--*
+        *--*--*
+
+        */
+        const AnswerD = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('d', arr);
+        }; AnswerD();
+
+        /* e.
+
+        *--*--*--*--*
+        *--*--*--*--*
+        *--*--*--*--*
+        *--*--*--*--*
+
+        */
+        const AnswerE = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('e', arr);
+        }; AnswerE();
+
+        /* f.
+
+        *
+        *--*
+        *--*--*
+        *--*--*--*
+        *--*--*
+        *--*
+        *
+
+        */
+        const AnswerF = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('f', arr);
+        }; AnswerF();
+
+        /* g. 
+
+        *------*--*--*--*
+        *--*------*--*--*
+        *--*--*------*--*
+        *--*--*--*------*
+
+        */
+        const AnswerG = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('g', arr);
+        }; AnswerG();
+
+        /* h.
+
+        *--*--*--*
+        *--*
+        *--*--*--*
+        *--*
+        *--*--*--*
+        *--*
+
+        */
+        const AnswerH = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('h', arr);
+        }; AnswerH();
+
+        /* i. 
+
+        *--*--*--*--*--*--*--*--*--*
+        *
+        *--*--*--*--*--*--*--*
+        *--*--*
+        *--*--*--*--*--*
+        *--*--*--*--*
+        *--*--*--*
+        *--*--*--*--*--*--*
+        *--*
+        *--*--*--*--*--*--*--*--*
+
+        */
+        const AnswerI = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('i', arr);
+        }; AnswerI();
+
+        /* j.
+
+        *--*
+        *
+        *--*--*--*
+        *--*
+        *--*--*--*--*--*
+        *--*--*
+        *--*--*--*--*--*--*--*
+        *--*--*--*
+        *--*--*--*--*--*--*--*--*--*
+
+        */
+        const AnswerJ = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('j', arr);
+        }; AnswerJ();
+
+        /* k.
+
+        *--*--*--*--*--*--*--*--*--*
+        *--+--+--+--+--+--+--+--+--*
+        *--+--+--+--+--+--+--+--+--*
+        *--+--+--+--+--+--+--+--+--*
+        *--+--+--+--+--+--+--+--+--*
+        *--+--+--+--+--+--+--+--+--*
+        *--*--*--*--*--*--*--*--*--*
+
+        */
+        const AnswerK = () => {
+            let arr = [];
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            renderAnswer('k', arr);
+        }; AnswerK();
+    </script>
+</body>
+
+</html>

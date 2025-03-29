@@ -131,6 +131,10 @@ a {
 a:hover {
   opacity: 0.6;
 }
+.link:hover::after,
+a:hover::after {
+  scale: 0 0;
+}
 
 .link::after {
   content: "";
@@ -140,6 +144,7 @@ a:hover {
   position: absolute;
   left: 0;
   bottom: 0.1em;
+  transition: scale 300ms ease-out;
 }
 
 h2 {
@@ -298,6 +303,17 @@ dl dt {
 .alpha > li + li {
   margin-top: 16px;
 }
+.alpha > li p {
+  margin-top: 8px;
+}
+.alpha > li p span {
+  color: var(--c-key-word-name);
+  font-weight: 700;
+}
+.alpha > li div p {
+  color: var(--c-key-word-name);
+  font-weight: 700;
+}
 
 .block {
   padding-bottom: 32px;
@@ -375,7 +391,7 @@ input[type=text] {
   background-color: var(--c-cmt);
   display: block;
   border-radius: 4px;
-  font-family: var(--c-code);
+  font-family: var(--f-code);
   font-size: 20px;
   font-weight: 500;
   color: var(--c-default);
@@ -399,6 +415,16 @@ hr {
 
 .font-40px {
   font-size: 40px !important;
+}
+
+.f-code {
+  font-family: var(--f-code) !important;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.f-center {
+  text-align: center;
 }
 
 .app_menu {
@@ -663,6 +689,18 @@ hr {
 .app_lesson_lists a::before {
   content: "Bài " counter(lesson-order) " :";
   display: block;
+}
+
+.app_lesson_homework {
+  display: flex;
+  gap: 32px;
+}
+.app_lesson_homework li {
+  flex-shrink: 0;
+}
+.app_lesson_homework a {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .code_board {

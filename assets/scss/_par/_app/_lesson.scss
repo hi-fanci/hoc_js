@@ -28,3 +28,17 @@
         }
     }
 }
+
+.app_lesson_homework {
+    display: flex;
+    gap: 32px;
+
+    li {
+        flex-shrink: 0;
+    }
+
+    a {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}

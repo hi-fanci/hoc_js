@@ -1,10 +1,17 @@
 .app_related {
+    width: 100%;
+    background-color: var(--bc-default);
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+
     display: flex;
     align-content: inherit;
     justify-content: space-between;
 
-    padding: 32px;
-    border-bottom: 8px solid var(--bc-btn-bc);
+    padding: 16px 32px;
+    border-bottom: 4px solid var(--bc-btn-bc);
 
     &_item {}
 }

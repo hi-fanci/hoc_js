@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 8: jQuery - cơ bản</title>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./../assets/css/style.css">
     <script>
         const page_name = "jquery - base";
     </script>
@@ -30,13 +30,37 @@
                             <a href="#b_init" class="app_menu_link js_goto">Khởi tạo</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_get" class="app_menu_link js_goto">Lấy giá trị theo từ khoá</a>
+                            <a href="#b_selector" class="app_menu_link js_goto">Bộ chọn ( selector )</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_delete" class="app_menu_link js_goto">Xoá giá trị theo từ khoá</a>
+                            <a href="#b_use" class="app_menu_link js_goto">Các hàm thường dùng</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_clear" class="app_menu_link js_goto">Xoá tất cả dữ liệu của trang</a>
+                            <a href="#b_append" class="app_menu_link js_goto">append()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_html" class="app_menu_link js_goto">html()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_text" class="app_menu_link js_goto">text()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_val" class="app_menu_link js_goto">val()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_attr" class="app_menu_link js_goto">attr()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_addclass" class="app_menu_link js_goto">addClass() & removeClass()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_animate" class="app_menu_link js_goto">animate()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_slideup" class="app_menu_link js_goto">slideUp() & slideDown()</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_eq" class="app_menu_link js_goto">eq() & index()</a>
                         </li>
                     </ul>
                 </div>
@@ -76,7 +100,7 @@
                 </div>
                 <!-- ▲ intro ▲ -->
 
-                <div class="app_main_block" id="b_intro">
+                <div class="app_main_block" id="b_init">
                     <h2>Thêm jQuery vào site</h2>
                     <div class="block">
                         <p>Để sử dụng jQuery bạn phải thêm thư viện vào web của mình, có 2 cái là .</p>
@@ -113,7 +137,7 @@
                                 <ul class="pre">
                                     <li>
                                         $(<c-string>'tag-name'</c-string>)
-                                        <br><c-cmt>// $('html'), $('body'), $('p')</c-cmt>
+                                        <br><c-cmt>// ví dụ: $('html'), $('body'), $('p')</c-cmt>
                                     </li>
                                 </ul>
 
@@ -123,7 +147,7 @@
                                 <ul class="pre">
                                     <li>
                                         $(<c-string>'#id'</c-string>)
-                                        <br><c-cmt>// $('#wraper'), $('#input'), $('#btn')</c-cmt>
+                                        <br><c-cmt>// ví dụ: $('#wraper'), $('#input'), $('#btn')</c-cmt>
                                     </li>
                                 </ul>
                             </li>
@@ -132,7 +156,7 @@
                                 <ul class="pre">
                                     <li>
                                         $(<c-string>'.class'</c-string>)
-                                        <br><c-cmt>// $('.toggler'), $('.confirm'), $('.submit')</c-cmt>
+                                        <br><c-cmt>// ví dụ: $('.toggler'), $('.confirm'), $('.submit')</c-cmt>
                                     </li>
                                 </ul>
                             </li>
@@ -141,7 +165,7 @@
                                 <ul class="pre">
                                     <li>
                                         $(<c-string>'tag, #id, .class'</c-string>)
-                                        <br><c-cmt>// $('html, #wraper, .toggler')</c-cmt>
+                                        <br><c-cmt>// ví dụ: $('html, #wraper, .toggler')</c-cmt>
                                     </li>
                                 </ul>
                             </li>
@@ -158,138 +182,323 @@
                 <!-- ▲ selector ▲ -->
 
                 <div class="app_main_block" id="b_use">
-                    <h3>Thao tác với HTML</h3>
+                    <h3>Các hàm thường dùng</h3>
                     <p>Có rất nhiều hàm dựng sẳn trong jQuery, mình chỉ bày các hàm cơ bản thường gặp.</p>
-                    <div class="block">
-                        <h5>append()</h5>
-                        <p>Hàm này dùng để <txt-bold>thêm nội dung mới</txt-bold> vào cuối.</p>
-                        <ul class="pre">
-                            <li>
-                                <c-tag>p</c-tag>
-                                <ul>
-                                    <li>
-                                        <c-tag>span</c-tag>
-                                        <c-string>This is text.</c-string>
-                                        <c-tag>/span</c-tag>
-                                    </li>
-                                </ul>
-                                <c-tag>/p</c-tag>
-                            </li>
-                        </ul>
 
-                        <ul class="pre">
-                            <li>
-                                $(<c-string>'p'</c-string>).append('<c-string>This is new text</c-string>');
-                            </li>
-                        </ul>
-                        <ul class="pre">
-                            <li>
-                                <c-tag>p</c-tag>
-                                <ul>
-                                    <li>
-                                        <c-tag>span</c-tag>
-                                        <c-string>This is text.</c-string>
-                                        <c-string>This is new text</c-string>
-                                        <c-tag>/span</c-tag>
-                                    </li>
-                                </ul>
-                                <c-tag>/p</c-tag>
-                            </li>
-                        </ul>
-                    </div>
                     <ul class="counter">
-                        <li>
-                            <h6>.append( )</h6>
+                        <li id="b_append">
+                            <h6>append()</h6>
+                            <p>Hàm này dùng để <txt-bold>thêm nội dung (HTML, chuỗi)</txt-bold> vào cuối phần tử được chọn.</p>
                             <ul class="pre">
                                 <li>
-                                    $(<c-string>'p'</c-string>).append('<c-string>This is new text</c-string>'');
+                                    $(<c-string>selector</c-string>).append(<c-string>somethings</c-string>);
                                 </li>
                             </ul>
-                            <p><c-note></c-note> hàm này <txt-bold>giữ nguyên nội dung</txt-bold> của thẻ và <txt-bold>thêm nội dung mới</txt-bold> vào ở cuối.</p>
-                        </li>
-                        <li>
-                            <h6>Thêm, thay đổi nội dung của phần tử.</h6>
-                            <ul class="pre">
-                                <li>
-                                    <c-cmt>// Sử dụng hàm html()</c-cmt>
-                                    <br>
-                                    $(<c-string>'p'</c-string>).html('<c-string>&#60;span&#62;This is new text&#60;/span&#62;</c-string>'');
-                                </li>
-                                <li>
-                                    <br>
-                                    <c-cmt>// Sử dụng hàm text()</c-cmt>
-                                    <br>
-                                    $(<c-string>'p'</c-string>).text('<c-string>This is new text</c-string>'');
-                                </li>
-                            </ul>
-                            <div class="block_note">
-                                <c-note></c-note>
-                                <ul class="lists">
-                                    <li>Cả 2 hàm này đều dùng để <txt-bold>thay đổi toàn bộ</txt-bold> nội dung của thẻ và thay bằng <txt-bold>nội dung mới</txt-bold>.</li>
-                                    <li>Hàm <txt-bold>text()</txt-bold> chỉ có thể thêm mới dưới kiểu <txt-bold>chuỗi</txt-bold>, hàm <txt-bold>html()</txt-bold> thì có thể thêm các <txt-bold>tag</txt-bold> tuỳ ý.</li>
-                                </ul>
+
+                            <div class="code_board" id="fn_append">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <p class="p">This is target selector</p>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">append('<c-tag>h4</c-tag>hihi<c-tag>/h4</c-tag>')</div>
+                                </div>
                             </div>
                         </li>
-                        <li>
-                            <h6>Lấy nội dung của phần tử.</h6>
-                            <ul class="pre">
-                                <li>
-                                    <c-keyw-name>&lt;p&gt;</c-keyw-name><c-keyw-name>&lt;span&gt;<c-string>This is text</c-string>&lt;/span&gt;</c-keyw-name><c-keyw-name>&lt;/p&gt;</c-keyw-name>
-                                </li>
-                            </ul>
-                            <ul class="pre">
-                                <li>
-                                    <c-cmt>// Sử dụng hàm html()</c-cmt>
-                                    <br>
-                                    $(<c-string>'p'</c-string>).html();
-                                    <br><c-cmt>// &lt;span&gt;This is text&lt;/span&gt;</c-cmt>
-                                </li>
-                                <li>
-                                    <br>
-                                    <c-cmt>// Sử dụng hàm text()</c-cmt>
-                                    <br>
-                                    $(<c-string>'p'</c-string>).text();
-                                    <br><c-cmt>// 'This is text'</c-cmt>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h6>Thay đổi thuộc tính của phần tử.</h6>
-                            <ul class="pre">
-                                <li>
-                                    $(<c-string>'p'</c-string>).attr(<c-keyw-name>'data-name'</c-keyw-name>, <c-string>'This is new value'</c-string>);
-                                </li>
-                            </ul>
-                            <p><c-note></c-note> hàm này dùng để <txt-bold>thay đổi</txt-bold> giá trị của các thuộc tính trên thẻ, như <txt-bold>src, data-, href, ... </txt-bold>.</p>
-                        </li>
+                        <!-- append -->
 
-                        <li>
-                            <h6>Chọn theo class</h6>
+                        <li id="b_html">
+                            <h6>html()</h6>
+                            <p>Hàm này dùng để <txt-bold>thay đổi nội dung</txt-bold> của phần tử được chọn, nghĩa là nội dung cũ sẽ bị thay bằng nội dung mới, có thể là <txt-bold>text, html</txt-bold>.</p>
+                            <ul class="lists">
+                                <li><txt-bold>Không có tham số</txt-bold>: <c-keyw-name>html</c-keyw-name>() trả về nội dung <txt-bold>HTML</txt-bold> của phần tử <txt-bold>đầu tiên</txt-bold> trong bộ chọn.</li>
+                                <li><txt-bold>Có tham số</txt-bold>: <c-keyw-name>html</c-keyw-name>( <c-string>somethings</c-string> ) thay đổi nội dung <txt-bold>HTML</txt-bold> của <txt-bold>tất cả</txt-bold> phần tử trong bộ chọn thành chuỗi <txt-bold>HTML</txt-bold> của tham số.</li>
+                            </ul>
+
                             <ul class="pre">
                                 <li>
-                                    $(<c-string>'.class'</c-string>)
-                                    <br><c-cmt>// $('.toggler'), $('.confirm'), $('.submit')</c-cmt>
+                                    $(<c-string>selector</c-string>).html();
+                                    <br><c-cmt>// Gán giá trị HTML hiện tại của phần tử được chọn cho biến 'test'</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    $(<c-string>selector</c-string>).html('<c-string><c-tag>h4</c-tag>somethings<c-tag>/h4</c-tag></c-string>');
+                                    <br><c-cmt>// Thay đổi giá trị HTML của phần tử được chọn</c-cmt>
                                 </li>
                             </ul>
+
+                            <div class="code_board" id="fn_html">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <div class="target">
+                                            <p>This is target selector</p>
+                                        </div>
+                                        <hr>
+                                        <p>Nội dung HTML của phần tử: <span class="target_val"></span></p>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">html()</div>
+                                    <div class="btn btn_cmt btn_set">html('<c-tag>h4</c-tag>hihi<c-tag>/h4</c-tag>')</div>
+                                </div>
+                            </div>
                         </li>
-                        <li>
-                            <h6>Chọn nhiều</h6>
+                        <!-- html -->
+
+                        <li id="b_text">
+                            <h6>text()</h6>
+                            <p>Hàm này dùng để <txt-bold>lấy</txt-bold> hoặc <txt-bold>thay đổi nội dung</txt-bold> của phần tử được chọn.</p>
+                            <ul class="lists">
+                                <li><txt-bold>Không có tham số</txt-bold>: <c-keyw-name>text</c-keyw-name>() trả về nội dung của phần tử <txt-bold>đầu tiên</txt-bold> trong bộ chọn.</li>
+                                <li><txt-bold>Có tham số</txt-bold>: <c-keyw-name>text</c-keyw-name>( <c-string>somethings</c-string> ) thay đổi nội dung của <txt-bold>tất cả</txt-bold> phần tử trong bộ chọn.</li>
+                            </ul>
+
                             <ul class="pre">
                                 <li>
-                                    $(<c-string>'tag, #id, .class'</c-string>)
-                                    <br><c-cmt>// $('html, #wraper, .toggler')</c-cmt>
+                                    $(<c-string>selector</c-string>).text();
+                                    <br><c-cmt>// Gán nội dung hiện tại của phần tử được chọn cho biến 'test'</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    $(<c-string>selector</c-string>).text(<c-string>somethings</c-string>);
+                                    <br><c-cmt>// Thay đổi nội dung của phần tử được chọn</c-cmt>
                                 </li>
                             </ul>
+
+                            <div class="code_board" id="fn_text">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <div class="target">This is target selector</div>
+                                        <hr>
+                                        <p>Nội dung của selector: <span class="target_val"></span></p>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">text()</div>
+                                    <div class="btn btn_cmt btn_set">text('hihi')</div>
+                                </div>
+                            </div>
                         </li>
+                        <!-- text -->
+
+                        <li id="b_val">
+                            <h6>val()</h6>
+                            <p>Hàm này dùng để <txt-bold>lấy</txt-bold> hoặc <txt-bold>thay đổi giá trị</txt-bold> của phần tử được chọn, chỉ dùng cho các phần tử của form, như <txt-bold>input, textarea, select..</txt-bold>.</p>
+                            <ul class="lists">
+                                <li><txt-bold>Không có tham số</txt-bold>: <c-keyw-name>val</c-keyw-name>() trả về giá trị hiện tại của phần tử <txt-bold>đầu tiên</txt-bold> trong bộ chọn.</li>
+                                <li><txt-bold>Có tham số</txt-bold>: <c-keyw-name>val</c-keyw-name>( <c-string>somethings</c-string> ) thay đổi nội dung của <txt-bold>tất cả</txt-bold> phần tử trong bộ chọn.</li>
+                            </ul>
+
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>const</c-keyw> <c-keyw-name>test</c-keyw-name> = $(<c-string>selector</c-string>).val();
+                                    <br><c-cmt>// Gán giá trị hiện tại của phần tử được chọn cho biến 'test'</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    $(<c-string>selector</c-string>).val(<c-string>somethings</c-string>);
+                                    <br><c-cmt>// Thay đổi giá trị của phần tử được chọn</c-cmt>
+                                </li>
+                            </ul>
+
+                            <div class="code_board" id="fn_val">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <input type="text" class="target">
+                                        <hr>
+                                        <p>Giá trị của selector: <span class="target_val"></span></p>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">val()</div>
+                                    <div class="btn btn_cmt btn_set">val('hihi')</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- val -->
+
+                        <li id="b_attr">
+                            <h6>attr()</h6>
+                            <p>Hàm này dùng để <txt-bold>lấy</txt-bold> hoặc <txt-bold>thay đổi thuộc tính</txt-bold> của phần tử được chọn.</p>
+                            <ul class="lists">
+                                <li><txt-bold>Không có tham số thứ 2</txt-bold>: <c-keyw-name>attr</c-keyw-name>( <c-string>attribute</c-string> ) trả về giá trị của thuộc tính <txt-bold>đầu tiên</txt-bold> trong bộ chọn.</li>
+                                <li><txt-bold>Có tham số thứ 2</txt-bold>: <c-keyw-name>attr</c-keyw-name>( <c-string>attribute</c-string>, <c-string>somethings</c-string> ) thay đổi nội dung của <txt-bold>tất cả</txt-bold> thuộc tính trong bộ chọn.</li>
+                            </ul>
+
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>const</c-keyw> <c-keyw-name>test</c-keyw-name> = $(<c-string>selector</c-string>).attr( <c-string>attribute</c-string> );
+                                    <br><c-cmt>// Gán giá trị thuộc tính hiện tại của phần tử được chọn cho biến 'test'</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    $(<c-string>selector</c-string>).attr( <c-string>attribute</c-string>, <c-string>somethings</c-string> );
+                                    <br><c-cmt>// Thay đổi giá trị của phần tử được chọn</c-cmt>
+                                </li>
+                            </ul>
+
+                            <div class="code_board" id="fn_attr">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <a href="đây-là-giá-trị-ban-đầu" class="target" target="_blank" rel="noopener noreferrer">thuộc tính cần đổi là href</a>
+                                        <hr>
+                                        <p>Attr của selector: <span class="target_val"></span></p>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">attr('href')</div>
+                                    <div class="btn btn_cmt btn_set">attr('href', 'hihi')</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- attr -->
+
+                        <li id="b_addclass">
+                            <h6>addClass() & removeClass()</h6>
+                            <ul class="lists">
+                                <li><txt-bold>addClass( <c-string>somethings</c-string> )</txt-bold>: thêm class tương ứng vào <txt-bold>tất cả</txt-bold> phần tử được chọn.</li>
+                                <li><txt-bold>removeClass( <c-string>somethings</c-string> )</txt-bold>: xoá class tương ứng của <txt-bold>tất cả</txt-bold> phần tử được chọn.</li>
+                            </ul>
+
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>selector</c-string>).addClass( <c-string>'classname'</c-string> );
+                                    <br><c-cmt>// Thêm class có tên là 'classname' vào selector</c-cmt>
+                                </li>
+                                <li>
+                                    <br>
+                                    $(<c-string>selector</c-string>).removeClass( <c-string>'classname'</c-string> );
+                                    <br><c-cmt>// Xoá class có tên là 'classname' khỏi selector</c-cmt>
+                                </li>
+                            </ul>
+
+                            <div class="code_board" id="fn_arclass">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <div class="target">Lorem ipsum dolor sit amet.</div>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">addClass('red font-40px')</div>
+                                    <div class="btn btn_cmt btn_set">addClass('red')</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- addClass & removeClass -->
+
+                        <li id="b_animate">
+                            <h6>animate</h6>
+                            <p>Hàm này dùng để tạo ra các hiệu ứng (animations) cho các phần tử HTML.</p>
+
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>selector</c-string>).animate( <c-string>{property: value}, duration, easing, complete</c-string> );
+                                    <br>
+                                    <c-cmt>
+                                        // { property: value } : thuộc tính CSS và giá trị mà bạn muốn thay đổi, bạn có thể thay đổi nhiều thuộc tính cùng lúc.
+                                        <br>// duration: Thời gian để hoàn thành hiệu ứng (theo mili giây, 1000 = 1 giây).
+                                        <br>// easing (tùy chọn): Kiểu làm mượt hiệu ứng, như là linear, ease, swing...
+                                        <br>// complete (tùy chọn): Một hàm callback được gọi khi hiệu ứng hoàn tất.
+                                    </c-cmt>
+                                </li>
+                            </ul>
+
+                            <div class="code_board" id="fn_animate">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <div class="target target_shape"></div>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">animate({width: 144px})</div>
+                                    <div class="btn btn_cmt btn_set">animate({height: 144px})</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- animate -->
+
+                        <li id="b_slideup">
+                            <h6>slideUp() & slideDown()</h6>
+                            <ul class="lists">
+                                <li><txt-bold>slideUp( <c-string>duration, easing, complete</c-string> )</txt-bold>: ẩn <txt-bold>tất cả</txt-bold> phần tử được chọn theo chiều dọc (từ chiều cao hiện tại xuống 0), giúp phần tử dần biến mất khỏi trang.</li>
+                                <li><txt-bold>slideDown( <c-string>duration, easing, complete</c-string> )</txt-bold>: mở rộng <txt-bold>tất cả</txt-bold> phần tử được chọn theo chiều dọc (từ 0 về chiều cao hiện tại).</li>
+                            </ul>
+
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>selector</c-string>).slideUp( <c-string>duration, easing, complete</c-string> );
+                                    <br>$(<c-string>selector</c-string>).slideDown( <c-string>duration, easing, complete</c-string> );
+                                    <br>
+                                    <c-cmt>
+                                        // duration: Thời gian để hoàn thành hiệu ứng (theo mili giây, 1000 = 1 giây).
+                                        <br>// easing (tùy chọn): Kiểu làm mượt hiệu ứng, như là linear, ease, swing...
+                                        <br>// complete (tùy chọn): Một hàm callback được gọi khi hiệu ứng hoàn tất.
+                                    </c-cmt>
+                                </li>
+                            </ul>
+
+                            <div class="code_board" id="fn_susd">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <div class="target target_shape"></div>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">slideUp()</div>
+                                    <div class="btn btn_cmt btn_set">slideDown()</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- slideUp & slideDown -->
+
+                        <li id="b_eq">
+                            <h6>eq() & index()</h6>
+                            <ul class="lists">
+                                <li><txt-bold>eq( <c-string>number</c-string> )</txt-bold>: lấy phần tử ở một chỉ số cụ thể trong bộ chọn (danh sách các phần tử), chỉ số bắt đầu từ 0.</li>
+                                <li><txt-bold>index()</txt-bold>: trả về chỉ số vị trí của phần tử trong bộ chọn (danh sách các phần tử).</li>
+                            </ul>
+
+                            <ul class="pre">
+                                <li>
+                                    $(<c-string>selector</c-string>).eq( <c-string>number</c-string> );
+                                    <br><c-cmt>// Trỏ tới selector tại vị trí number</c-cmt>
+                                </li>
+                                <li>
+                                    $(<c-string>selector</c-string>).index( );
+                                    <br><c-cmt>// Trả về vị trí hiện tại của selector trong danh sách bộ chọn.</c-cmt>
+                                </li>
+                            </ul>
+
+                            <div class="code_board" id="fn_eqin">
+                                <div class="overflow">
+                                    <div class="code_board_box">
+                                        <div class="target">Thứ 5</div>
+                                        <div class="target">Thứ 6</div>
+                                        <div class="target">Thứ 7</div>
+                                        <div class="target">Chủ nhật</div>
+                                        <hr>
+                                        <p>selector tại vị trí eq: <span class="target_eq"></span></p>
+                                        <p>vị trí của Thứ 6: <span class="target_index"></span></p>
+                                    </div>
+                                </div>
+                                <div class="code_board_btn">
+                                    <div class="btn btn_cmt btn_reset">Đặt lại</div>
+                                    <div class="btn btn_cmt btn_run">eq(3)</div>
+                                    <div class="btn btn_cmt btn_set">Thứ 6.index()</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- eq & index -->
                     </ul>
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li><txt-bold>Bộ chọn trong jQuery</txt-bold> củng tương tự như <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank" rel="noopener noreferrer">bộ chọn trong css</a>.</li>
-                            <li>Phần tử được chọn luôn ở kiểu <txt-bold>string</txt-bold>.</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
             <!-- ▲ use ▲ -->
@@ -313,8 +522,9 @@
         </div>
     </div><!-- ▲ last access position ▲ -->
     </div>
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/common.js"></script>
+    <script src="./../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../assets/js/common.js"></script>
+    <script src="./../assets/js/bai-8.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - mảng</title>
+
+    <link rel="stylesheet" href="./../assets/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_main">
+            <div class="app_main_content">
+                Bài 1: cho mảng sau [5, 4, -10, 1, -5, 1000, 50]
+                <ul class="alpha">
+                    <li>
+                        Tìm số nhỏ nhất. Đáp án: -10
+                        <p>Đáp án của bạn là: <span class="anwser_a"></span></p>
+                    </li>
+                    <li>Tìm số lớn nhất. Đáp án: 1000
+                        <p>Đáp án của bạn là: <span class="anwser_b"></span></p>
+                    </li>
+                    <li>Tìm các số chẵn. Đáp án: [4, -10, 1000, 50]
+                        <p>Đáp án của bạn là: <span class="anwser_c"></span></p>
+                    </li>
+                    <li>Tìm các số lẽ. Đáp án: [5, 1, -5]
+                        <p>Đáp án của bạn là: <span class="anwser_d"></span></p>
+                    </li>
+                    <li>Tìm số lẽ nhỏ nhất. Đáp án: -5
+                        <p>Đáp án của bạn là: <span class="anwser_e"></span></p>
+                    </li>
+                    <li>Tìm số chẵn lớn nhất. Đáp án: 1000
+                        <p>Đáp án của bạn là: <span class="anwser_f"></span></p>
+                    </li>
+                    <li>Tính tổng các số lẽ - tổng các số chẵn. Đáp án: 1043
+                        <p>Đáp án của bạn là: <span class="anwser_g"></span></p>
+                    </li>
+                    <li>Sắp xếp mảng theo thứ tự từ nhỏ đến lớn. Đáp án: [-10, -5, 1, 4, 5, 50, 1000]
+                        <p>Đáp án của bạn là: <span class="anwser_h"></span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        const origin_arr = [5, 4, -10, 1, -5, 1000, 50];
+
+        // làm cho câu a
+        const AnswerA = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            for (let i = 0; i < arr.length; i++) {
+                if (!result) result = arr[i]
+                else {
+                    if (result > arr[i]) result = arr[i]
+                }
+            }
+            // ▲ end code
+            $('.anwser_a').text(result);
+        }; AnswerA();
+
+        // làm cho câu b
+        const AnswerB = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            $('.anwser_b').text(result);
+        }; AnswerB();
+
+        // làm cho câu c
+        const AnswerC = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            $('.anwser_c').text(result);
+        }; AnswerC();
+
+        // làm cho câu d
+        const AnswerD = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            $('.anwser_d').text(result);
+        }; AnswerD();
+
+        // làm cho câu e
+        const AnswerE = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+            // ▲ end code
+            $('.anwser_e').text(result);
+        }; AnswerE();
+
+        // làm cho câu f
+        const AnswerF = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            $('.anwser_f').text(result);
+        }; AnswerF();
+
+        // làm cho câu g
+        const AnswerG = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            $('.anwser_g').text(result);
+        }; AnswerG();
+
+        // làm cho câu H
+        const AnswerH = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+
+
+            // ▲ end code
+            $('.anwser_h').text(result);
+        }; AnswerH();
+    </script>
+</body>
+
+</html>

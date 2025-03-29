@@ -6,7 +6,7 @@
     - boolean
     - null
     - undefined 
-- kiểu dữ liệu - nâng cao 
+- kiểu dữ liệu - cơ bản 
     - array 
         -> các phương thức
     - object 
@@ -14,18 +14,16 @@
 - function - cơ bản 
     - setTimeout
     - setInterval
-- function - nâng cao
+- function - cơ bản
     - promise 
     - async/await 
 - class - cơ bản
 
 - bài 1: biến và hằng trong javascript
 - bài 2: kiểu dữ liệu - cơ bản - string - number - boolean - null - undefined 
-- bài 3: kiểu dữ liệu - nâng cao - array
-- bài 4: kiểu dữ liệu - nâng cao - object
+- bài 3: kiểu dữ liệu - cơ bản - array
+- bài 4: kiểu dữ liệu - cơ bản - object
 - bài 5: setTimeout - cơ bản
 - bài 6: setInterval - cơ bản
 - bài 7: localStorage
 - bài 8: jQuery cơ bản, .append(), .html(), .text(), .value(), .attr(), .addClass(), .removeClass(), .animate(), .slideUp(), .slideDown(), .eq(), .index()
-- bài 9: hiệu ứng cơ bản
-- bài 10:

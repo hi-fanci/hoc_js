@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Giới thiệu về CSS</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "css-intro";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <!-- --------- let -------- -->
+                <div class="app_main_block" id="b_intro">
+                    <h2>Thêm style CSS vào html</h2>
+                    <p>Có 2 cách để thêm style css vào file html</p>
+                    <ul class="counter">
+                        <li>
+                            <h6>Thêm bằng file</h6>
+                            <ul class="pre">
+                                <li>
+                                    &lt;link rel="stylesheet" href="[path]/css/[file name].css"&gt;
+                                </li>
+                            </ul>
+                            <div class="block">
+                                <c-note></c-note>
+                                <ul class="lists">
+                                    <li><txt-bold>[path]</txt-bold> là đường dẫn tới file css</li>
+                                    <li>Ở đầu các file phải có css rule <txt-bold>@charset "UTF-8"</txt-bold>; </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <h6>Thêm trực tiếp</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-tag>style</c-tag>
+                                    <br><c-cmt>// code css here</c-cmt>
+                                    <br><c-tag>/style</c-tag>
+                                </li>
+                            </ul>
+                            <p><c-note></c-note> <txt-bold>&lt;style&gt;&lt;/style&gt;</txt-bold> thường được đặt trong thẻ <txt-bold>&lt;head&gt;&lt;/head&gt;</txt-bold></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="app_main_block" id="b_init">
+                    <h2>Cách dùng Css</h2>
+                    <p>Có 2 cách dùng css phổ biến.</p>
+                    <ul class="counter">
+                        <li>
+                            <h6>Viết css ở file hoặc trong thẻ &lt;style&gt;</h6>
+                            <ul class="pre">
+                                <li>
+                                    .đối-tượng {
+                                    <dl>
+                                        <dt>thuộc-tính:</dt>
+                                        <dd>giá-trị</dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h6>Viết css inline</h6>
+                            <ul class="pre">
+                                <li>
+                                    &lt;p style="thuộc-tính: giá-trị;"&gt;Lorem, ipsum.&lt;/p&gt;
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="app_main_block" id="b_rule">
+                    <h2>Selector ( bộ chọn ) của css</h2>
+                    <div class="block">
+                        <ul class="counter">
+                            <li>
+                                <h6>Chọn theo html tag</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-string>tag-name</c-string>{}
+                                        <br><c-cmt>// ví dụ: html{}, body{}, p{}</c-cmt>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <h6>Chọn theo id</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-string>#id</c-string>{}
+                                        <br><c-cmt>// ví dụ: #wraper{}, #input{}, #btn{}</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6>Chọn hết</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-string>*</c-string>{}
+                                        <br><c-cmt>// ví dụ: *{}, my-block *{}, your-block *{}</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6>Chọn theo class</h6>
+                                <ul class="pre">
+                                    <li>
+                                        <c-string>.class-name</c-string>{}
+                                        <br><c-cmt>// ví dụ: .toggler{}, .confirm{}, .submit{}</c-cmt>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="block_note">
+                            <c-note></c-note>
+                            <ul class="lists">
+                                <li><a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank" rel="noopener noreferrer">xem thêm ở đây</a></li>
+                                <li>Tên class có phân biệt <txt-bold>chữ thường</txt-bold> và <txt-bold>CHỮ HOA</txt-bold>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block_note">
+                        <c-note></c-note> mức độ ưu tiên mặc định của css là thuộc tính ở dưới sẽ ghi đè thuộc tính của dòng trên.
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>span</c-keyw-name> {
+                                <dl>
+                                    <dt>color:</dt>
+                                    <dd><c-string>red</c-string>; <c-cmt>// thuộc tính này sẽ bị loại bỏ</c-cmt></dd>
+                                </dl>
+                                <dl>
+                                    <dt>color:</dt>
+                                    <dd><c-string>yellow</c-string>; <c-cmt>// do bị ghi đè ở đây</c-cmt></dd>
+                                </dl>
+                                }
+                            </li>
+                        </ul>
+
+                        <h6>Thứ tự sẽ được xếp theo độ ưu tiên dưới đây.</h6>
+                        <div class="block">
+                            <p>1. Inline style <txt-bold>&lt;p style="color: #333;"&gt;</txt-bold></p>
+                            <p>2. Id <txt-bold>#element</txt-bold></p>
+                            <p>3. Class & :hover <txt-bold>#element</txt-bold></p>
+                            <p>3. Thuộc tính <txt-bold>[type="text"]</txt-bold></p>
+                            <p>3. Tag & ::after, ::before <txt-bold>h1, ::after, ::before</txt-bold></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_update">
+                    <h2>Thay đổi giá trị thuộc tính bằng :hover{}</h2>
+                    <div class="block">
+                        <p>
+                            Chỉ cần thêm thuộc tính cần thay đổi vào trong <txt-bold>:hover{}</txt-bold>.
+                            <br>Ví dụ mình có một thẻ <c-tag>span</c-tag> đang được style là <txt-bold>màu đỏ ( red )</txt-bold>, và hover chuyển thành <txt-bold>màu vàng (yellow)</txt-bold>.
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>span</c-keyw-name> {
+                                <dl>
+                                    <dt>color:</dt>
+                                    <dd><c-string>red</c-string>;</dd>
+                                </dl>
+                                }
+                            </li>
+                            <li>
+                                <c-keyw-name>span</c-keyw-name>:hover {
+                                <dl>
+                                    <dt>color:</dt>
+                                    <dd><c-string>yellow</c-string>;</dd>
+                                </dl>
+                                }
+                            </li>
+                        </ul>
+                        <span class="font-40px red red-hover">Đây là thẻ p màu đỏ</span>
+                        <!--  -->
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_error">
+                    <h2>Transition</h2>
+                    <div class="block">
+                        <p>
+                            Củng là ví dụ như trên, nhưng có thêm <txt-bold>transition</txt-bold>.
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>transition</c-keyw-name>: property duration timing-function;
+                            </li>
+                        </ul>
+
+                        <div class="block_border">
+                            <ul class="lists">
+                                <li><txt-bold>property</txt-bold>: là thuộc tính cần thay đổi, <a href="https://www.w3schools.com/cssref/css_animatable.php" target="_blank" rel="noopener noreferrer">xem thêm</a>.</li>
+                                <li><txt-bold>duration</txt-bold>: là thời gian diễn ra sự thay đổi thuộc tính, có thể là giây, mili giây, 1000ms = 1s.</li>
+                                <li><txt-bold>timing-function</txt-bold>: là cách mà sự thay đổi diễn ra, <a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank" rel="noopener noreferrer">xem thêm</a>.</li>
+                            </ul>
+                        </div>
+
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>span</c-keyw-name> {
+                                <dl>
+                                    <dt>color:</dt>
+                                    <dd><c-string>red</c-string>;</dd>
+                                </dl>
+                                }
+                            </li>
+                            <li>
+                                <c-keyw-name>span</c-keyw-name>:hover {
+                                <dl>
+                                    <dt>color:</dt>
+                                    <dd><c-string>yellow</c-string>;</dd>
+                                </dl>
+                                <dl>
+                                    <dt>transition:</dt>
+                                    <dd><c-string>color 2s ease</c-string>;</dd>
+                                </dl>
+                                }
+                            </li>
+                        </ul>
+                        <span class="font-40px red red-hover duration-2s">Đây là thẻ p màu đỏ</span>
+                        <!--  -->
+                    </div>
+                </div>
+
+                <!-- --------- const -------- -->
+                <div class="app_main_block" id="b_intro2">
+                    <h2>Kết hợp css</h2>
+                    <p>
+                        Thông thường trong các trường hợp cần thiết, người ta sẽ thêm class để phân biệt trạng thái hiện tại của phần tử.
+                        <br>Ví dụ thẻ <c-tag>p</c-tag> ban đầu là <txt-bold>màu đỏ</txt-bold>, nhưng khi active
+                    </p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>span</c-keyw-name> {
+                            <dl>
+                                <dt>color:</dt>
+                                <dd><c-string>red</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                        <li>
+                            <c-keyw-name>span</c-keyw-name>:hover {
+                            <dl>
+                                <dt>color:</dt>
+                                <dd><c-string>yellow</c-string>;</dd>
+                            </dl>
+                            <dl>
+                                <dt>transition:</dt>
+                                <dd><c-string>color 2s ease</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="app_main_block" id="b_init2">
+                    <h2>Cách khai báo hằng</h2>
+                    <div class="block">
+                        <p>
+                            Để khai báo hằng trong JavaScript, bạn dùng từ khóa <c-keyw>const</c-keyw>, và hằng phải có giá trị đi kèm, nếu không sẽ lỗi.
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>variable_name</c-keyw-name> = <c-string>"value"</c-string>;
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>
+                            Ví dụ, bạn muốn khai báo một hằng tên là "PI".
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>PI</c-keyw-name> = <c-string>3.14</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw>console.log</c-keyw>( <c-keyw-name>PI</c-keyw-name> ); <c-cmt>// 3.14</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Bạn củng có thể khai báo nhiều hằng thông qua dấu ( <c-null>,</c-null> ).</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>PI</c-keyw-name> = <c-string>3.14</c-string>,
+                                <br><c-keyw-name>VN</c-keyw-name> = <c-string>"Việt Nam"</c-string>,
+                                <br><c-keyw-name>EN</c-keyw-name> = <c-string>"English"</c-string>;
+                            </li>
+                            <li>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>PI</c-keyw-name> ); <c-cmt>// 3.14</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>VN</c-keyw-name> ); <c-cmt>// "Việt Nam"</c-cmt>
+                                <br><c-keyw>console.log</c-keyw>( <c-keyw-name>EN</c-keyw-name> ); <c-cmt>// "English"</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_rule2">
+                    <h2>Quy tắc đặt tên của hằng</h2>
+                    <div class="block">
+                        <p>Tương tự <a class="link js_goto" href="#b_rule">quy tắc đặt tên của biến</a>.</p>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_error2">
+                    <h2>Một số lỗi của hằng</h2>
+                    <div class="block">
+                        <p>Khai báo không có giá trị khởi tạo.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>variable_name</c-keyw-name>;
+                                <br><c-cmt>Uncaught SyntaxError: Missing initializer in const declaration </c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <p>Thay đổi giá trị của hằng.</p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>const</c-keyw> <c-keyw-name>PI</c-keyw-name> = <c-string>3.14</c-string>;
+                            </li>
+                            <li>
+                                <c-keyw-name>PI</c-keyw-name> = <c-string>314</c-string>;
+                                <br><c-cmt>// Uncaught TypeError: Assignment to constant variable.</c-cmt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_related" id="related">
+            <div class="app_releated_item">
+                Bài trước: <a href="../">Mục lục.</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-2/">Kiểu dữ liệu - cơ bản.</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../../assets/js/common.js"></script>
+    <script>
+        ; (function () {
+            const handleMin2Txt = () => {
+                const time_current_txt = $('.time_current');
+                const time_in_5min_txt = $('.time_in_5min');
+                const time_current = new Date();
+                const time_in_5min = new Date(Date.now() + 10 * 60 * 1000);
+
+                time_current_txt.text(`"${time_current.getHours()}:${("0" + time_current.getMinutes()).slice(-2)}"`);
+                time_in_5min_txt.text(`"${time_in_5min.getHours()}:${("0" + time_in_5min.getMinutes()).slice(-2)}"`);
+            };
+            handleMin2Txt();
+        })();
+    </script>
+</body>
+
+</html>

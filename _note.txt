@@ -27,3 +27,13 @@
 - bài 6: setInterval - cơ bản
 - bài 7: localStorage
 - bài 8: jQuery cơ bản, .append(), .html(), .text(), .value(), .attr(), .addClass(), .removeClass(), .animate(), .slideUp(), .slideDown(), .eq(), .index()
+
+
+css 
+- thêm css
+- style, style inline
+- selector
+- specificity
+- hover - transition
+- addclass
+- layout cơ bản

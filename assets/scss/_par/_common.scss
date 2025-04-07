@@ -308,15 +308,6 @@ dl {
     }
 }
 
-.snapcode {
-    width: 100%;
-    max-width: 100%;
-
-    img {
-        width: 100%;
-    }
-}
-
 .btn {
     font-family: var(--f-code);
 
@@ -374,7 +365,15 @@ hr {
 }
 
 .red {
-    color: red !important;
+    color: red;
+
+    &-hover {
+        transition: color;
+
+        &:hover {
+            color: yellow;
+        }
+    }
 }
 
 .font-40px {
@@ -390,3 +389,15 @@ hr {
 .f-center {
     text-align: center;
 }
+
+.test {
+    background-color: red;
+}
+
+.duration-2s {
+    transition-duration: 2s;
+}
+
+// .TesT {
+//     background-color: red;
+// }

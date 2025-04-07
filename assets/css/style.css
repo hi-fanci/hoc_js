@@ -355,14 +355,6 @@ dl dt {
   translate: -50% 0;
 }
 
-.snapcode {
-  width: 100%;
-  max-width: 100%;
-}
-.snapcode img {
-  width: 100%;
-}
-
 .btn {
   font-family: var(--f-code);
   min-width: 144px;
@@ -410,7 +402,13 @@ hr {
 }
 
 .red {
-  color: red !important;
+  color: red;
+}
+.red-hover {
+  transition: color;
+}
+.red-hover:hover {
+  color: yellow;
 }
 
 .font-40px {
@@ -425,6 +423,14 @@ hr {
 
 .f-center {
   text-align: center;
+}
+
+.test {
+  background-color: red;
+}
+
+.duration-2s {
+  transition-duration: 2s;
 }
 
 .app_menu {

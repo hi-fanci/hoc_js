@@ -535,41 +535,20 @@
                                     <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>['c', 'b', 'a', 'd']</c-string>;
                                 </li>
                                 <li>
-                                    <c-keyw-name>arr</c-keyw-name>.<c-null>sort</c-null>();
+                                    <c-keyw-name>arr</c-keyw-name>.<c-null>reverse</c-null>();
                                 </li>
                                 <li>
                                     <br>
-                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["a", "b", "c", "d"]</c-cmt>
+                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// ["d", "a", "b", "c"]</c-cmt>
                                 </li>
                             </ul>
                             <div class="block_note">
                                 <c-note></c-note>
                                 <ul class="lists">
-                                    <li><c-strong>sort</c-strong> mặc định sắp xếp theo thứ tự <txt-bold>tăng dần</txt-bold>, dưới dạng <txt-bold>chuỗi từ mã ASCII</txt-bold>.</li>
+                                    <li><c-strong>reverse</c-strong> làm đảo thứ tự các giá trị hiện tại.</li>
                                 </ul>
                             </div>
-                            <ul class="pre">
-                                <li>
-                                    <c-keyw>let</c-keyw> <c-keyw-name>arr</c-keyw-name> = <c-string>[3, 10, 1]</c-string>;
-                                </li>
-                                <li>
-                                    <c-keyw-name>arr</c-keyw-name>.<c-null>sort</c-null>( ( <c-string>a</c-string>, <c-string>b</c-string> ) => <c-string>a</c-string> - <c-string>b</c-string> ); <c-cmt>// theo thứ tự tăng dần</c-cmt>
-                                </li>
-                                <li>
-                                    <br>
-                                    <c-keyw>console.log</c-keyw>( <c-keyw-name>arr</c-keyw-name> ); <c-cmt>// [1, 3, 10]</c-cmt>
-                                </li>
-                            </ul>
-                            <div class="block_note">
-                                <c-note></c-note>
-                                <ul class="lists">
-                                    <li><c-strong>sort( callback( a, b ) )</c-strong>, <txt-bold>callback</txt-bold> là hàm xác định cách xắp xếp các phần tử.</li>
-                                    <li>Có 2 đối số, thường gọi tên là <txt-bold>a</txt-bold>, <txt-bold>b</txt-bold></li>
-                                    <li>Xắp xếp tăng dần: <txt-bold>( a, b ) => a - b</txt-bold></li>
-                                    <li>Xắp xếp giảm dần: <txt-bold>( a, b ) => b - a</txt-bold></li>
-                                </ul>
-                            </div>
-                        </li><!-- ▲ sort ▲ -->
+                        </li><!-- ▲ reverse ▲ -->
 
                         <li>
                             <h6>join</h6>

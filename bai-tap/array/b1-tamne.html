@@ -138,7 +138,13 @@
             for(let i = 0; i < arr.length; i++){
                 if (!result) result = arr[i]
                 else {
-                    if (result > arr[i] && arr[i]%2 != 0) result = arr[i]
+                    //if (result > arr[i] && arr[i]%2 != 0) result = arr[i] // tốn vòng lặp
+                    //sử dụng cách này
+                    if(arr[i]%2!=0){
+                        if(result > arr[i]){
+                            result = arr[i]
+                        }
+                    }
                 }
             }
             // ▲ end code
@@ -153,7 +159,13 @@
             for(let i = 0; i < arr.length; i++){
                 if (!result) result = arr[i]
                 else {
-                    if (result < arr[i] && arr[i]%2 == 0) result = arr[i]
+                   // if (result < arr[i] && arr[i]%2 == 0) result = arr[i] // tốn vòng lặp
+
+                    if(arr[i] % 2 == 0){
+                        if(result < arr[i]){
+                            result = arr[i];
+                        }
+                    }
                 }
             }
             // ▲ end code
@@ -163,21 +175,24 @@
         // làm cho câu g
         const AnswerG = () => {
             const arr = [...origin_arr];
-            let resultEven = 0;
-            let resultOdd = 0;
+            let result = 0;
+            // let resultEven = 0;
+            // let resultOdd = 0;
             // ▼ code here - do with arr
             for(let i = 0; i < arr.length; i++){
                 if (arr[i]%2 == 0 ) {
-                        resultEven += arr[i];
+                       // resultEven += arr[i];
+                       result -= arr[i];
                         //console.log(resultEven)
                  }  
-                if (arr[i]%2 != 0 ) {
-                    resultOdd += arr[i];
+                else  {
+                   // resultOdd += arr[i];
+                   result += arr[i];
                     //console.log(resultOdd)
                 }  
             }
 
-            result = resultOdd - resultEven; 
+          //result = resultOdd - resultEven;
             // ▲ end code
             $('.answer_g').text(result);
         }; AnswerG();

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - mảng 1</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "homework-array-1";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_main">
+            <div class="app_main_content">
+                <h2>Bài 1: Hê lô Qorld</h2>
+                <h6>Đề: Cho mảng sau: <span class="f-code">[5, 1, 2, -1, 7, -9, 10, -11]</span></h6>
+                <ul class="alpha">
+                    <li>
+                        Tìm số nhỏ nhất.
+                        <br>Đáp án: <txt-bold>-11</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_a"></span></p>
+                    </li>
+                    <li>
+                        Tìm số lớn nhất.
+                        <br>Đáp án: <txt-bold>10</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_b"></span></p>
+                    </li>
+                    <li>
+                        Tìm các số chẵn.
+                        <br>Đáp án: <txt-bold>[2, 10]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_c"></span></p>
+                    </li>
+                    <li>
+                        Tìm các số lẽ.
+                        <br>Đáp án: <txt-bold>[5, 1, -1, 7, -9, -11]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_d"></span></p>
+                    </li>
+                    <li>
+                        Tìm số lẽ nhỏ nhất.
+                        <br>Đáp án: <txt-bold>-11</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_e"></span></p>
+                    </li>
+                    <li>
+                        Tìm số chẵn lớn nhất.
+                        <br>Đáp án: <txt-bold>10</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_f"></span></p>
+                    </li>
+                    <li>
+                        Tính tổng các số lẽ - tổng các số chẵn.
+                        <br>Đáp án: <txt-bold>-20</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_g"></span></p>
+                    </li>
+                    <li>
+                        Sắp xếp mảng theo thứ tự từ nhỏ đến lớn.
+                        <br>Đáp án: <txt-bold>[-11, -9, -1, 1, 2, 5, 7, 10]</txt-bold>
+                        <p>Đáp án của bạn là: <span class="answer_h"></span></p>
+                    </li>
+                </ul>
+                <a class="link" href="./b2.html">Bài 2</a>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+
+    <script>
+        const origin_arr = [5, 1, 2, -1, 7, -9, 10, -11];
+
+        // làm cho câu a
+        const AnswerA = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            for (let i = 0; i < arr.length; i++) {
+                if (!result) result = arr[i]
+                else {
+                    if (result > arr[i]) result = arr[i]
+                }
+            }
+            // ▲ end code
+            $('.answer_a').text(result);
+        }; AnswerA();
+
+        // làm cho câu b
+        const AnswerB = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            for (let i = 0; i < arr.length; i++) {
+                if (!result) result = arr[i]
+                else {
+                    if (result < arr[i]) result = arr[i]
+                }
+            }
+
+            // ▲ end code
+            $('.answer_b').text(result);
+        }; AnswerB();
+
+        // làm cho câu c
+        const AnswerC = () => {
+            const arr = [...origin_arr];
+            let result = [];
+            // ▼ code here - do with arr
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    result.push(arr[i]);
+                }
+            }
+    
+            // ▲ end code
+            $('.answer_c').text(result);
+        }; AnswerC();
+
+        // làm cho câu d
+        const AnswerD = () => {
+            const arr = [...origin_arr];
+            let result = [];
+            // ▼ code here - do with arr
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 != 0) {
+                    result.push(arr[i]);
+                }
+            }
+
+            // ▲ end code
+            $('.answer_d').text(result);
+        }; AnswerD();
+
+        // làm cho câu e
+        const AnswerE = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            for(let i = 0; i < arr.length; i++){
+                if (!result) result = arr[i]
+                else {
+                    if (result > arr[i] && arr[i]%2 != 0) result = arr[i]
+                }
+            }
+            // ▲ end code
+            $('.answer_e').text(result);
+        }; AnswerE();
+
+        // làm cho câu f
+        const AnswerF = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            for(let i = 0; i < arr.length; i++){
+                if (!result) result = arr[i]
+                else {
+                    if (result < arr[i] && arr[i]%2 == 0) result = arr[i]
+                }
+            }
+            // ▲ end code
+            $('.answer_f').text(result);
+        }; AnswerF();
+
+        // làm cho câu g
+        const AnswerG = () => {
+            const arr = [...origin_arr];
+            let resultEven = 0;
+            let resultOdd = 0;
+            // ▼ code here - do with arr
+            for(let i = 0; i < arr.length; i++){
+                if (arr[i]%2 == 0 ) {
+                        resultEven += arr[i];
+                        //console.log(resultEven)
+                 }  
+                if (arr[i]%2 != 0 ) {
+                    resultOdd += arr[i];
+                    //console.log(resultOdd)
+                }  
+            }
+
+            result = resultOdd - resultEven; 
+            // ▲ end code
+            $('.answer_g').text(result);
+        }; AnswerG();
+
+        // làm cho câu H
+        const AnswerH = () => {
+            const arr = [...origin_arr];
+
+            // ▼ code here - do with arr
+            const result =  arr.sort( ( a, b ) => a - b );
+
+            // ▲ end code
+            $('.answer_h').text(result);
+        }; AnswerH();
+    </script>
+</body>
+
+</html>

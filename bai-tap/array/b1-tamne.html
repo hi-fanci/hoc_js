@@ -161,6 +161,28 @@
                 else {
                     // if (result < arr[i] && arr[i]%2 == 0) result = arr[i] // tốn vòng lặp
 
+                    /* ▼ đã fix
+                        cái này bữa em lộn shop ơi
+                        do trường hợp của mình chỉ có 1 lệnh gán result = arr[i]; trong if else thui.
+                        
+                        cái ban đầu của shop vẫn đúng nha hehe, sogy
+                        if (result < arr[i] && arr[i]%2 == 0) result = arr[i]
+
+                        nếu mà có nhìu lệnh hơn thì phải chia ra dị nè
+                        if (arr[i] % 2 == 0) {
+                            if (result < arr[i]) {
+                                // làm gì đó
+                            } else {
+                                // làm gì đó
+                            }
+                        } else {
+                            if (result < arr[i]) {
+                                // làm gì đó
+                            } else {
+                                // làm gì đó
+                            }
+                        }
+                    */
                     if (arr[i] % 2 == 0) {
                         if (result < arr[i]) {
                             result = arr[i];

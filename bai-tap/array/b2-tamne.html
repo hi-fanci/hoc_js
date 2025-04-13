@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - mảng 2</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_main">
+            <div class="app_main_content">
+                <h2>Bài 2: Oki chưa bồ gồ</h2>
+                <h6>Đề: Cho mảng sau <f-code>['a', 'b', 'h', 'r', 'c', 'e']</f-code></h6>
+
+                <ul class="alpha">
+                    <li>
+                        Tìm ví trí của chữ 'h'.
+                        <br>Đáp án: <txt-bold>2</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_a"></span></p>
+                    </li>
+                    <li>
+                        Thêm chữ 'f' vào cuối mảng.
+                        <br>Đáp án: <txt-bold>['a', 'b', 'h', 'r', 'c', 'e', 'f']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_b"></span></p>
+                    </li>
+                    <li>
+                        Xoá các kí tự bắt đầu từ ví trí thứ 2 đến 4.
+                        <br>Đáp án: <txt-bold>['a', 'b', 'e']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_c"></span></p>
+                    </li>
+                    <li>
+                        Lấy 3 kí tự từ cuối đếm lên.
+                        <br>Đáp án: <txt-bold>['r', 'c', 'e']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_d"></span></p>
+                    </li>
+                    <li>
+                        Lấy các kí tự ở vị trí lẻ.
+                        <br>Đáp án: <txt-bold>['b', 'r', 'e']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_e"></span></p>
+                    </li>
+                    <li>
+                        Gộp mảng lại thành chuỗi với kí tự '--'
+                        <br>Đáp án: <txt-bold>'a--b--h--r--c--e'</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_f"></span></p>
+                    </li>
+                    <li>
+                        Sắp xếp mảng theo thứ tự z-a.
+                        <br>Đáp án: <txt-bold>['r', 'h', 'e', 'c', 'b', 'a']</txt-bold>
+                        <p>Đáp án của bạn là: <span class="ans_g"></span></p>
+                    </li>
+                </ul>
+                <a class="link" href="./b3.html">Bài 3</a>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        const origin_arr = ['a', 'b', 'h', 'r', 'c', 'e'];
+
+        const renderAnswer = (e, t) => {
+            const p = $(`.ans_${e}`);
+            if (p.length > 0) p.text(t);
+        }
+
+        // a. Tìm ví trí của chữ 'h'.
+        const AnswerA = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == 'h') {
+                    result = i;
+                    break;
+                }
+            }
+            // ▲ end code
+            renderAnswer('a', result);
+        }; AnswerA();
+
+        // b. Thêm chữ 'f' vào cuối mảng.
+        const AnswerB = () => {
+            const arr = [...origin_arr];
+
+            let result;
+            // ▼ code here - do with arr
+            arr.push('f');
+
+            result = arr.map((val, i) => {
+                return result = arr[i];
+            });
+
+            /* đã fix ▼
+                haha
+                bài này chỉ cần làm
+                arr.push('f');
+                result = arr;
+                là xong goi
+            */
+
+            // ▲ end code
+            renderAnswer('b', result);
+        }; AnswerB();
+
+        // c. Xoá các kí tự bắt đầu từ ví trí thứ 2 đến 4.
+        const AnswerC = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            arr.splice(2, 3);
+
+            result = arr.map((val, i) => {
+                return result = arr[i];
+            });
+
+            /* đã fix ▼
+                tương tự bài trên
+
+                arr.splice(2, 3);
+                result = arr;
+            */
+            // ▲ end code
+            renderAnswer('c', result);
+        }; AnswerC();
+
+        // d. Lấy 3 kí tự từ cuối đếm lên.
+        const AnswerD = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            arr.splice(0, 3);
+            result = arr.map((val, i) => {
+                return result = arr[i];
+            });
+            /* đã fix ▼
+                bài này sai gòi
+                arr.splice(0, 3); // là xoá 3 phần tử bắt đầu từ ví trí 0, nếu bài này có 10 phần tử thì số còn lại là 7
+                // nếu dùng cách này thì phải làm như này 
+                arr.splice(0, arr.length - n)// n là số phần tử cuối cùng muốn lấy.
+
+                // hoặc
+                result = arr.splice(-3); // -1 là lấy phần tử cuối cùng, -n là lấy n phần tử cuối
+            */
+            // ▲ end code
+            renderAnswer('d', result);
+        }; AnswerD();
+
+        // e. Lấy các kí tự ở vị trí lẻ.
+        const AnswerE = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            result = arr.filter((val, i) => {
+                return i % 2 != 0;
+            });
+            // ▲ end code
+
+            renderAnswer('e', result);
+        }; AnswerE();
+
+        // f. Gộp mảng lại thành chuỗi với kí tự '--'
+        const AnswerF = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            result = arr.join('--');
+
+            // ▲ end code
+            renderAnswer('f', result);
+        }; AnswerF();
+
+        // g
+        const AnswerG = () => {
+            const arr = [...origin_arr];
+            let result;
+            // ▼ code here - do with arr
+            // result = arr.sort((a, b) => b.localeCompare(a));  //cái này anh search trên mạng nó chỉ dùng hàm này kkk
+
+            /* ▼ đã fix
+                // oki đỉnh á hehe
+                // này là cách khác
+                result = arr.sort((a, b) => b.charCodeAt(0) - a.charCodeAt(0));
+                // charCodeAt(0) là chuyển chữ về mã ASCII, ví dụ A = 65, B = 66, xong rồi xắp xếp như các số bth thoi
+            */
+            // ▲ end code
+            renderAnswer('g', result);
+        }; AnswerG();
+    </script>
+</body>
+
+</html>

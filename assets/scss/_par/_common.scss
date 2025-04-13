@@ -13,6 +13,10 @@ body {
     letter-spacing: 0.01em;
 }
 
+img {
+    width: 100%;
+}
+
 .link,
 a {
     display: inline-block;
@@ -286,6 +290,11 @@ dl {
         margin-bottom: 24px;
 
         padding: 16px 24px;
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     }
 
     &_note {
@@ -376,8 +385,18 @@ hr {
     }
 }
 
-.font-40px {
-    font-size: 40px !important;
+.font {
+    &-14px {
+        font-size: 14px !important;
+    }
+
+    &-16px {
+        font-size: 16px !important;
+    }
+
+    &-40px {
+        font-size: 40px !important;
+    }
 }
 
 .f-code {
@@ -397,7 +416,3 @@ hr {
 .duration-2s {
     transition-duration: 2s;
 }
-
-// .TesT {
-//     background-color: red;
-// }

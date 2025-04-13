@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7: overflow</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "css-b7";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_margin">
+                    <h2>margin</h2>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>div</c-keyw-name> {
+                            <dl>
+                                <dt>margin:</dt>
+                                <dd><c-string>10px 20px 30px 40px</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_margin">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block_note">
+                        <c-note></c-note>
+                        <ul class="lists">
+                            <li><c-strong>margin</c-strong> giúp tạo khoảng cách bên ngoài của một phần tử (element), tức là khoảng cách giữa phần tử đó và các phần tử xung quanh.</li>
+                            <li>Cách viết đầy đủ của <c-strong>margin</c-strong> là <txt-bold>margin: trên phải dưới trái;</txt-bold></li>
+                            <li>Nếu chỉ có 3 giá trị thì <txt-bold>margin: trên trái-phải dưới</txt-bold>.</li>
+                            <li>Nếu chỉ có 2 giá trị thì <txt-bold>margin: trên-dưới trái-phải</txt-bold>.</li>
+                            <li>Nếu chỉ có 1 giá trị thì <txt-bold>margin: trên-dưới-trái-phải</txt-bold>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- margin -->
+
+                <div class="app_main_block" id="b_padding">
+                    <h2>padding</h2>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>span</c-keyw-name> {
+                            <dl>
+                                <dt>padding:</dt>
+                                <dd><c-string>10px 20px 30px 40px</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_padding">
+                                <span>content</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block_note">
+                        <c-note></c-note>
+                        <ul class="lists">
+                            <li><c-strong>padding</c-strong> tạo khoảng cách bên trong phần tử, tức là khoảng cách giữa nội dung của phần tử và đường viền của nó.</li>
+                            <li>Cách viết giống <c-strong>margin</c-strong></li>
+                            <li><txt-bold>Không khuyến khích</txt-bold> sử dụng cho các thẻ có thuộc tính <txt-bold>display: inline</txt-bold>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- inline-block -->
+
+                <div class="app_main_block" id="b_margin_layout">
+                    <h2>Một số layout cơ bản dùng margin</h2>
+
+                    <h5>Căn giữa nhờ margin-left, right auto</h5>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_margin__01">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5>Tạo margin-top mặc định cho thẻ tuỳ ý</h5>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_margin__02">
+                                <p>This is text</p>
+                                <p>This is text</p>
+                                <p>This is text</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5>Canh đều các phần tử trong flex, nhờ margin-top auto</h5>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_margin__03">
+                                <div>
+                                    <p>This is title</p>
+                                    <p>view more button</p>
+                                </div>
+                                <div>
+                                    <p>This is long title, maybe break line</p>
+                                    <p>view more button</p>
+                                </div>
+                                <div>
+                                    <p>This is title</p>
+                                    <p>view more button</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- b_margin_layout -->
+
+            </div>
+        </div>
+
+        <div class="app_related" id="related">
+            <div class="app_releated_item">
+                Bài trước: <a href="../bai-6">position</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../../bai-tap/css/b1.html">bài tập</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../../assets/js/common.js"></script>
+</body>
+
+</html>

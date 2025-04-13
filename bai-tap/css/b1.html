@@ -89,12 +89,7 @@
             const arr = [...origin_arr];
             let result;
             // ▼ code here - do with arr
-            for (let i = 0; i < arr.length; i++) {
-                if (!result) result = arr[i]
-                else {
-                    if (result < arr[i]) result = arr[i]
-                }
-            }
+
 
             // ▲ end code
             $('.answer_b').text(result);
@@ -103,13 +98,9 @@
         // làm cho câu c
         const AnswerC = () => {
             const arr = [...origin_arr];
-            let result = [];
+            let result;
             // ▼ code here - do with arr
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] % 2 == 0) {
-                    result.push(arr[i]);
-                }
-            }
+
 
             // ▲ end code
             $('.answer_c').text(result);
@@ -118,13 +109,9 @@
         // làm cho câu d
         const AnswerD = () => {
             const arr = [...origin_arr];
-            let result = [];
+            let result;
             // ▼ code here - do with arr
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] % 2 != 0) {
-                    result.push(arr[i]);
-                }
-            }
+
 
             // ▲ end code
             $('.answer_d').text(result);
@@ -135,12 +122,7 @@
             const arr = [...origin_arr];
             let result;
             // ▼ code here - do with arr
-            for (let i = 0; i < arr.length; i++) {
-                if (!result) result = arr[i]
-                else {
-                    if (result > arr[i] && arr[i] % 2 != 0) result = arr[i]
-                }
-            }
+
             // ▲ end code
             $('.answer_e').text(result);
         }; AnswerE();
@@ -150,12 +132,8 @@
             const arr = [...origin_arr];
             let result;
             // ▼ code here - do with arr
-            for (let i = 0; i < arr.length; i++) {
-                if (!result) result = arr[i]
-                else {
-                    if (result < arr[i] && arr[i] % 2 == 0) result = arr[i]
-                }
-            }
+
+
             // ▲ end code
             $('.answer_f').text(result);
         }; AnswerF();
@@ -163,21 +141,10 @@
         // làm cho câu g
         const AnswerG = () => {
             const arr = [...origin_arr];
-            let resultEven = 0;
-            let resultOdd = 0;
+            let result;
             // ▼ code here - do with arr
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] % 2 == 0) {
-                    resultEven += arr[i];
-                    //console.log(resultEven)
-                }
-                if (arr[i] % 2 != 0) {
-                    resultOdd += arr[i];
-                    //console.log(resultOdd)
-                }
-            }
 
-            result = resultOdd - resultEven;
+
             // ▲ end code
             $('.answer_g').text(result);
         }; AnswerG();
@@ -185,9 +152,9 @@
         // làm cho câu H
         const AnswerH = () => {
             const arr = [...origin_arr];
-
+            let result;
             // ▼ code here - do with arr
-            const result = arr.sort((a, b) => a - b);
+
 
             // ▲ end code
             $('.answer_h').text(result);

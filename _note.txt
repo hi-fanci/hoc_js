@@ -37,3 +37,10 @@ css
 - hover - transition
 - addclass
 - layout cơ bản
+    - color, background-color, text clip
+    - display, inline, inline-block, block, inline-flex, flex*, grid*
+    - margin - padding
+    - font, family, size, weight, line-height, color
+    - position, relative, absolute, fixed
+    - overflow, hidden, auto
+    -  

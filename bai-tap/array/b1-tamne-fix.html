@@ -150,12 +150,34 @@
             const arr = [...origin_arr];
             let result;
             // ▼ code here - do with arr
+            /*
             for (let i = 0; i < arr.length; i++) {
                 if (!result) result = arr[i]
                 else {
                     if (result < arr[i] && arr[i] % 2 == 0) result = arr[i]
+                    // if này sẽ luôn thực hiện 2 bước
+                    // 1. so sánh lớn bé
+                    // 2. kiểm tra chia hết cho 2
+                    // => có nghĩa là dù lớn hay bé, chia hết cho 2 hay không thì cả 2 điều kiện luôn thực hiện
                 }
             }
+            */
+            // ▼ đã fix
+            for (let i = 0; i < arr.length; i++) {
+                if (!result) result = arr[i]
+                else {
+                    if (arr[i] % 2 == 0) {
+                        // kiểm tra số chẳn trước
+                        // 1. nếu là số chẳn thì thực hiện bước so sánh tiếp theo
+                        if (result < arr[i]) {
+                            result = arr[i]
+                        }
+                    }
+                    // 2. nếu không phải số chẳn thì không làm gì cả
+                }
+            }
+            // ▲ đã fix
+
             // ▲ end code
             $('.answer_f').text(result);
         }; AnswerF();
@@ -163,6 +185,8 @@
         // làm cho câu g
         const AnswerG = () => {
             const arr = [...origin_arr];
+            let result;
+            /* -- 
             let resultEven = 0;
             let resultOdd = 0;
             // ▼ code here - do with arr
@@ -178,6 +202,24 @@
             }
 
             result = resultOdd - resultEven;
+            */
+
+            // ▼ đã fix
+            /*
+                Tính tổng các số lẽ - tổng các số chẳn
+                => số lẻ thì +
+                => số chẳn thì -
+            */
+            result = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    result -= arr[i];
+                } else {
+                    result += arr[i];
+                }
+            }
+            // ▲ đã fix
+
             // ▲ end code
             $('.answer_g').text(result);
         }; AnswerG();

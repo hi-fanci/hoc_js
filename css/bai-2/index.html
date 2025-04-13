@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: color, background</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "css-b2";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_dot"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <p class="app_menu_logo">Menu</p>
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_color">
+                    <h2>Color</h2>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>color:</dt>
+                                <dd><span style="color: #06b6d4">#06b6d4</span>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_color">
+                                <p>This is p with color: #06b6d4</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Ngoài ra, chúng ta có màu dạng <txt-bold>rgba(red, green, blue, alpha)</txt-bold>, trong đó <txt-bold><a class="link" href="https://www.w3schools.com/colors/colors_rgb.asp" target="_blank" rel="noopener noreferrer">RGB</a></txt-bold> là mã màu, <txt-bold>alpha</txt-bold> là <txt-bold>độ trong suốt</txt-bold>, có giá trị từ <txt-bold>0-1</txt-bold>.</p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>color:</dt>
+                                <dd><span style="color: rgba(6, 182, 212, 0.5)">rgba(6, 182, 212, 0.5)</span>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_color_alpha_0.5">
+                                <p>This is p with color: rgba(6, 182, 212, 0.5)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="b_background">
+                    <h2>Background</h2>
+                    <p><txt-bold>background</txt-bold> có rất nhiều loại, bao gồm <a href="#b_background_color" class="js_goto">background-color</a>, <a href="#b_background_image" class="js_goto">background-image</a>, <a href="#b_background_clip" class="js_goto">background-clip</a></p>
+                    <ul class="counter">
+                        <li id="b_background_color">
+                            <h6>background-color</h6>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw-name>.box</c-keyw-name>{
+                                    <dl>
+                                        <dt>background-color:</dt>
+                                        <dd><c-string>giá trị</c-string>;</dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_background_color">
+                                        <div class="box">
+                                            background-color: #06b6d4
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                <c-note></c-note> <c-strong>background-color</c-strong> chỉ nhận các màu <txt-bold>đơn sắc</txt-bold>, như <txt-bold>tên màu ( red, black ... ), hex, rgb, rgba ...</txt-bold>.
+                                <br>Đặc biệt <txt-bold>currentColor</txt-bold> sẽ cho màu tương ứng với <txt-bold>màu chữ</txt-bold> hiện tại.
+                            </p>
+                        </li>
+                        <!-- background-color -->
+
+                        <li id="b_background_image">
+                            <h6>background-image: gradient</h6>
+
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw-name>.box</c-keyw-name>{
+                                    <dl>
+                                        <dt>background-image:</dt>
+                                        <dd><c-string>giá trị</c-string>;</dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_background_gradient">
+                                        <div class="box">
+                                            linear-gradient<br>(45deg, #009966, #06b6d4);
+                                        </div>
+                                        <div class="box">
+                                            linear-gradient<br>(45deg, #f6339a, #06b6d4);
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Xem thêm các thuộc tính khác của <txt-bold><a class="link" href="https://www.w3schools.com/css/css3_gradients.asp" target="_blank" rel="noopener noreferrer">gradient</a></txt-bold>.</p>
+                        </li>
+                        <!-- background-image gradient -->
+
+                        <li>
+                            <h6>background-image: url</h6>
+
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw-name>.box</c-keyw-name>{
+                                    <dl>
+                                        <dt>background-image:</dt>
+                                        <dd>url(<c-string>đường dẫn</c-string>);</dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_background_url">
+                                        <div class="box"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Xem thêm các thuộc tính khác của <txt-bold><a class="link" href="https://www.w3schools.com/cssref/css3_pr_background.php" target="_blank" rel="noopener noreferrer">background</a></txt-bold>.</p>
+                            <p><c-note></c-note> <c-strong>background-url</c-strong> thường dùng cho các <txt-bold>layout dùng chung</txt-bold>, như là <txt-bold>icon, MV của các trang con</txt-bold>, hoặc là các trường hợp dùng lớp giả như <c-strong>::after, ::before</c-strong>.</p>
+                        </li>
+                        <!-- background-image url -->
+
+                        <li id="b_background_clip">
+                            <h6>background-clip</h6>
+
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw-name>.box</c-keyw-name>{
+                                    <dl>
+                                        <dt>background-clip:</dt>
+                                        <dd><c-string>text</c-string>;</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>-webkit-background-clip:</dt>
+                                        <dd><c-string>text</c-string>;</dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_background_clip">
+                                        <div class="box">this is text</div>
+                                        <div class="box">this is text</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Xem thêm các thuộc tính khác của <txt-bold><a class="link" href="https://www.w3schools.com/cssref/css3_pr_background-clip.php" target="_blank" rel="noopener noreferrer">background-clip</a></txt-bold>.</p>
+                            <p><c-note></c-note> <c-strong>background-clip</c-strong> thường dùng để thay đổi màu, hình nền cho chữ, văn bản.</p>
+                        </li>
+                        <!-- background-clip -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_related" id="related">
+            <div class="app_releated_item">
+                Bài trước: <a href="../bai-1">Giới thiệu về CSS</a>
+            </div>
+            <div class="app_releated_item">
+                Bài tiếp: <a href="../bai-3">display.</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../../assets/js/common.js"></script>
+</body>
+
+</html>

@@ -23,7 +23,7 @@
     --f-code: "Inconsolata", serif;
 
     --c-btn: #cbd5e1;
-    --bc-btn-bc: #6b7280;
+    --bc-btn-bc: #c6005c;
 
     --c-nav-link: #14b8a6;
 }
@@ -68,7 +68,7 @@ c-strong {
 .c-note,
 c-note {
     &::before {
-        content: '#note:';
+        content: "#note:";
         display: inline-block;
         padding-right: 4px;
         font-weight: 700;
@@ -82,16 +82,15 @@ c-tag {
 
     &::before,
     &::after {
-
         display: inline-block;
     }
 
     &::before {
-        content: '\003C';
+        content: "\003C";
     }
 
     &::after {
-        content: '\003E';
+        content: "\003E";
     }
 }
 

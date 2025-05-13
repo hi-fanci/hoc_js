@@ -16,11 +16,11 @@
     <div class="app">
         <div class="app_menu">
             <div class="app_menu_open">
-                <span class="app_menu_open_dot"></span>
+                <span class="app_menu_open_bar"></span>
             </div>
             <div class="app_menu_mask"></div>
             <div class="app_menu_area">
-                <p class="app_menu_logo">Menu</p>
+
                 <div class="overflow">
                     <ul class="app_menu_lists">
                         <li class="app_menu_item">
@@ -57,163 +57,153 @@
 
         <div class="app_main">
             <div class="app_main_content">
-                <div class="app_main_block" id="b_color">
+                <div class="app_main_block" id="css_color">
                     <h2>Color</h2>
-                    <ul class="pre">
+                    <p><c-strong>Color (màu)</c-strong> là điều không thể thiếu trong <txt-bold>css</txt-bold>.</p>
+                    <p>Có 2 hệ màu cơ bản, thường được sử dụng nhất là <txt-bold>RGB, RGBA, HEX</txt-bold>, và <txt-bold>tên màu</txt-bold> <a href="https://www.w3schools.com/W3CSS/w3css_colors.asp" target="_blank" rel="noopener noreferrer" class="link">được thiết lập sẳn</a>:</p>
+                    <ul class="lists">
                         <li>
-                            <c-keyw-name>p</c-keyw-name> {
                             <dl>
-                                <dt>color:</dt>
-                                <dd><span style="color: #06b6d4">#06b6d4</span>;</dd>
+                                <dt><c-strong>RGB</c-strong>:</dt>
+                                <dd>
+                                    <p>được sử dụng theo dạng rgb(<txt-bold>red, green, blue</txt-bold>), mỗi tham sẽ xác định cường độ màu từ <txt-bold>0-255</txt-bold>, tương ứng, <txt-bold>0</txt-bold> là mờ nhất, và <txt-bold>255</txt-bold> là đậm nhất.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div class="css_board_color">
+                                                <span style="color: rgba(6, 182, 212)">Text's color: rgba(6, 182, 212)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_color">
-                                <p>This is p with color: #06b6d4</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p>Ngoài ra, chúng ta có màu dạng <txt-bold>rgba(red, green, blue, alpha)</txt-bold>, trong đó <txt-bold><a class="link" href="https://www.w3schools.com/colors/colors_rgb.asp" target="_blank" rel="noopener noreferrer">RGB</a></txt-bold> là mã màu, <txt-bold>alpha</txt-bold> là <txt-bold>độ trong suốt</txt-bold>, có giá trị từ <txt-bold>0-1</txt-bold>.</p>
-                    <ul class="pre">
+                        <!-- rgb -->
                         <li>
-                            <c-keyw-name>p</c-keyw-name> {
                             <dl>
-                                <dt>color:</dt>
-                                <dd><span style="color: rgba(6, 182, 212, 0.5)">rgba(6, 182, 212, 0.5)</span>;</dd>
+                                <dt><c-strong>RGBA</c-strong>:</dt>
+                                <dd>
+                                    <p>được sử dụng theo dạng rgba(<txt-bold>red, green, blue, alpha</txt-bold>), tương tự như <c-strong>RGB</c-strong>, tham số <txt-bold>alpha</txt-bold> sẽ cho độ mờ có giá trị từ <txt-bold>0-1</txt-bold>.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div class="css_board_color">
+                                                <p style="color: rgba(6, 182, 212, 0.5)">Text's color: rgba(6, 182, 212, 0.5)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
+                        <!-- rgba -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>HEX</c-strong>:</dt>
+                                <dd>
+                                    <p>được sử dụng theo dạng <txt-bold>#rrggbb</txt-bold>, trong đó <txt-bold>rr(red), gg(green), bb(blue)</txt-bold> các tham số mang giá trị thập lục phân từ <txt-bold>00-ff</txt-bold>, tương tự số thập phân 0-255.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div class="css_board_color">
+                                                <span style="color: #06b6d4">Text's color: #06b6d4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- hex -->
                     </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_color_alpha_0.5">
-                                <p>This is p with color: rgba(6, 182, 212, 0.5)</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Ngoài ra, bạn có thể <a href="https://www.w3schools.com/css/css_colors.asp" target="_blank" rel="noopener noreferrer" class="link">xem thêm tại đây</a>.</p>
                 </div>
 
                 <div class="app_main_block" id="b_background">
                     <h2>Background</h2>
-                    <p><txt-bold>background</txt-bold> có rất nhiều loại, bao gồm <a href="#b_background_color" class="js_goto">background-color</a>, <a href="#b_background_image" class="js_goto">background-image</a>, <a href="#b_background_clip" class="js_goto">background-clip</a></p>
-                    <ul class="counter">
-                        <li id="b_background_color">
-                            <h6>background-color</h6>
-                            <ul class="pre">
-                                <li>
-                                    <c-keyw-name>.box</c-keyw-name>{
-                                    <dl>
-                                        <dt>background-color:</dt>
-                                        <dd><c-string>giá trị</c-string>;</dd>
-                                    </dl>
-                                    }
-                                </li>
-                            </ul>
-                            <div class="css_board">
-                                <div class="css_board_block">
-                                    <div class="css_board_background_color">
-                                        <div class="box">
-                                            background-color: #06b6d4
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>
-                                <c-note></c-note> <c-strong>background-color</c-strong> chỉ nhận các màu <txt-bold>đơn sắc</txt-bold>, như <txt-bold>tên màu ( red, black ... ), hex, rgb, rgba ...</txt-bold>.
-                                <br>Đặc biệt <txt-bold>currentColor</txt-bold> sẽ cho màu tương ứng với <txt-bold>màu chữ</txt-bold> hiện tại.
-                            </p>
+                    <p><c-strong>background(nền)</c-strong> là thuộc tính dùng để thiết lập nền cho 1 phần tử HTML.</p>
+                    <p>Có 3 loại cơ bản, thường được sử dụng nhất là <txt-bold>background-color</txt-bold>, <txt-bold>background-image</txt-bold>, <txt-bold>background-clip</txt-bold></p>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>background-color</c-strong>:</dt>
+                                <dd>
+                                    <p>được sử dụng với giá trị là <txt-bold>color(màu)</txt-bold>, các kiểu màu có thể <a href="#css_color" class="js_goto">xem thêm tại đây</a>.</p>
+
+                                    <p style="
+                                        text-align: center;
+                                        font-size: 16px;
+                                        padding: 8px;
+                                        background-color: rgb(230 0 118);
+                                    ">text này có màu nền là rgb(230 0 118)</p>
+                                    <p style="
+                                        text-align: center;
+                                        font-size: 16px;
+                                        padding: 8px;
+                                        background-color: rgba(230, 0, 118, 0.5);
+                                    ">text này có màu nền là rgba(230, 0, 118, 0.5);</p>
+                                    <p style="
+                                        text-align: center;
+                                        font-size: 16px;
+                                        padding: 8px;
+                                        background-color: #e60076;
+                                    ">text này có màu nền là #e60076</p>
+                                </dd>
+                            </dl>
                         </li>
                         <!-- background-color -->
-
-                        <li id="b_background_image">
-                            <h6>background-image: gradient</h6>
-
-                            <ul class="pre">
-                                <li>
-                                    <c-keyw-name>.box</c-keyw-name>{
-                                    <dl>
-                                        <dt>background-image:</dt>
-                                        <dd><c-string>giá trị</c-string>;</dd>
-                                    </dl>
-                                    }
-                                </li>
-                            </ul>
-
-                            <div class="css_board">
-                                <div class="css_board_block">
-                                    <div class="css_board_background_gradient">
-                                        <div class="box">
-                                            linear-gradient<br>(45deg, #009966, #06b6d4);
-                                        </div>
-                                        <div class="box">
-                                            linear-gradient<br>(45deg, #f6339a, #06b6d4);
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>Xem thêm các thuộc tính khác của <txt-bold><a class="link" href="https://www.w3schools.com/css/css3_gradients.asp" target="_blank" rel="noopener noreferrer">gradient</a></txt-bold>.</p>
-                        </li>
-                        <!-- background-image gradient -->
-
                         <li>
-                            <h6>background-image: url</h6>
-
-                            <ul class="pre">
-                                <li>
-                                    <c-keyw-name>.box</c-keyw-name>{
-                                    <dl>
-                                        <dt>background-image:</dt>
-                                        <dd>url(<c-string>đường dẫn</c-string>);</dd>
-                                    </dl>
-                                    }
-                                </li>
-                            </ul>
-
-                            <div class="css_board">
-                                <div class="css_board_block">
-                                    <div class="css_board_background_url">
-                                        <div class="box"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>Xem thêm các thuộc tính khác của <txt-bold><a class="link" href="https://www.w3schools.com/cssref/css3_pr_background.php" target="_blank" rel="noopener noreferrer">background</a></txt-bold>.</p>
-                            <p><c-note></c-note> <c-strong>background-url</c-strong> thường dùng cho các <txt-bold>layout dùng chung</txt-bold>, như là <txt-bold>icon, MV của các trang con</txt-bold>, hoặc là các trường hợp dùng lớp giả như <c-strong>::after, ::before</c-strong>.</p>
+                            <dl>
+                                <dt><c-strong>background-image</c-strong>:</dt>
+                                <dd>
+                                    <p>được sử dụng với giá trị là <txt-bold>url(hình ảnh)</txt-bold> hoặc <txt-bold>gradient</txt-bold>.</p>
+                                    <p style="
+                                        padding: 50px 8px;
+                                        font-weight: 700;
+                                        color: black;
+                                        text-align: center;
+                                        background-image: url('./../../assets/images/img_01.jpeg');
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center center;
+                                    ">text này có nền là hình ảnh.</p>
+                                    <p style="
+                                        width: 100%;
+                                        padding: 50px 8px;
+                                        font-weight: 700;
+                                        color: black;
+                                        text-align: center;
+                                        background-image: linear-gradient(to right, red, yellow);
+                                    ">text này có nền là màu gradient.</p>
+                                    <p>Xem thêm các thuộc tính khác của <c-strong>background-image</c-strong> như là: <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position" target="_blank" rel="noopener noreferrer">background-position</a>, <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat" target="_blank" rel="noopener noreferrer">background-repeat</a>, <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size" target="_blank" rel="noopener noreferrer">background-size</a>.</p>
+                                </dd>
+                            </dl>
                         </li>
-                        <!-- background-image url -->
-
-                        <li id="b_background_clip">
-                            <h6>background-clip</h6>
-
-                            <ul class="pre">
-                                <li>
-                                    <c-keyw-name>.box</c-keyw-name>{
-                                    <dl>
-                                        <dt>background-clip:</dt>
-                                        <dd><c-string>text</c-string>;</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>-webkit-background-clip:</dt>
-                                        <dd><c-string>text</c-string>;</dd>
-                                    </dl>
-                                    }
-                                </li>
-                            </ul>
-
-                            <div class="css_board">
-                                <div class="css_board_block">
-                                    <div class="css_board_background_clip">
-                                        <div class="box">this is text</div>
-                                        <div class="box">this is text</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>Xem thêm các thuộc tính khác của <txt-bold><a class="link" href="https://www.w3schools.com/cssref/css3_pr_background-clip.php" target="_blank" rel="noopener noreferrer">background-clip</a></txt-bold>.</p>
-                            <p><c-note></c-note> <c-strong>background-clip</c-strong> thường dùng để thay đổi màu, hình nền cho chữ, văn bản.</p>
+                        <!-- background-image -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>background-clip</c-strong>:</dt>
+                                <dd>
+                                    <p>được sử dụng với giá trị là <txt-bold>url(hình ảnh)</txt-bold> hoặc <txt-bold>gradient</txt-bold>.</p>
+                                    <p style="
+                                        padding: 50px 8px;
+                                        font-size: 25px;
+                                        font-weight: 700;
+                                        color: #0000;
+                                        text-align: center;
+                                        background-image: url('./../../assets/images/img_01.jpeg');
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center center;
+                                        background-clip: text;
+                                    ">text này có nền là hình ảnh, nhưng bên trong chữ.</p>
+                                    <p style="
+                                        padding: 8px;
+                                        font-size: 25px;
+                                        font-weight: 700;
+                                        color: #0000;
+                                        text-align: center;
+                                        background-image: linear-gradient(to right, red, yellow);
+                                        background-clip: text;
+                                    ">text này có nền là màu gradient, nhưng bên trong chữ.</p>
+                                    <p>Xem thêm các thuộc tính khác của <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip" target="_blank" rel="noopener noreferrer">background-clip</a>.</p>
+                                </dd>
+                            </dl>
                         </li>
                         <!-- background-clip -->
                     </ul>

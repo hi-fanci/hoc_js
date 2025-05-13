@@ -16,11 +16,11 @@
     <div class="app">
         <div class="app_menu">
             <div class="app_menu_open">
-                <span class="app_menu_open_dot"></span>
+                <span class="app_menu_open_bar"></span>
             </div>
             <div class="app_menu_mask"></div>
             <div class="app_menu_area">
-                <p class="app_menu_logo">Menu</p>
+
                 <div class="overflow">
                     <ul class="app_menu_lists">
                         <li class="app_menu_item">
@@ -57,575 +57,189 @@
 
         <div class="app_main">
             <div class="app_main_content">
-                <div class="app_main_block" id="b_dnone">
-                    <h2>none</h2>
-                    <ul class="pre">
+                <div class="app_main_block" id="css_display">
+                    <h2>Display</h2>
+                    <p><c-strong>display</c-strong> sẽ xác định cách <txt-bold>hiện thị</txt-bold> của một phần tử trang web.</p>
+                    <p>Có 7 loại cơ bản thường được sử dụng: <txt-bold>none</txt-bold>, <txt-bold>inline</txt-bold>, <txt-bold>inline-block</txt-bold>, <txt-bold>inline-flex</txt-bold>, <txt-bold>block</txt-bold>, <txt-bold>flex</txt-bold>, <txt-bold>grid</txt-bold>.</p>
+                    <ul class="lists">
                         <li>
-                            <c-keyw-name>p</c-keyw-name> {
                             <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>none</c-string>;</dd>
+                                <dt><c-strong>none</c-strong>:</dt>
+                                <dd>
+                                    <p>dùng để ẩn phần tử, làm nó không hiện thị, không chiếm không gian.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div class="css_board_d_none">
+                                                <span>Dòng này sẽ biến mất khi màn hình nhỏ hơn 1024px, và ngược lại.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
+                        <!-- none -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>inline</c-strong>:</dt>
+                                <dd>
+                                    <p>dùng để hiện thị các phần tử trên cùng một dòng như các phần tử inline khác.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: inline;">đây là thẻ div ( phần tử block )</div>
+                                            <div style="display: inline;">nhưng</div>
+                                            <div style="display: inline;">cùng một dòng</div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Làm cho phần tử hiện thị cùng hàng với các phần tử <a href="https://www.w3schools.com/html/html_blocks.asp" target="_blank" rel="noopener noreferrer" class="link">inline khác</a>.</li>
+                                            <li>Không có thuộc tính <txt-bold>width, height</txt-bold>, chiều cao, rộng phụ thuộc vào nội dung.</li>
+                                            <li>Không có thuộc tính <txt-bold>margin-top, margin-bottom</txt-bold>.</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- inline -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>inline-block</c-strong>:</dt>
+                                <dd>
+                                    <p>tương tự inline.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: inline-block;">đây là thẻ div ( phần tử block )</div>
+                                            <div style="display: inline-block;">nhưng</div>
+                                            <div style="display: inline-block;">cùng một dòng</div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Tương tự như <txt-bold>inline</txt-bold>, nhưng dùng được các thuộc tính của <txt-bold>display: block</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh <txt-bold>chiều cao, rộng, margin, padding</txt-bold>.</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- inline-block -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>inline-flex</c-strong>:</dt>
+                                <dd>
+                                    <p>dùng để hiện thị cùng một dòng với các phần tử inline khác.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: inline-flex; gap: 32px;">
+                                                <div>đây là thẻ div</div>
+                                                <div>nhưng </div>
+                                                <div>chung một dòng</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Cách hiện thị tương tự <txt-bold>inline</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh <txt-bold>chiều cao, rộng, margin, padding</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh dành riêng cho <txt-bold>hệ Flexbox</txt-bold> như, <a href="https://www.w3schools.com/cssref/css3_pr_flex-wrap.php" target="_blank" rel="noopener noreferrer" class="link">flex-wrap</a>, <a href="https://www.w3schools.com/cssref/css3_pr_gap.php" target="_blank" rel="noopener noreferrer" class="link">gap</a>, <a href="https://www.w3schools.com/cssref/css3_pr_align-items.php" target="_blank" rel="noopener noreferrer" class="link">align-items</a>, <a href="https://www.w3schools.com/cssref/css3_pr_justify-content.php" target="_blank" rel="noopener noreferrer" class="link">justify-content</a>.</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- inline-flex -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>block</c-strong>:</dt>
+                                <dd>
+                                    <p>dùng để hiện thị các phần tử dưới dạng khối.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <span style="display: block;">đây là thẻ span ( phần tử inline )</span>
+                                            <span style="display: block;">nhưng</span>
+                                            <span style="display: block;">không chung một dòng</span>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Mặc định, phần tử sẽ có <txt-bold>chiều rộng</txt-bold> bằng với phần tử cha.</li>
+                                            <li>Luôn được xếp ở <txt-bold>dòng mới</txt-bold> ( nếu không có thay đổi kiểu hiện thị của thẻ cha ).</li>
+                                            <li>Tuỳ chỉnh <txt-bold>chiều cao, rộng, margin, padding</txt-bold>.</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- block -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>flex</c-strong>:</dt>
+                                <dd>
+                                    <p> là một layout model, dùng để tạo 1 bố cục <txt-bold>1 chiều ( hàng hoặc cột )</txt-bold>, dễ dàng căn chỉnh, phần chia khoảng trống giữa các phần tử.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px;">
+                                                <div class="box" style="background-color: darkcyan;"></div>
+                                                <div class="box" style="background-color: darkcyan;"></div>
+                                                <div class="box" style="background-color: darkcyan;"></div>
+                                                <div class="box" style="background-color: darkcyan;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Cách hiện thị tương tự <txt-bold>block, inline-flex</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh <txt-bold>chiều cao, rộng, margin, padding</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh dành riêng cho <a href="./../bai-8" target="_blank" rel="noopener noreferrer" class="link">hệ Flexbox</a>, nạp VIP mới xem được hehe.</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- flex -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>grid</c-strong>:</dt>
+                                <dd>
+                                    <p> là một layout model, tương tự như <c-strong>flex</c-strong>, nhưng <c-strong>grid</c-strong> có thể tạo ra layout <txt-bold>2 chiều ( hàng + cột )</txt-bold>, kiểm soát bố cục linh hoạt hơn, nhưng củng khó dùng hơn <c-strong>flex</c-strong>.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 100px; gap: 24px;">
+                                                <div style="height: 100px; background-color: darkcyan;"></div>
+                                                <div style="height: 100px; background-color: darkcyan;"></div>
+                                                <div style="height: 100px; background-color: darkcyan;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Cách hiện thị tương tự <txt-bold>flex</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh <txt-bold>chiều cao, rộng, margin, padding</txt-bold>.</li>
+                                            <li>Bắt buộc phải có thuộc tính <txt-bold>grid-template-columns</txt-bold> hoặc <txt-bold>grid-template-rows</txt-bold>.</li>
+                                            <li>Tuỳ chỉnh dành riêng cho <a href="./../bai-9" target="_blank" rel="noopener noreferrer" class="link">hệ Gridbox</a>, nạp VIP mới xem được hehe.</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- grid -->
                     </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_none">
-                                <p>This is display: none</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Làm cho phần tử <txt-bold>bị ẩn hoàn toàn</txt-bold> khỏi trang.</li>
-                            <li><txt-bold>Không hiện thị, không chiếm không gian</txt-bold> trên trang.</li>
-                        </ul>
-                    </div>
                 </div>
-                <!-- none -->
-                <div class="app_main_block" id="b_inline">
-                    <h2>inline</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>inline</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_inline">
-                                <p>This is inline</p>
-                                <p>This is inline</p>
-                                <p>This is inline</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Làm cho phần tử hiện thị cùng hàng với các phần tử <txt-bold>display: inline</txt-bold> khác.</li>
-                            <li>Không có thuộc tính <txt-bold>width, height</txt-bold>, chiều cao, rộng phụ thuộc vào nội dung.</li>
-                            <li>Không có thuộc tính <txt-bold>margin-top, margin-bottom</txt-bold>.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- inline -->
-
-                <div class="app_main_block" id="b_inline_block">
-                    <h2>inline-block</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>span</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>block</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_inline_block">
-                                <span>This is inline-block</span>
-                                <span>This is inline-block</span>
-                                <span>This is inline-block</span>
-                                <span>This is inline-block</span>
-                                <span>This is inline-block</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Tương tự như <txt-bold>display: inline</txt-bold>, nhưng dùng được các thuộc tính của <txt-bold>display: block</txt-bold>.</li>
-                            <li>Có thể set <txt-bold>chiều cao, rộng, margin</txt-bold> tuỳ ý.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- inline-block -->
-
-                <div class="app_main_block" id="b_block">
-                    <h2>block</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>span</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>block</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_block">
-                                <span>This is block</span>
-                                <span>This is block</span>
-                                <span>This is block</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Mặc định, phần tử sẽ có <txt-bold>chiều rộng</txt-bold> bằng với phần tử cha.</li>
-                            <li>Luôn được xếp ở <txt-bold>dòng mới</txt-bold> ( nếu không có thay đổi kiểu hiện thị của thẻ cha ).</li>
-                            <li>Có thể set <txt-bold>chiều cao, rộng, margin</txt-bold> tuỳ ý.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- block -->
-
-                <div class="app_main_block" id="b_iflex">
-                    <h2>inline-flex</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>inline-flex</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_iflex">
-                                <p><span>This</span><span>is</span><span>inline-flex</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Cách hiện thị tương tự <txt-bold>inline</txt-bold>.</li>
-                            <li>Có thể set <txt-bold>chiều cao, rộng, margin</txt-bold> tuỳ ý.</li>
-                            <li>Tuỳ chỉnh dành riêng cho <txt-bold>hệ Flexbox</txt-bold> như, <a href="https://www.w3schools.com/cssref/css3_pr_flex-wrap.php" target="_blank" rel="noopener noreferrer" class="link">flex-wrap</a>, <a href="https://www.w3schools.com/cssref/css3_pr_gap.php" target="_blank" rel="noopener noreferrer" class="link">gap</a>, <a href="https://www.w3schools.com/cssref/css3_pr_align-items.php" target="_blank" rel="noopener noreferrer" class="link">align-items</a>.</li>
-                        </ul>
-                    </div>
-
-                    <p id="dif_use_wrap">Thuộc tính <c-strong>flex-wrap</c-strong>.</p>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>inline-flex</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>flex-wrap:</dt>
-                                <dd>[<c-string>nowrap!, wrap</c-string>]; <c-cmt>// <txt-bold>!</txt-bold> là giá trị mặc định</c-cmt></dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <p><c-strong>nowrap</c-strong> sẽ giữ cho các phần tử con luôn nằm trên 1 hàng.</p>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_iflex css_board_d_iflex__nowrap">
-                                <p><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span><span>nowrap</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <p><c-strong>wrap</c-strong> sẽ làm các phần tử con tự động xuống dòng mới, khi không còn đủ chỗ.</p>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_iflex css_board_d_iflex__wrap">
-                                <p><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span><span>wrap</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p id="dif_use_gap">Thuộc tính <c-strong>gap</c-strong>.</p>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>inline-flex</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>gap:</dt>
-                                <dd>[<c-string>value</c-string>];</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_iflex css_board_d_iflex__gap">
-                                <p><span>gap</span><span>is</span><span>50px</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p id="dif_use_ai">Thuộc tính <c-strong>align-items</c-strong>.</p>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>inline-flex</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>align-items:</dt>
-                                <dd>[<c-string>flex-start, center!, flex-end</c-string>];<c-cmt>// <txt-bold>!</txt-bold> là giá trị mặc định</c-cmt></dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_iflex css_board_d_iflex__ai">
-                                <p><span>align-items</span><span>is</span><span>flex-start</span></p>
-                                <br>
-                                <p><span>align-items</span><span>is</span><span>center</span></p>
-                                <br>
-                                <p><span>align-items</span><span>is</span><span>flex-end</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- inline-flex -->
-
-                <div class="app_main_block" id="b_flex">
-                    <h2>flex</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>flex</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex">
-                                <p><span>This</span><span>is</span><span>flex</span><span>block</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Cách hiện thị tương tự <txt-bold>block, inline-flex</txt-bold>.</li>
-                            <li>Có thể set <txt-bold>chiều cao, rộng, margin</txt-bold> tuỳ ý.</li>
-                            <li>Tuỳ chỉnh dành riêng cho <txt-bold>hệ Flexbox</txt-bold> như, <a href="https://www.w3schools.com/cssref/css3_pr_gap.php" target="_blank" rel="noopener noreferrer" class="link">gap</a>, <a href="https://www.w3schools.com/cssref/css3_pr_align-items.php" target="_blank" rel="noopener noreferrer" class="link">align-items</a>, <a href="https://www.w3schools.com/cssref/css3_pr_justify-content.php" target="_blank" rel="noopener noreferrer" class="link">justify-content</a>.</li>
-                        </ul>
-                    </div>
-                    <p>Thuộc tính <txt-bold><a href="#dif_use_gap" class="js_goto">gap</a>, <a href="#dif_use_ai" class="js_goto">align-items</a></txt-bold> tương tự <c-strong>inline-flex</c-strong>.</p>
-                    <p id="df_use_justify">Thuộc tính <c-strong>justify-content</c-strong>.</p>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>flex</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>justify-content:</dt>
-                                <dd>[<c-string>flex-start, center, flex-end</c-string>];</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex css_board_d_flex__jc">
-                                <p><span>justify-content</span><span>is</span><span>flex-start</span></p>
-                                <p><span>justify-content</span><span>is</span><span>center</span></p>
-                                <p><span>justify-content</span><span>is</span><span>space-between</span></p>
-                                <p><span>justify-content</span><span>is</span><span>space-around</span></p>
-                                <p><span>justify-content</span><span>is</span><span>flex-end</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- flex -->
-
-                <div class="app_main_block" id="b_grid">
-                    <h2>grid</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>grid</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>grid-template-columns:</dt>
-                                <dd><c-string>1fr 1fr 1fr 1fr</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid">
-                                <p><span>This</span><span>is</span><span>grid</span><span>block</span></p>
-                                <p><span>This</span><span>is</span><span>grid</span><span>block</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li>Cách hiện thị tương tự <txt-bold>flex</txt-bold>.</li>
-                            <li>Có thể set <txt-bold>chiều cao, rộng, margin</txt-bold> tuỳ ý.</li>
-                            <li>Tuỳ chỉnh dành riêng cho <txt-bold>hệ Gridbox</txt-bold> như, <a href="https://www.w3schools.com/cssref/pr_grid-template-columns.php" target="_blank" rel="noopener noreferrer" class="link">grid-template-columns</a>, <a href="https://www.w3schools.com/cssref/css3_pr_align-items.php" target="_blank" rel="noopener noreferrer" class="link">align-items</a>, <a href="https://www.w3schools.com/cssref/css_pr_justify-items.php" target="_blank" rel="noopener noreferrer" class="link">justify-items</a>.</li>
-                            <li>Bắt buộc phải có thuộc tính <txt-bold>grid-template-columns</txt-bold>.</li>
-                        </ul>
-                    </div>
-
-                    <p>Ví dụ cho thuộc tính <c-strong>gap</c-strong>.</p>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>p</c-keyw-name> {
-                            <dl>
-                                <dt>display:</dt>
-                                <dd><c-string>grid</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>gap:</dt>
-                                <dd><c-string>50px</c-string>;</dd>
-                            </dl>
-                            <dl>
-                                <dt>grid-template-columns:</dt>
-                                <dd><c-string>1fr 1fr 1fr 1fr</c-string>;</dd>
-                            </dl>
-                            }
-                        </li>
-                    </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid css_board_d_grid__gap">
-                                <p><span>This</span><span>is</span><span>gap</span><span>50px</span></p>
-                                <p><span>This</span><span>is</span><span>gap</span><span>50px</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- grid -->
-
-                <div class="app_main_block" id="b_flexbox">
-                    <h2>Một số layout cơ bản dùng flexbox</h2>
-
-                    <h5>align-items: flex-start;</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__01">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>align-items: center;</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__02">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>align-items: flex-end</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__03">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>reverse</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__04">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom 50% - 50% - 100%</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__05">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom 25% - 75% - 100%</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__06">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom 25% - 75% - 50% - 50%</h5>
-
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_flex__07">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- flexbox -->
-
-                <div class="app_main_block" id="b_gridbox">
-                    <h2>Một số layout cơ bản dùng gridbox</h2>
-
-                    <h5>align-items: flex-start;</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__01">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>align-items: center;</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__02">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>align-items: flex-end</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__03">
-                                <figure>
-                                    <figcaption>IMG</figcaption>
-                                </figure>
-                                <div>
-                                    <p>CONTENT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom 1fr - 1fr - 2fr</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__05">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom 1fr - 2fr - 1fr</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__06">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom 2fr - 2fr - 1fr - 3fr</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__07">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>custom blabla</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_d_grid__08">
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                                <div><img src="./../../assets/images/img_01.jpeg" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- gridbox -->
-
             </div>
         </div>
 
         <div class="app_related" id="related">
             <div class="app_releated_item">
-                Bài trước: <a href="../bai-2">color, background</a>
+                <a href="../bai-2">Bài 2: color, background</a>
             </div>
             <div class="app_releated_item">
-                Bài tiếp: <a href="../bai-4">margin, padding</a>
+                <a href="../bai-4">Bài 4: margin, padding</a>
             </div>
         </div>
         <div class="app_last_pos">

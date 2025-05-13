@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu về CSS</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "css-b0";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_bar"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#css_add_file" class="app_menu_link js_goto">Thêm css style vào html</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#css_use" class="app_menu_link js_goto">Cách viết css</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#css_selector" class="app_menu_link js_goto">Selector(bộ chọn) của css</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#css_hover" class="app_menu_link js_goto">:hover</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#css_transition" class="app_menu_link js_goto">Transition</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#css_combine" class="app_menu_link js_goto">Kết hợp css</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#css_media" class="app_menu_link js_goto">@media rule</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="css_add_file">
+                    <h2>Thêm css style vào html</h2>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>Thêm bằng file</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        Trước hết, mình cần 1 <c-strong>file css</c-strong>, và <c-string>đường dẫn(path)</c-string> từ file html đến file css đó.
+                                        <br>Ở đầu các file css <c-null>nên</c-null> có css rule: <c-string>@charset "UTF-8"</-string>;
+                                    </p>
+                                    <ul class="pre">
+                                        <li>
+
+                                            &lt;link rel="stylesheet" href="<c-string>[path]</c-string>/<c-strong>[file name]</c-strong>.css"&gt;
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><c-strong>Thêm trực tiếp</c-strong>:</dt>
+                                <dd>
+                                    <p>Thẻ <c-tag>style</c-tag> được đặt bên trong thẻ <c-tag>head</c-tag></p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-tag>style</c-tag>
+                                            <br><c-cmt>// code css here</c-cmt>
+                                            <br><c-tag>/style</c-tag>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="app_main_block" id="css_use">
+                    <h2>Cách viết css</h2>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>file css<br>hoặc thẻ <c-tag>style</c-tag></c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        Viết ở <c-strong>file css</c-strong>, hay trong thẻ <c-tag>style</c-tag> đều giống nhau.
+                                        <br>Chỉ cần có 1 bộ chọn phần tử, sau đó ghi các thuộc tính cần css trong dấu <c-null>{}</c-null>
+                                    </p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-keyw>bộ-chọn</c-keyw>{
+                                            <dl>
+                                                <dt><c-keyw-name>thuộc-tính</c-keyw-name>:</dt>
+                                                <dd><c-string>giá-trị</c-string></dd>
+                                            </dl>
+                                            }
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><c-strong>css inline</c-strong>:</dt>
+                                <dd>
+                                    <p>Cách này khó sử dụng hơn, độ hiệu quả củng không mấy cao, nhưng được rất nhiều người tin dùng.</p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-tag>p style="<c-string>thuộc-tính: giá-trị;"</c-string></c-tag><c-tag>/p</c-tag>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="app_main_block" id="css_selector">
+                    <h2>Selector(bộ chọn) của css</h2>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>Chọn html tag</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        Các tag name là các thẻ trong html
+                                        <br>Ví dụ: <c-strong>html, body, p</c-strong>
+                                    </p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-keyw>tag-name</c-keyw>{}
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><c-strong>Chọn id</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        <c-strong>id</c-strong> dùng để định nghĩa 1 phần tử <c-null>duy nhất</c-null> trong trang, và không được <txt-bold>trùng lặp</txt-bold>.
+                                        <br>Phải có dấu <c-null>#</c-null> ở phía trước để phân biệt.
+                                        <br>Ví dụ: <c-strong>#html, #wraper, #input-submit</c-strong>
+                                    </p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-keyw>#id-name</c-keyw>{}
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><c-strong>Chọn class</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        <c-strong>class</c-strong> dùng để định nghĩa 1 hoặc nhiều phần tử <c-null>có thuộc tính giống nhau, gần giống nhau</c-null> trong trang, thường được <txt-bold>dùng lại nhiều lần</txt-bold>.
+                                        <br>Phải có dấu <c-null>.</c-null> ở phía trước để phân biệt.
+                                        <br>Ví dụ: <c-strong>.block, .btn, .text</c-strong>
+                                    </p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-keyw>.class-name</c-keyw>{}
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><c-strong>Chọn hết</c-strong>:</dt>
+                                <dd>
+                                    <p>Lấy tất cả các phần tử bên trong(phần tử con) của phần tử được chọn.</p>
+                                    <ul class="pre">
+                                        <li>
+                                            <c-keyw>bộ-chọn *</c-keyw>{}
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div class="block_note">
+                        <c-note></c-note> mức độ ưu tiên mặc định của css là thuộc tính ở dưới sẽ ghi đè thuộc tính của dòng trên.
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>span</c-keyw> {
+                                <dl>
+                                    <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                    <dd>red; <c-cmt>// thuộc tính này sẽ bị loại bỏ</c-cmt></dd>
+                                </dl>
+                                <dl>
+                                    <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                    <dd>yellow; <c-cmt>// do bị ghi đè ở đây</c-cmt></dd>
+                                </dl>
+                                }
+                            </li>
+                        </ul>
+                        <ul class="pre">
+                            <li>
+                                <ul class="counter">
+                                    <li>
+                                        <h6>inline style</h6>
+                                    </li>
+                                    <li>
+                                        <h6>id</h6>
+                                    </li>
+                                    <li>
+                                        <h6>class, :hover</h6>
+                                    </li>
+                                    <li>
+                                        <h6>thuộc tính</h6>
+                                    </li>
+                                    <li>
+                                        <h6>thẻ html ::after, ::before</h6>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class="link" href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank" rel="noopener noreferrer">xem thêm ở đây</a>
+
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="css_hover">
+                    <h2>:hover</h2>
+                    <div class="block">
+                        <p>
+                            <c-strong>:hover</c-strong> sẽ ghi đè giá trị của các thuộc tính hiện tại, sử dụng cho hiệu ứng rê chuột, ví dụ:
+                        </p>
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>.box</c-keyw> {
+                                <dl>
+                                    <dt><c-keyw-name>background-color</c-keyw-name>:</dt>
+                                    <dd><c-color style="--bc: #009966">#009966</c-color>;</dd>
+                                </dl>
+                                }
+                            </li>
+                            <li>
+                                <c-keyw>.box</c-keyw>:hover {
+                                <dl>
+                                    <dt><c-keyw-name>background-color</c-keyw-name>:</dt>
+                                    <dd><c-color style="--bc: #06b6d4">#06b6d4</c-color>;</dd>
+                                </dl>
+                                }
+                            </li>
+                        </ul>
+                        <div class="css_board">
+                            <div class="css_board_block">
+                                <div class="css_board_hover">
+                                    <div class="box box--none">hover me !</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p><c-note></c-note>Đừng quên thêm thuộc tính <c-strong>"cursor: pointer"</c-strong> và <c-strong>"transition"</c-strong>.</p>
+                    </div>
+                </div>
+                <!-- hover -->
+
+                <div class="app_main_block" id="css_transition">
+                    <h2>Transition</h2>
+                    <div class="block">
+                        <ul class="pre">
+                            <li>
+                                <c-keyw-name>transition</c-keyw-name>: property duration timing-function;
+                            </li>
+                        </ul>
+
+                        <div class="block_border">
+                            <ul class="lists">
+                                <li><txt-bold>property</txt-bold>: thuộc tính cần thay đổi, thường dùng <txt-bold>all</txt-bold> hoặc để trống, <a class="link" href="https://www.w3schools.com/cssref/css_animatable.php" target="_blank" rel="noopener noreferrer">xem thêm</a>.</li>
+                                <li><txt-bold>duration</txt-bold>: thời gian diễn ra sự thay đổi, có thể là <txt-bold>giây, mili giây, 1000ms = 1s</txt-bold>.</li>
+                                <li><txt-bold>timing-function</txt-bold>: là cách mà sự thay đổi diễn ra, <a class="link" href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank" rel="noopener noreferrer">xem thêm</a>.</li>
+                            </ul>
+                        </div>
+
+                        <ul class="pre">
+                            <li>
+                                <c-keyw>.box</c-keyw> {
+                                <dl>
+                                    <dt><c-keyw-name>background-color</c-keyw-name>:</dt>
+                                    <dd><c-color style="--bc: #009966">#009966</c-color>;</dd>
+                                </dl>
+                                <dl>
+                                    <dt><c-keyw-name>transition</c-keyw-name>:</dt>
+                                    <dd>450ms ease-out;</dd>
+                                </dl>
+                                <dl>
+                                    <dt><c-keyw-name>cursor</c-keyw-name>:</dt>
+                                    <dd>pointer;</dd>
+                                </dl>
+                                }
+                            </li>
+                            <li>
+                                <c-keyw>.box</c-keyw>:hover {
+                                <dl>
+                                    <dt><c-keyw-name>background-color</c-keyw-name>:</dt>
+                                    <dd><c-color style="--bc: #06b6d4">#06b6d4</c-color>;</dd>
+                                </dl>
+                                }
+                            </li>
+                        </ul>
+                        <div class="css_board">
+                            <div class="css_board_block">
+                                <div class="css_board_hover">
+                                    <div class="box">hover me !<br>better than</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+
+                <div class="app_main_block" id="css_combine">
+                    <h2>Kết hợp css</h2>
+
+                    <ul class="pre">
+                        <li>
+                            <c-keyw>.box</c-keyw> {
+                            <dl>
+                                <dt><c-keyw-name>background-color</c-keyw-name>:</dt>
+                                <dd><c-color style="--bc: #009966">#009966</c-color>;</dd>
+                            </dl>
+                            }
+                        </li>
+                        <li>
+                            <c-keyw>.box.is_active</c-keyw> {
+                            <dl>
+                                <dt><c-keyw-name>background-color</c-keyw-name>:</dt>
+                                <dd><c-color style="--bc: #06b6d4">#06b6d4</c-color>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <p>Dùng trong các trường hợp <txt-bold>ghi đè thuộc tính</txt-bold> của phần tử.</p>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div class="css_board_combine">
+                                <div class="box">
+                                    <span class="box_state">click me to active</span>
+                                    <span class="box_state">click me to deactive</span>
+                                </div>
+                                <div class="box">
+                                    <span class="box_state">click me to active</span>
+                                    <span class="box_state">click me to deactive</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main_block" id="css_media">
+                    <h2>@media rule</h2>
+                    <p>Quy tắc <c-strong>@media</c-strong> được dùng để áp dụng các <txt-bold>styles</txt-bold> khác nhau cho các màn hình tương ứng.</p>
+                    <ul class="lists">
+                        <li>
+                            <c-strong>@media only screen and (min-width: xxx)</c-strong>
+                            <p><txt-bold>xxx</txt-bold> sẽ xác định độ rộng màn hình <txt-bold>nhỏ nhất</txt-bold> được áp dụng css.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>div</c-keyw>{
+                                    <dl>
+                                        <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                        <dd>black;</dd>
+                                    </dl>
+                                    }
+                                    <br>
+                                    <c-null>@media only screen and (min-width: 1024px)</c-null>{
+                                    <dl>
+                                        <dt><c-keyw>div</c-keyw>{
+                                            <dl>
+                                                <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                                <dd>red;</dd>
+                                            </dl>
+                                            }
+                                        </dt>
+                                        <dd></dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_media_min">
+                                        <span>Dòng này sẽ có màu "red(đỏ)" khi độ rộng màn hình lớn hơn 1024px, và ngược lại thì màu "black(đen)".</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- min -->
+                        <li>
+                            <c-strong>@media only screen and (max-width: xxx)</c-strong>
+                            <p><txt-bold>xxx</txt-bold> sẽ xác định độ rộng màn hình <txt-bold>lớn nhất</txt-bold> được áp dụng css.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>div</c-keyw>{
+                                    <dl>
+                                        <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                        <dd>black;</dd>
+                                    </dl>
+                                    }
+                                    <br>
+                                    <c-null>@media only screen and (max-width: 1024px)</c-null>{
+                                    <dl>
+                                        <dt><c-keyw>div</c-keyw>{
+                                            <dl>
+                                                <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                                <dd>red;</dd>
+                                            </dl>
+                                            }
+                                        </dt>
+                                        <dd></dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_media_max">
+                                        <span>Dòng này sẽ có màu "red(đỏ)" khi độ rộng màn hình nhỏ hơn 1024px, và ngược lại thì màu "black(đen)".</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- max -->
+                        <li>
+                            <c-strong>@media only screen and (min-width: xxx) and (max-width: yyy)</c-strong>
+                            <p>Tương tự, <txt-bold>xxx, yyy</txt-bold> sẽ lần lượt là giới hạn <txt-bold>nhỏ nhất, lớn nhất</txt-bold> được áp dụng css.</p>
+                            <ul class="pre">
+                                <li>
+                                    <c-keyw>div</c-keyw>{
+                                    <dl>
+                                        <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                        <dd>black;</dd>
+                                    </dl>
+                                    }
+                                    <br>
+                                    <c-null>@media only screen and (min-width: 768px) and (max-width: 1024px)</c-null>{
+                                    <dl>
+                                        <dt><c-keyw>div</c-keyw>{
+                                            <dl>
+                                                <dt><c-keyw-name>color</c-keyw-name>:</dt>
+                                                <dd>red;</dd>
+                                            </dl>
+                                            }
+                                        </dt>
+                                        <dd></dd>
+                                    </dl>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="css_board">
+                                <div class="css_board_block">
+                                    <div class="css_board_media_minmax">
+                                        <span>Dòng này sẽ có màu "red(đỏ)" khi độ rộng màn hình trong khoảng từ 768px đến 1024px, và ngược lại thì màu "black(đen)".</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- min & max -->
+                    </ul>
+
+                    <p><c-note></c-note> để thuận tiện cho việc thêm, sửa, xoá thuộc tính sau này, tui khuyến khích dùng <c-strong>@media</c-strong> ngay sau khối khai báo của <c-strong>selector</c-strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_related" id="related">
+            <div class="app_releated_item">
+                <a href="../">Mục lục.</a>
+            </div>
+            <div class="app_releated_item">
+                <a href="../bai-1">Bài tiếp: Đơn vị tính trong css.</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../../assets/js/common.js"></script>
+    <script>
+        ; (function () {
+            const css_board_combine = () => {
+                const target = $('.css_board_combine .box');
+                target.on('click', function () {
+                    const check = $(this).hasClass('is_active');
+                    if (check) {
+                        $(this).removeClass('is_active');
+                    } else {
+                        $(this).addClass('is_active');
+                    }
+                })
+            };
+            css_board_combine();
+        })();
+    </script>
+</body>
+
+</html>

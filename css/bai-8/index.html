@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: flexbox</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "css-b8";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_bar"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_margin">
+                    <h2>flexbox</h2>
+
+                    <ul class="ul">
+                        <li>
+                            <h3>align-items</h3>
+                            <p><c-strong>align-items</c-strong> dùng để <txt-bold>căn ngang ( căn theo trục phụ )</txt-bold> các phần tử, mặc định là <c-strong>flex-start</c-strong>.</p>
+                            <ul class="counter">
+                                <li>
+                                    <h6>flex-start</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; align-items: flex-start;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="
+                                                    width: calc(100% - 144px - 24px);
+                                                    font-size: 16px;
+                                                ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>flex-star</c-strong> dùng để căn phía trên.</p>
+                                </li>
+                                <!-- flex-start -->
+                                <li>
+                                    <h6>flex-end</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; align-items: flex-end;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="
+                                                    width: calc(100% - 144px - 24px);
+                                                    font-size: 16px;
+                                                ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>flex-end</c-strong> dùng để căn phía dưới.</p>
+                                </li>
+                                <!-- flex-end -->
+                                <li>
+                                    <h6>center</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; align-items: center;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="
+                                                    width: calc(100% - 144px - 24px);
+                                                    font-size: 16px;
+                                                ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>center</c-strong> dùng để căn giữa.</p>
+                                </li>
+                                <!-- center -->
+                                <li>
+                                    <h6>baseline</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; align-items: baseline;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="
+                                                    width: calc(100% - 144px - 24px);
+                                                    font-size: 16px;
+                                                ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>baseline</c-strong> dùng để căn theo dòng chữ của nội dung, để ý thấy chữ "image" ngang hàng với content.</p>
+                                </li>
+                                <!-- center -->
+                            </ul>
+                        </li>
+                        <!-- align-items -->
+
+                        <li>
+                            <h3>justify-content</h3>
+                            <p><c-strong>justify-content</c-strong> dùng để <txt-bold>căn dọc ( trục chính )</txt-bold> các phần tử, mặc định là <c-strong>flex-start</c-strong>.</p>
+
+                            <ul class="counter">
+                                <li>
+                                    <h6>flex-start</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; justify-content: flex-start;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>flex-start</c-strong> dùng để dồn item về phía đầu.</p>
+                                </li>
+                                <!-- flex-start -->
+                                <li>
+                                    <h6>flex-end</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; justify-content: flex-end;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>flex-end</c-strong> dùng để dồn item về phía cuối.</p>
+                                </li>
+                                <!-- flex-end -->
+                                <li>
+                                    <h6>center</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; justify-content: center;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>center</c-strong> dùng để căn giữa.</p>
+                                </li>
+                                <!-- center -->
+                                <li>
+                                    <h6>space-between</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; justify-content: space-between;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>center</c-strong> dùng để tạo khoảng cách ở giữa item, sát 2 đầu.</p>
+                                </li>
+                                <!-- space-between -->
+                                <li>
+                                    <h6>space-around</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; justify-content: space-around;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>center</c-strong> dùng để tạo khoảng cách xung quanh giữa các item.</p>
+                                </li>
+                                <!-- space-around -->
+                                <li>
+                                    <h6>space-evenly</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; justify-content: space-evenly;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>center</c-strong> dùng để tạo các khoảng cách bằng nhau giữa các item.</p>
+                                </li>
+                                <!-- space-evenly -->
+                            </ul>
+                        </li>
+                        <!-- justify-content -->
+
+                        <li>
+                            <h3>flex-direction</h3>
+                            <p><c-strong>flex-direction</c-strong> dùng để điều hướng xắp xếp của <txt-bold>flexbox</txt-bold>, mặc định là <c-strong>row</c-strong>.</p>
+
+                            <ul class="counter">
+                                <li>
+                                    <h6>row</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: row;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>row</c-strong> dùng cho trục chính, xắp xếp item theo hướng <txt-bold>trái -> phải</txt-bold>.</p>
+                                </li>
+                                <!-- row -->
+                                <li>
+                                    <h6>row-reverse</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: row-reverse;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>row-reverse</c-strong> dùng cho trục chính, xắp xếp item theo hướng <txt-bold>phải -> trái</txt-bold>, đảo ngược thứ tự.</p>
+                                </li>
+                                <!-- row-reverse -->
+                                <li>
+                                    <h6>column</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: column;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>column</c-strong> dùng cho trục chính, xắp xếp item theo hướng <txt-bold>trên -> dưới</txt-bold>.</p>
+                                </li>
+                                <!-- column -->
+                                <li>
+                                    <h6>column-reverse</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: column-reverse;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>column-reverse</c-strong> dùng cho trục chính, xắp xếp item theo hướng <txt-bold>dưới -> trên</txt-bold>, đảo ngược thứ tự.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- flex-direction -->
+                        <li>
+                            <h3>order</h3>
+                            <p><c-strong>order</c-strong> dùng để thay đổi thứ tự xắp xếp trong <txt-bold>flexbox</txt-bold>.</p>
+
+                            <ul class="counter">
+                                <li>
+                                    <h6>order</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 2;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 1;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 3;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- order -->
+                                <li>
+                                    <h6>order - row-reverse</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: row-reverse;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 2;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 1;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 3;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>order</c-strong> trong khi dùng <c-strong>row-reverse</c-strong> vẫn tuân thủ hướng <txt-bold>phải -> trái</txt-bold>, đảo ngược thứ tự.</p>
+                                </li>
+                                <!-- order - row-reverse -->
+                                <li>
+                                    <h6>order - column</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: column;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 2;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 1;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 3;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- order - column -->
+                                <li>
+                                    <h6>order - column-reverse</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex; gap: 24px; flex-direction: column-reverse;">
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 2;
+                                                ">
+                                                    <p>box 1</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 1;
+                                                ">
+                                                    <p>box 2</p>
+                                                </div>
+                                                <div style="
+                                                    width: 144px; height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                    order: 3;
+                                                ">
+                                                    <p>box 3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>order</c-strong> trong khi dùng <c-strong>column-reverse</c-strong> vẫn tuân thủ hướng <txt-bold>dưới -> trên</txt-bold>, đảo ngược thứ tự.</p>
+                                </li>
+                                <!-- order - column-reverse -->
+                            </ul>
+                        </li>
+                        <!-- flex-direction -->
+                    </ul>
+                </div>
+                <!-- flexbox -->
+            </div>
+        </div>
+
+        <div class="app_related" id="related">
+            <div class="app_releated_item">
+                <a href="./../bai-3">Bài 3: display</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../../assets/js/common.js"></script>
+</body>
+
+</html>

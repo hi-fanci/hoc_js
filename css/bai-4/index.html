@@ -16,11 +16,11 @@
     <div class="app">
         <div class="app_menu">
             <div class="app_menu_open">
-                <span class="app_menu_open_dot"></span>
+                <span class="app_menu_open_bar"></span>
             </div>
             <div class="app_menu_mask"></div>
             <div class="app_menu_area">
-                <p class="app_menu_logo">Menu</p>
+
                 <div class="overflow">
                     <ul class="app_menu_lists">
                         <li class="app_menu_item">
@@ -57,69 +57,283 @@
 
         <div class="app_main">
             <div class="app_main_content">
-                <div class="app_main_block" id="b_margin">
+                <div class="app_main_block" id="css_margin">
                     <h2>margin</h2>
-                    <ul class="pre">
+                    <p><c-strong>margin</c-strong> dùng để tạo khoảng cách bên ngoài phần tử, tức là khoảng cách giữa phần tử đó với các phần tử xung quanh.</p>
+                    <p>Cách dùng: <c-strong>margin</c-strong> : <txt-bold>trên phải dưới trái</txt-bold></p>
+                    <ul class="lists">
                         <li>
-                            <c-keyw-name>div</c-keyw-name> {
                             <dl>
-                                <dt>margin:</dt>
-                                <dd><c-string>10px 20px 30px 40px</c-string>;</dd>
+                                <dt><c-strong>1 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px</txt-bold>;</p>
+                                    <p>Nếu <c-strong>margin</c-strong> chỉ có 1 giá trị, thì giá trị này sẽ áp dụng cho cả <txt-bold>4 phía</txt-bold>.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    width: 144px;
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin: 20px;
+                                                ">
+                                                    margin: 20px;
+                                                </div>
+                                                <div style="width: 144px; height: 144px; background-color: darkcyan;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
+                        <!-- 1 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>2 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px 40px</txt-bold>;</p>
+                                    <p>
+                                        Giá trị đầu tiên sẽ áp dụng cho phía <txt-bold>trên, dưới</txt-bold>
+                                        <br>Giá trị còn lại áp dụng cho <txt-bold>trái, phải</txt-bold>.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    width: 180px;
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin: 20px 40px;
+                                                ">
+                                                    margin: 20px 40px;
+                                                </div>
+                                                <div style="width: 144px; height: 144px; background-color: darkcyan;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- 2 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>3 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px 50px 40px</txt-bold>;</p>
+                                    <p>
+                                        Giá trị đầu tiên sẽ áp dụng cho phía <txt-bold>trên</txt-bold>
+                                        <br>Giá trị thứ 2 áp dụng cho <txt-bold>phải, trái</txt-bold>
+                                        <br>Giá trị còn lại áp dụng cho <txt-bold>dưới</txt-bold>.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    width: 256px;
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin: 20px 50px 40px;
+                                                ">
+                                                    margin: 20px 50px 40px;
+                                                </div>
+                                                <div style="width: 144px; height: 144px; background-color: darkcyan;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- 3 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>4 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px 50px 40px 10px</txt-bold>;</p>
+                                    <p>
+                                        Giá trị đầu tiên sẽ áp dụng cho phía <txt-bold>trên</txt-bold>
+                                        <br>Giá trị thứ 2 áp dụng cho <txt-bold>phải</txt-bold>
+                                        <br>Giá trị thứ 3 áp dụng cho <txt-bold>dưới</txt-bold>
+                                        <br>Giá trị còn lại áp dụng cho <txt-bold>trái</txt-bold>.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    width: 256px;
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin: 20px 50px 40px 10px;
+                                                ">
+                                                    margin: 20px 50px 40px 10px;
+                                                </div>
+                                                <div style="width: 144px; height: 144px; background-color: darkcyan;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- 4 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>auto</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>auto</txt-bold>;</p>
+                                    <p>Ngoài ra, <c-strong>margin</c-strong> còn có giá trị <txt-bold>auto</txt-bold>, giá trị này sẽ tự động căn đều <txt-bold>4 hướng</txt-bold> cho phù hợp theo kiểu <txt-bold>hiện thị(display)</txt-bold>.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    width: 256px;
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin: auto;
+                                                ">
+                                                    margin: auto;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- auto -->
                     </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_margin">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li><c-strong>margin</c-strong> giúp tạo khoảng cách bên ngoài của một phần tử (element), tức là khoảng cách giữa phần tử đó và các phần tử xung quanh.</li>
-                            <li>Cách viết đầy đủ của <c-strong>margin</c-strong> là <txt-bold>margin: trên phải dưới trái;</txt-bold></li>
-                            <li>Nếu chỉ có 3 giá trị thì <txt-bold>margin: trên trái-phải dưới</txt-bold>.</li>
-                            <li>Nếu chỉ có 2 giá trị thì <txt-bold>margin: trên-dưới trái-phải</txt-bold>.</li>
-                            <li>Nếu chỉ có 1 giá trị thì <txt-bold>margin: trên-dưới-trái-phải</txt-bold>.</li>
-                        </ul>
-                    </div>
                 </div>
                 <!-- margin -->
 
-                <div class="app_main_block" id="b_padding">
+                <div class="app_main_block" id="css_padding">
                     <h2>padding</h2>
-                    <ul class="pre">
+                    <p><c-strong>padding</c-strong> dùng để tạo khoảng cách bên trong phần tử, tức là khoảng cách từ viền phần tử tới nội dung bên trong phần tử đó.</p>
+                    <p>Cách dùng: <c-strong>margin</c-strong> : <txt-bold>trên phải dưới trái</txt-bold></p>
+                    <ul class="lists">
                         <li>
-                            <c-keyw-name>span</c-keyw-name> {
                             <dl>
-                                <dt>padding:</dt>
-                                <dd><c-string>10px 20px 30px 40px</c-string>;</dd>
+                                <dt><c-strong>1 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px</txt-bold>;</p>
+                                    <p>Nếu <c-strong>padding</c-strong> chỉ có 1 giá trị, thì giá trị này sẽ áp dụng cho cả <txt-bold>4 phía</txt-bold>.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    padding: 20px;
+                                                ">
+                                                    padding: 20px;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
+                        <!-- 1 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>2 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px 40px</txt-bold>;</p>
+                                    <p>
+                                        Giá trị đầu tiên sẽ áp dụng cho phía <txt-bold>trên, dưới</txt-bold>
+                                        <br>Giá trị còn lại áp dụng cho <txt-bold>trái, phải</txt-bold>.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    padding: 20px 40px;
+                                                ">
+                                                    padding: 20px 40px;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- 2 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>3 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px 50px 40px</txt-bold>;</p>
+                                    <p>
+                                        Giá trị đầu tiên sẽ áp dụng cho phía <txt-bold>trên</txt-bold>
+                                        <br>Giá trị thứ 2 áp dụng cho <txt-bold>phải, trái</txt-bold>
+                                        <br>Giá trị còn lại áp dụng cho <txt-bold>dưới</txt-bold>.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    padding: 20px 50px 40px;
+                                                ">
+                                                    padding: 20px 50px 40px;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- 3 -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>4 giá trị</c-strong>:</dt>
+                                <dd>
+                                    <p><txt-bold>20px 50px 40px 10px</txt-bold>;</p>
+                                    <p>
+                                        Giá trị đầu tiên sẽ áp dụng cho phía <txt-bold>trên</txt-bold>
+                                        <br>Giá trị thứ 2 áp dụng cho <txt-bold>phải</txt-bold>
+                                        <br>Giá trị thứ 3 áp dụng cho <txt-bold>dưới</txt-bold>
+                                        <br>Giá trị còn lại áp dụng cho <txt-bold>trái</txt-bold>.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: flex;">
+                                                <div style="
+                                                    background-color: darkcyan;
+                                                    font-size: 14px;
+                                                    padding: 20px 50px 40px 10px;
+                                                ">
+                                                    padding: 20px 50px 40px 10px;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- 4 -->
                     </ul>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_padding">
-                                <span>content</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li><c-strong>padding</c-strong> tạo khoảng cách bên trong phần tử, tức là khoảng cách giữa nội dung của phần tử và đường viền của nó.</li>
-                            <li>Cách viết giống <c-strong>margin</c-strong></li>
-                            <li><txt-bold>Không khuyến khích</txt-bold> sử dụng cho các thẻ có thuộc tính <txt-bold>display: inline</txt-bold>.</li>
-                        </ul>
-                    </div>
                 </div>
-                <!-- inline-block -->
+                <!-- margin -->
 
                 <div class="app_main_block" id="b_margin_layout">
                     <h2>Một số layout cơ bản dùng margin</h2>
@@ -129,17 +343,6 @@
                         <div class="css_board_block">
                             <div class="css_board_margin__01">
                                 <div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>Tạo margin-top mặc định cho thẻ tuỳ ý</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_margin__02">
-                                <p>This is text</p>
-                                <p>This is text</p>
-                                <p>This is text</p>
                             </div>
                         </div>
                     </div>
@@ -171,10 +374,10 @@
 
         <div class="app_related" id="related">
             <div class="app_releated_item">
-                Bài trước: <a href="../bai-3">display</a>
+                <a href="../bai-3">Bài trước: display</a>
             </div>
             <div class="app_releated_item">
-                Bài tiếp: <a href="../bai-5">font</a>
+                <a href="../bai-5">Bài tiếp: font</a>
             </div>
         </div>
         <div class="app_last_pos">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 1: Giới thiệu về CSS</title>
+    <title>Bài 1: Đơn vị tính trong css</title>
 
     <link rel="stylesheet" href="./../../assets/css/style.css">
     <script>
@@ -16,39 +16,23 @@
     <div class="app">
         <div class="app_menu">
             <div class="app_menu_open">
-                <span class="app_menu_open_dot"></span>
+                <span class="app_menu_open_bar"></span>
             </div>
             <div class="app_menu_mask"></div>
             <div class="app_menu_area">
-                <p class="app_menu_logo">Menu</p>
                 <div class="overflow">
                     <ul class="app_menu_lists">
                         <li class="app_menu_item">
-                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                            <a href="#css_absolute_units" class="app_menu_link js_goto">Đơn vị tuyệt đối</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                            <a href="#css_relative_units" class="app_menu_link js_goto">Đơn vị tương đối</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                            <a href="#css_time_units" class="app_menu_link js_goto">Đơn vị thời gian</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                            <a href="#css_radian_units" class="app_menu_link js_goto">Đơn vị đo gốc</a>
                         </li>
                     </ul>
                 </div>
@@ -57,281 +41,255 @@
 
         <div class="app_main">
             <div class="app_main_content">
-                <!-- --------- let -------- -->
-                <div class="app_main_block" id="b_intro">
-                    <h2>Thêm style CSS vào html</h2>
-                    <p>Có 2 cách để thêm style css vào file html</p>
-                    <ul class="counter">
+                <div class="app_main_block" id="css_absolute_units">
+                    <h2>Đơn vị tuyệt đối</h2>
+                    <p><c-strong>Đơn vị tuyệt đối</c-strong> có giá trị không đổi theo thiết bị hay kích thước màn hình.</p>
+                    <ul class="lists">
                         <li>
-                            <h6>Thêm bằng file</h6>
-                            <ul class="pre">
-                                <li>
-                                    &lt;link rel="stylesheet" href="[path]/css/[file name].css"&gt;
-                                </li>
-                            </ul>
-                            <div class="block">
-                                <c-note></c-note>
-                                <ul class="lists">
-                                    <li><txt-bold>[path]</txt-bold> là đường dẫn tới file css</li>
-                                    <li>Ở đầu các file phải có css rule <txt-bold>@charset "UTF-8"</txt-bold>; </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <h6>Thêm trực tiếp</h6>
-                            <ul class="pre">
-                                <li>
-                                    <c-tag>style</c-tag>
-                                    <br><c-cmt>// code css here</c-cmt>
-                                    <br><c-tag>/style</c-tag>
-                                </li>
-                            </ul>
-                            <p><c-note></c-note> <txt-bold>&lt;style&gt;&lt;/style&gt;</txt-bold> thường được đặt trong thẻ <txt-bold>&lt;head&gt;&lt;/head&gt;</txt-bold></p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="app_main_block" id="b_init">
-                    <h2>Cách dùng Css</h2>
-                    <p>Có 2 cách dùng css phổ biến.</p>
-                    <ul class="counter">
-                        <li>
-                            <h6>Viết css ở file hoặc trong thẻ &lt;style&gt;</h6>
-                            <ul class="pre">
-                                <li>
-                                    .đối-tượng {
-                                    <dl>
-                                        <dt>thuộc-tính:</dt>
-                                        <dd><c-string>giá-trị</c-string></dd>
-                                    </dl>
-                                    }
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h6>Viết css inline</h6>
-                            <ul class="pre">
-                                <li>
-                                    &lt;p style="<c-string>thuộc-tính: giá-trị;"</c-string>&gt;&lt;/p&gt;
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="app_main_block" id="b_rule">
-                    <h2>Selector ( bộ chọn ) của css</h2>
-                    <div class="block">
-                        <ul class="counter">
-                            <li>
-                                <h6>Chọn theo html tag</h6>
-                                <ul class="pre">
-                                    <li>
-                                        <c-strong>tag-name</c-strong>{}
-                                        <br><c-cmt>// ví dụ: html{}, body{}, p{}</c-cmt>
-                                    </li>
-                                </ul>
-
-                            </li>
-                            <li>
-                                <h6>Chọn theo id</h6>
-                                <ul class="pre">
-                                    <li>
-                                        <c-strong>#id</c-strong>{}
-                                        <br><c-cmt>// ví dụ: #wraper{}, #input{}, #btn{}</c-cmt>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h6>Chọn hết</h6>
-                                <ul class="pre">
-                                    <li>
-                                        <c-strong>*</c-strong>{}
-                                        <br><c-cmt>// ví dụ: *{}, my-block *{}, your-block *{}</c-cmt>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h6>Chọn theo class</h6>
-                                <ul class="pre">
-                                    <li>
-                                        <c-strong>.class-name</c-strong>{}
-                                        <br><c-cmt>// ví dụ: .toggler{}, .confirm{}, .submit{}</c-cmt>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="block_note">
-                            <c-note></c-note>
-                            <ul class="lists">
-                                <li><a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank" rel="noopener noreferrer">xem thêm ở đây</a></li>
-                                <li><txt-bold>class</txt-bold> có phân biệt <txt-bold>chữ thường</txt-bold> và <txt-bold>CHỮ HOA</txt-bold>.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="block_note">
-                        <c-note></c-note> mức độ ưu tiên mặc định của css là thuộc tính ở dưới sẽ ghi đè thuộc tính của dòng trên.
-                        <ul class="pre">
-                            <li>
-                                <c-keyw-name>span</c-keyw-name> {
-                                <dl>
-                                    <dt>color:</dt>
-                                    <dd><c-string>red</c-string>; <c-cmt>// thuộc tính này sẽ bị loại bỏ</c-cmt></dd>
-                                </dl>
-                                <dl>
-                                    <dt>color:</dt>
-                                    <dd><c-string>yellow</c-string>; <c-cmt>// do bị ghi đè ở đây</c-cmt></dd>
-                                </dl>
-                                }
-                            </li>
-                        </ul>
-                        <div class="block_border">
-                            <p>Thứ tự ưu tiên như dưới đây.</p>
-                            <h6>1. Inline style</h6>
-                            <h6>2. Id</h6>
-                            <h6>3. Class, :hover</h6>
-                            <h6>4. Thuộc tính</h6>
-                            <h6>5. Tag, ::after, ::before</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="app_main_block" id="b_update">
-                    <h2>:hover{}</h2>
-                    <div class="block">
-                        <p>
-                            <txt-bold>:hover</txt-bold> sẽ ghi đè giá trị của các thuộc tính, thường dùng cho các trường hợp làm hiệu ứng rê chuột, ví dụ:
-                        </p>
-                        <ul class="pre">
-                            <li>
-                                <c-keyw-name>.box</c-keyw-name> {
-                                <dl>
-                                    <dt>background-color:</dt>
-                                    <dd><span style="color: #009966">#009966</span>;</dd>
-                                </dl>
-                                }
-                            </li>
-                            <li>
-                                <c-keyw-name>.box</c-keyw-name>:hover {
-                                <dl>
-                                    <dt>background-color:</dt>
-                                    <dd><span style="color: #06b6d4">#06b6d4</span>;</dd>
-                                </dl>
-                                }
-                            </li>
-                        </ul>
-                        <div class="css_board">
-                            <div class="css_board_block">
-                                <div class="css_board_hover">
-                                    <div class="box box--none">hover me !</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p><c-note></c-note>Đừng quên thêm thuộc tính <txt-bold>"cursor: pointer", "transition"</txt-bold>.</p>
-                        <!--  -->
-                    </div>
-                </div>
-
-                <div class="app_main_block" id="b_transition">
-                    <h2>Transition</h2>
-                    <div class="block">
-                        <ul class="pre">
-                            <li>
-                                <c-keyw-name>transition</c-keyw-name>: property duration timing-function;
-                            </li>
-                        </ul>
-
-                        <div class="block_border">
-                            <ul class="lists">
-                                <li><txt-bold>property</txt-bold>: thuộc tính cần thay đổi, thường dùng <txt-bold>all</txt-bold> hoặc để trống, <a href="https://www.w3schools.com/cssref/css_animatable.php" target="_blank" rel="noopener noreferrer">xem thêm</a>.</li>
-                                <li><txt-bold>duration</txt-bold>: thời gian diễn ra sự thay đổi, có thể là <txt-bold>giây, mili giây, 1000ms = 1s</txt-bold>.</li>
-                                <li><txt-bold>timing-function</txt-bold>: là cách mà sự thay đổi diễn ra, <a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank" rel="noopener noreferrer">xem thêm</a>.</li>
-                            </ul>
-                        </div>
-
-                        <ul class="pre">
-                            <li>
-                                <c-keyw-name>.box</c-keyw-name> {
-                                <dl>
-                                    <dt>background-color:</dt>
-                                    <dd><span style="color: #009966">#009966</span>;</dd>
-                                </dl>
-                                <dl>
-                                    <dt>transition:</dt>
-                                    <dd><c-string>450ms ease-out</c-string>;</dd>
-                                </dl>
-                                <dl>
-                                    <dt>cursor:</dt>
-                                    <dd><c-string>pointer</c-string>;</dd>
-                                </dl>
-                                }
-                            </li>
-                            <li>
-                                <c-keyw-name>.box</c-keyw-name>:hover {
-                                <dl>
-                                    <dt>background-color:</dt>
-                                    <dd><span style="color: #06b6d4">#06b6d4</span>;</dd>
-                                </dl>
-                                }
-                            </li>
-                        </ul>
-                        <div class="css_board">
-                            <div class="css_board_block">
-                                <div class="css_board_hover">
-                                    <div class="box">hover me !<br>better than</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-                    </div>
-                </div>
-
-                <div class="app_main_block" id="b_intro2">
-                    <h2>Kết hợp css</h2>
-                    <ul class="pre">
-                        <li>
-                            <c-keyw-name>.box</c-keyw-name> {
                             <dl>
-                                <dt>background-color:</dt>
-                                <dd><span style="color: #009966">#009966</span>;</dd>
+                                <dt><c-strong>px</c-strong>:</dt>
+                                <dd>
+                                    <p>(pixel) là đơn vị đo độ dài tuyệt đối trong CSS, đại diện cho một điểm ảnh (pixel) trên màn hình theo cách mà trình duyệt định nghĩa, tính toán dựa trên DPI và zoom.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div>
+                                                <div style="
+                                                    width: 300px;
+                                                    height: 150px;
+                                                    background-color: darkcyan;
+                                                    padding: 20px;">
+                                                    div này có độ rộng 300px
+                                                    <br>và chiều cao là 150px
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
+                        <!-- px -->
                         <li>
-                            <c-keyw-name>.box.is_active</c-keyw-name> {
                             <dl>
-                                <dt>background-color:</dt>
-                                <dd><span style="color: #06b6d4">#06b6d4</span>;</dd>
+                                <dt><c-strong>rem</c-strong>:</dt>
+                                <dd>
+                                    <p>(rem) là đơn vị đo độ dài tương đối trong CSS, nhưng cách cài đặt khiến rem hoạt động gần như là một đơn vị tuyệt đối.
+                                        <br>Mặc định <c-string>1rem = 16px</c-string>, thường thì người dùng sẽ đổi về <c-string>1rem = 10px</c-string> để tiện cho tính toán.
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div>
+                                                <div style="width: 30rem;
+                                                    height: 10rem;
+                                                    background-color: darkcyan;
+                                                    padding: 20px;">
+                                                    div này có độ rộng 30rem
+                                                    <br>và chiều cao là 10rem
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
                             </dl>
-                            }
                         </li>
+                        <!-- rem -->
                     </ul>
-                    <p>Thường dùng trong các trường hợp như <txt-bold>ghi đè thuộc tính, phân biệt</txt-bold> phần tử với các block giống nhau.</p>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_combine">
-                                <div class="box">
-                                    <span class="box_state">click me to active</span>
-                                    <span class="box_state">click me to deactive</span>
-                                </div>
-                                <div class="box">
-                                    <span class="box_state">click me to active</span>
-                                    <span class="box_state">click me to deactive</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <!-- absolute units -->
+
+                <div class="app_main_block" id="css_relative_units">
+                    <h2>Đơn vị tương đối</h2>
+                    <p><c-strong>Đơn vị tương đối</c-strong> có giá trị thay đổi phù thuộc vào các yếu tố khác trong trang.</p>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>em</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        đơn vị đo tính theo kích thước <c-null>font-size</c-null> của phần tử cha.
+                                        <br>Mặc định <c-string>1em = 100% font-size phần tử cha</c-string>
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div>
+                                                <p style="
+                                                    display: inline-block;
+                                                    background-color: darkcyan;
+                                                    padding: 1.5em;">
+                                                    thẻ này có padding là 1em
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- em -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>%</c-strong>:</dt>
+                                <dd>
+                                    <p>đơn vị đo tính theo kích thước <c-null>chiều rộng, ngang</c-null> của phần tử chứa.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="background-color: #00786f; padding: 20px;">
+                                                <div style="
+                                                    width: 80%;
+                                                    background-color: darkcyan;
+                                                    padding: 20px;">
+                                                    thẻ này có chiều rộng là 80%
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- % -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>vw</c-strong>:</dt>
+                                <dd>
+                                    <p>đơn vị đo tính theo kích thước <c-null>chiều rộng, ngang</c-null> của màn hình.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="background-color: #00786f; padding: 20px;">
+                                                <div style="
+                                                    width: 25vw;
+                                                    background-color: darkcyan;
+                                                    padding: 20px;">
+                                                    thẻ này có chiều rộng là 25vw
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- vw -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>vh</c-strong>:</dt>
+                                <dd>
+                                    <p>đơn vị đo tính theo kích thước <c-null>chiều cao</c-null> của màn hình.</p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="background-color: #00786f; padding: 20px;">
+                                                <div style="
+                                                    width: 50vh;
+                                                    background-color: darkcyan;
+                                                    padding: 20px;">
+                                                    thẻ này có chiều rộng là 50vh
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- vh -->
+                    </ul>
+                </div>
+                <!-- relative units -->
+
+                <div class="app_main_block" id="css_time_units">
+                    <h2>Đơn vị thời gian</h2>
+                    <p><c-strong>Đơn vị thời gian</c-strong> dùng cho các <c-string>animation, transition</c-string> đảm bảo độ chính xác tương ứng thơi gian thực.</p>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>ms</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        mili giây
+                                        <br>Mặc định <c-string>1000ms = 1s</c-string>
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div>
+                                                <p style="
+                                                    display: inline-block;
+                                                    background-color: darkcyan;
+                                                    padding: 1.5em;
+                                                    transition-duration: 100ms">
+                                                    thẻ này có transition-duration là 100ms
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- ms -->
+                        <li>
+                            <dl>
+                                <dt><c-strong>s</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        giây
+                                        <br>Mặc định <c-string>1s = 1000ms</c-string>
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div>
+                                                <p style="
+                                                    display: inline-block;
+                                                    background-color: darkcyan;
+                                                    padding: 1.5em;
+                                                    transition-duration: 1ms">
+                                                    thẻ này có transition-duration là 1s
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- s -->
+                    </ul>
+                </div>
+                <!-- time units -->
+
+                <div class="app_main_block" id="css_radian_units">
+                    <h2>Đơn vị đo gốc</h2>
+                    <p><c-strong>Đơn vị đo gốc</c-strong> dùng cho <c-string>transform</c-string>, để phần tử có thể xoay theo gốc độ tương ứng, không áp dụng cho các phần tử <c-strong>inline</c-strong>.</p>
+                    <ul class="lists">
+                        <li>
+                            <dl>
+                                <dt><c-strong>deg</c-strong>:</dt>
+                                <dd>
+                                    <p>
+                                        <br>Mặc định các gốc độ áp dụng từ <c-string>-360deg -> 360deg</c-string>
+                                    </p>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div>
+                                                <div style="
+                                                    width: 200px;
+                                                    height: 200px;
+                                                    background-color: darkcyan;
+                                                    padding: 20px;
+                                                    rotate: 20deg">
+                                                    thẻ này có gốc xoay là 20 độ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <!-- deg -->
+                    </ul>
+                </div>
+                <!-- time units -->
             </div>
         </div>
 
         <div class="app_related" id="related">
             <div class="app_releated_item">
-                <a href="../">Mục lục.</a>
+                <a href="../bai-0">Giới thiệu về CSS</a>
             </div>
             <div class="app_releated_item">
-                Bài tiếp: <a href="../bai-2">color, background.</a>
+                <a href="../bai-2">Bài 2: color, background</a>
             </div>
         </div>
         <div class="app_last_pos">
@@ -344,22 +302,6 @@
     </div>
     <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
     <script src="./../../assets/js/common.js"></script>
-    <script>
-        ; (function () {
-            const css_board_combine = () => {
-                const target = $('.css_board_combine .box');
-                target.on('click', function () {
-                    const check = $(this).hasClass('is_active');
-                    if (check) {
-                        $(this).removeClass('is_active');
-                    } else {
-                        $(this).addClass('is_active');
-                    }
-                })
-            };
-            css_board_combine();
-        })();
-    </script>
 </body>
 
 </html>

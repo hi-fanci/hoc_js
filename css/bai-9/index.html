@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9: gridbox</title>
+
+    <link rel="stylesheet" href="./../../assets/css/style.css">
+    <script>
+        const page_name = "css-b9";
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="app_menu">
+            <div class="app_menu_open">
+                <span class="app_menu_open_bar"></span>
+            </div>
+            <div class="app_menu_mask"></div>
+            <div class="app_menu_area">
+
+                <div class="overflow">
+                    <ul class="app_menu_lists">
+                        <li class="app_menu_item">
+                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
+                        </li>
+                        <li class="app_menu_item">
+                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_main">
+            <div class="app_main_content">
+                <div class="app_main_block" id="b_margin">
+                    <h2>gridbox</h2>
+                    <p><c-strong>grid</c-strong> cho phép bạn tạo 1 layout dạng lưới, bao gồm <txt-bold>hàng (grid-template-row)</txt-bold> và <txt-bold>cột (grid-template-columns)</txt-bold>.</p>
+
+                    <ul class="ul">
+                        <li>
+                            <h3>grid-template-columns</h3>
+                            <ul class="counter">
+                                <li>
+                                    <h6>fr</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                                                <div style="height: 100px; background-color: darkcyan; border-radius: 6px; display: flex; align-items: center; justify-content: center;">box này là 1fr</div>
+                                                <div style="height: 100px; background-color: darkcyan; border-radius: 6px; display: flex; align-items: center; justify-content: center;">box này là 1fr</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>
+                                                <dl>
+                                                    <dt><c-strong>fr</c-strong>:</dt>
+                                                    <dd>
+                                                        <p>
+                                                            nghĩa là <txt-bold>fractional unit</txt-bold> là một phần của không gian còn lại trong <txt-bold>gridbox</txt-bold>, ví dụ:
+                                                            <br><c-strong>grid-template-columns</c-strong>: <txt-bold>2fr 1fr</txt-bold>;
+                                                            <br>như vậy thì có tổng là <txt-bold>3fr</txt-bold> cho 2 cột, tương ứng cột đầu tiên sẽ là <txt-bold>2/3*100%</txt-bold> = <txt-bold>66.66%</txt-bold>, cột còn lại là <txt-bold>33.33%</txt-bold> tổng chiều rộng của <txt-bold>gridbox</txt-bold>.
+                                                        </p>
+                                                        <txt-bold></txt-bold>
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h6>px, rem, các đơn vị đo cố định</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 200px 20rem; gap: 24px;">
+                                                <div style="height: 100px; background-color: darkcyan; border-radius: 6px; display: flex; align-items: center; justify-content: center;">box này là 200px</div>
+                                                <div style="height: 100px; background-color: darkcyan; border-radius: 6px; display: flex; align-items: center; justify-content: center;">box này là 20rem</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block_note">
+                                        <c-note></c-note>
+                                        <ul class="lists">
+                                            <li>Do là đơn vị cố định, nên bạn phải chú ý là chia không gian cho hợp lí, tránh trường hợp hỏng layout.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--  -->
+
+                        <li>
+                            <h3>align-items</h3>
+                            <p><c-strong>align-items</c-strong> dùng để <txt-bold>căn ngang ( căn theo trục phụ )</txt-bold> các phần tử, mặc định là <c-strong>flex-start</c-strong>, tương tự như <c-strong>flexbox</c-strong>.</p>
+                            <ul class="counter">
+                                <li>
+                                    <h6>flex-start</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: flex-start;">
+                                                <div style="
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>flex-star</c-strong> dùng để căn phía trên.</p>
+                                </li>
+                                <!-- flex-start -->
+                                <li>
+                                    <h6>flex-end</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: flex-end;">
+                                                <div style="
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>flex-end</c-strong> dùng để căn phía dưới.</p>
+                                </li>
+                                <!-- flex-end -->
+                                <li>
+                                    <h6>center</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center;">
+                                                <div style="
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>center</c-strong> dùng để căn giữa.</p>
+                                </li>
+                                <!-- center -->
+                                <li>
+                                    <h6>baseline</h6>
+                                    <div class="css_board">
+                                        <div class="css_board_block">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: baseline;">
+                                                <div style="
+                                                    height: 144px;
+                                                    background-color: darkcyan;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 16px;
+                                                ">
+                                                    <p>image</p>
+                                                </div>
+                                                <div style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil beatae, velit deleniti error facilis architecto autem eos quaerat aliquid voluptate!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><c-strong>baseline</c-strong> dùng để căn theo dòng chữ của nội dung, để ý thấy chữ "image" ngang hàng với content.</p>
+                                </li>
+                                <!-- center -->
+                            </ul>
+                        </li>
+                        <!-- align-items -->
+
+                        <li>
+                            <h3>justify-content</h3>
+                            <p><c-strong>justify-content</c-strong> dùng tương tự như <c-strong>flexbox</c-strong>, nhưng khuyến khích không sử dụng.</p>
+                        </li>
+                        <!-- justify-content -->
+
+                        <li>
+                            <h3>flex-direction</h3>
+                            <p><c-strong>flex-direction</c-strong> dùng tương tự như <c-strong>flexbox</c-strong>, nhưng khuyến khích không sử dụng.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- flexbox -->
+
+            </div>
+        </div>
+
+        <div class="app_related" id="related">
+            <div class="app_releated_item">
+                <a href="./../bai-3">Bài 3: display</a>
+            </div>
+        </div>
+        <div class="app_last_pos">
+            <div class="app_last_pos_mask"></div>
+            <div class="app_last_pos_btn">
+                <span class="app_last_pos_close"></span>
+                <span class="app_last_pos_txt">Tiếp tục vị trí lần trước.</span>
+            </div>
+        </div>
+    </div>
+    <script src="./../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./../../assets/js/common.js"></script>
+</body>
+
+</html>

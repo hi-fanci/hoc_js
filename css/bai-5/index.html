@@ -16,11 +16,11 @@
     <div class="app">
         <div class="app_menu">
             <div class="app_menu_open">
-                <span class="app_menu_open_dot"></span>
+                <span class="app_menu_open_bar"></span>
             </div>
             <div class="app_menu_mask"></div>
             <div class="app_menu_area">
-                <p class="app_menu_logo">Menu</p>
+
                 <div class="overflow">
                     <ul class="app_menu_lists">
                         <li class="app_menu_item">
@@ -57,38 +57,80 @@
 
         <div class="app_main">
             <div class="app_main_content">
-                <div class="app_main_block" id="b_margin">
-                    <h2>margin</h2>
+                <div class="app_main_block" id="b_font_family">
+                    <h2>font-family</h2>
+                    <p><c-strong>font-family</c-strong> còn gọi là <txt-bold>kiểu chữ</txt-bold>, giúp văn bản, kí tự thay đổi cách hiện thị theo cài đặt.</p>
+                    <p><c-strong>font-family</c-strong> bao gồm 2 giá trị: <c-string>"tên kiểu chữ", nhóm của kiểu chữ</c-string></p>
                     <ul class="pre">
                         <li>
-                            <c-keyw-name>div</c-keyw-name> {
+                            <c-keyw-name>p</c-keyw-name> {
                             <dl>
-                                <dt>margin:</dt>
-                                <dd><c-string>10px 20px 30px 40px</c-string>;</dd>
+                                <dt>font-family:</dt>
+                                <dd><c-string>"Open Sans", sans-serif</c-string>;</dd>
                             </dl>
                             }
                         </li>
                     </ul>
                     <div class="css_board">
                         <div class="css_board_block">
-                            <div class="css_board_margin">
-                                <div></div>
+                            <div>
+                                <p style="font-family: Open Sans, sans-serif;">Dòng này là font-family "Open Sans"</p>
+                                <p style="font-family: Inconsolata, serif;">Dòng này là font-family "Inconsolata"</p>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- font-family -->
 
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li><c-strong>margin</c-strong> giúp tạo khoảng cách bên ngoài của một phần tử (element), tức là khoảng cách giữa phần tử đó và các phần tử xung quanh.</li>
-                            <li>Cách viết đầy đủ của <c-strong>margin</c-strong> là <txt-bold>margin: trên phải dưới trái;</txt-bold></li>
-                            <li>Nếu chỉ có 3 giá trị thì <txt-bold>margin: trên trái-phải dưới</txt-bold>.</li>
-                            <li>Nếu chỉ có 2 giá trị thì <txt-bold>margin: trên-dưới trái-phải</txt-bold>.</li>
-                            <li>Nếu chỉ có 1 giá trị thì <txt-bold>margin: trên-dưới-trái-phải</txt-bold>.</li>
-                        </ul>
+                <div class="app_main_block" id="b_font_weight">
+                    <h2>font-weight</h2>
+                    <p><c-strong>font-weight</c-strong> còn gọi là <txt-bold>độ đậm</txt-bold>, giúp văn bản, kí tự thay đổi độ đậm nhạt theo cài đặt.</p>
+                    <p><c-strong>font-weight</c-strong> có các giá trị phổ biến như là: <c-string>thin-100, extraLight-200, light-300, regular-400, medium-500, semiBold-600, bold-700, extraBold-800, black-900</c-string></p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>font-weight:</dt>
+                                <dd><c-string>500</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div>
+                                <p style="font-weight: 300;">Dòng này là font-weight: 300</p>
+                                <p style="font-weight: 700;">Dòng này là font-weight: 700</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- margin -->
+                <!-- font-weight -->
+
+                <div class="app_main_block" id="b_font_size">
+                    <h2>font-size</h2>
+                    <p><c-strong>font-weight</c-strong> còn gọi là <txt-bold>độ đậm</txt-bold>, giúp văn bản, kí tự thay đổi độ đậm nhạt theo cài đặt.</p>
+                    <p><c-strong>font-weight</c-strong> có các giá trị phổ biến như là: <c-string>thin-100, extraLight-200, light-300, regular-400, medium-500, semiBold-600, bold-700, extraBold-800, black-900</c-string></p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>font-weight:</dt>
+                                <dd><c-string>500</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div>
+                                <p style="font-weight: 300;">Dòng này là font-weight: 300</p>
+                                <p style="font-weight: 700;">Dòng này là font-weight: 700</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- font-weight -->
 
                 <div class="app_main_block" id="b_padding">
                     <h2>padding</h2>
@@ -171,10 +213,10 @@
 
         <div class="app_related" id="related">
             <div class="app_releated_item">
-                Bài trước: <a href="../bai-4">margin, padding</a>
+                <a href="../bai-4">Bài trước: margin, padding</a>
             </div>
             <div class="app_releated_item">
-                Bài tiếp: <a href="../bai-6">position</a>
+                <a href="../bai-6">Bài tiếp: position</a>
             </div>
         </div>
         <div class="app_last_pos">

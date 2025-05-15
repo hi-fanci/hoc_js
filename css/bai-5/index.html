@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 5: font</title>
+    <title>fonts</title>
 
     <link rel="stylesheet" href="./../../assets/css/style.css">
     <script>
@@ -24,31 +24,25 @@
                 <div class="overflow">
                     <ul class="app_menu_lists">
                         <li class="app_menu_item">
-                            <a href="#b_intro" class="app_menu_link js_goto">Biến trong Javascript</a>
+                            <a href="#css_font_family" class="app_menu_link js_goto">font-family</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_init" class="app_menu_link js_goto">Cách khai báo biến</a>
+                            <a href="#css_font_weight" class="app_menu_link js_goto">font-weight</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_rule" class="app_menu_link js_goto">Quy tắc đặt tên của biến</a>
+                            <a href="#css_font_size" class="app_menu_link js_goto">font-size</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_update" class="app_menu_link js_goto">Thay đổi giá trị của biến</a>
+                            <a href="#css_font_style" class="app_menu_link js_goto">font-style</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_error" class="app_menu_link js_goto">Một số lỗi của biến</a>
+                            <a href="#css_lineheight" class="app_menu_link js_goto">line-height</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_intro2" class="app_menu_link js_goto">Hằng trong Javascript</a>
+                            <a href="#css_letterspacing" class="app_menu_link js_goto">letter-spacing</a>
                         </li>
                         <li class="app_menu_item">
-                            <a href="#b_init2" class="app_menu_link js_goto">Cách khai báo hằng</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_rule2" class="app_menu_link js_goto">Quy tắc đặt tên của hằng</a>
-                        </li>
-                        <li class="app_menu_item">
-                            <a href="#b_error2" class="app_menu_link js_goto">Một số lỗi của hằng</a>
+                            <a href="#css_texttransform" class="app_menu_link js_goto">text-transform</a>
                         </li>
                     </ul>
                 </div>
@@ -57,7 +51,7 @@
 
         <div class="app_main">
             <div class="app_main_content">
-                <div class="app_main_block" id="b_font_family">
+                <div class="app_main_block" id="css_font_family">
                     <h2>font-family</h2>
                     <p><c-strong>font-family</c-strong> còn gọi là <txt-bold>kiểu chữ</txt-bold>, giúp văn bản, kí tự thay đổi cách hiện thị theo cài đặt.</p>
                     <p><c-strong>font-family</c-strong> bao gồm 2 giá trị: <c-string>"tên kiểu chữ", nhóm của kiểu chữ</c-string></p>
@@ -74,17 +68,17 @@
                     <div class="css_board">
                         <div class="css_board_block">
                             <div>
-                                <p style="font-family: Open Sans, sans-serif;">Dòng này là font-family "Open Sans"</p>
-                                <p style="font-family: Inconsolata, serif;">Dòng này là font-family "Inconsolata"</p>
+                                <p style="font-family: Open Sans, sans-serif;">font-family: "Open Sans"</p>
+                                <p style="font-family: Inconsolata, serif;">font-family: "Inconsolata"</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- font-family -->
 
-                <div class="app_main_block" id="b_font_weight">
+                <div class="app_main_block" id="css_font_weight">
                     <h2>font-weight</h2>
-                    <p><c-strong>font-weight</c-strong> còn gọi là <txt-bold>độ đậm</txt-bold>, giúp văn bản, kí tự thay đổi độ đậm nhạt theo cài đặt.</p>
+                    <p><c-strong>font-weight</c-strong> còn gọi là <txt-bold>độ đậm</txt-bold>, giúp văn bản, kí tự thay đổi độ đậm nhạt theo cài đặt và theo font-family.</p>
                     <p><c-strong>font-weight</c-strong> có các giá trị phổ biến như là: <c-string>thin-100, extraLight-200, light-300, regular-400, medium-500, semiBold-600, bold-700, extraBold-800, black-900</c-string></p>
                     <ul class="pre">
                         <li>
@@ -99,24 +93,25 @@
                     <div class="css_board">
                         <div class="css_board_block">
                             <div>
-                                <p style="font-weight: 300;">Dòng này là font-weight: 300</p>
-                                <p style="font-weight: 700;">Dòng này là font-weight: 700</p>
+                                <p style="font-weight: 300;">font-weight: 300</p>
+                                <p style="font-weight: 500;">font-weight: 500</p>
+                                <p style="font-weight: 700;">font-weight: 700</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- font-weight -->
 
-                <div class="app_main_block" id="b_font_size">
+                <div class="app_main_block" id="css_font_size">
                     <h2>font-size</h2>
-                    <p><c-strong>font-weight</c-strong> còn gọi là <txt-bold>độ đậm</txt-bold>, giúp văn bản, kí tự thay đổi độ đậm nhạt theo cài đặt.</p>
-                    <p><c-strong>font-weight</c-strong> có các giá trị phổ biến như là: <c-string>thin-100, extraLight-200, light-300, regular-400, medium-500, semiBold-600, bold-700, extraBold-800, black-900</c-string></p>
+                    <p><c-strong>font-size</c-strong> còn gọi là <txt-bold>cở chữ</txt-bold>, giúp văn bản, kí tự thay đổi cở chữ theo cài đặt.</p>
+                    <p><c-strong>font-size</c-strong> có các giá trị phổ biến như là: <c-string>px, em, rem, vw</c-string></p>
                     <ul class="pre">
                         <li>
                             <c-keyw-name>p</c-keyw-name> {
                             <dl>
-                                <dt>font-weight:</dt>
-                                <dd><c-string>500</c-string>;</dd>
+                                <dt>font-size:</dt>
+                                <dd><c-string>10px</c-string>;</dd>
                             </dl>
                             }
                         </li>
@@ -124,99 +119,128 @@
                     <div class="css_board">
                         <div class="css_board_block">
                             <div>
-                                <p style="font-weight: 300;">Dòng này là font-weight: 300</p>
-                                <p style="font-weight: 700;">Dòng này là font-weight: 700</p>
+                                <p style="font-size: 20px;">font-size: 20px</p>
+                                <p style="font-size: 2em;">font-size: 2em</p>
+                                <p style="font-size: 2rem;">font-size: 2rem</p>
+                                <p style="font-size: 2vw;">font-size: 2vw</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- font-weight -->
+                <!-- font-size -->
 
-                <div class="app_main_block" id="b_padding">
-                    <h2>padding</h2>
+                <div class="app_main_block" id="css_font_style">
+                    <h2>font-style</h2>
+                    <p><c-strong>font-style</c-strong> còn gọi là <txt-bold>kiểu dáng</txt-bold>, giúp văn bản, kí tự tạo chữ nghiêng theo cài đặt.</p>
+                    <p><c-strong>font-style</c-strong> có các giá trị phổ biến như là: <c-string>normal(bình thường), italic(in nghiêng), oblique(hơi nghiêng)</c-string>.</p>
                     <ul class="pre">
                         <li>
-                            <c-keyw-name>span</c-keyw-name> {
+                            <c-keyw-name>p</c-keyw-name> {
                             <dl>
-                                <dt>padding:</dt>
-                                <dd><c-string>10px 20px 30px 40px</c-string>;</dd>
+                                <dt>font-style:</dt>
+                                <dd><c-string>italic</c-string>;</dd>
                             </dl>
                             }
                         </li>
                     </ul>
                     <div class="css_board">
                         <div class="css_board_block">
-                            <div class="css_board_padding">
-                                <span>content</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block_note">
-                        <c-note></c-note>
-                        <ul class="lists">
-                            <li><c-strong>padding</c-strong> tạo khoảng cách bên trong phần tử, tức là khoảng cách giữa nội dung của phần tử và đường viền của nó.</li>
-                            <li>Cách viết giống <c-strong>margin</c-strong></li>
-                            <li><txt-bold>Không khuyến khích</txt-bold> sử dụng cho các thẻ có thuộc tính <txt-bold>display: inline</txt-bold>.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- inline-block -->
-
-                <div class="app_main_block" id="b_margin_layout">
-                    <h2>Một số layout cơ bản dùng margin</h2>
-
-                    <h5>Căn giữa nhờ margin-left, right auto</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_margin__01">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>Tạo margin-top mặc định cho thẻ tuỳ ý</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_margin__02">
-                                <p>This is text</p>
-                                <p>This is text</p>
-                                <p>This is text</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>Canh đều các phần tử trong flex, nhờ margin-top auto</h5>
-                    <div class="css_board">
-                        <div class="css_board_block">
-                            <div class="css_board_margin__03">
-                                <div>
-                                    <p>This is title</p>
-                                    <p>view more button</p>
-                                </div>
-                                <div>
-                                    <p>This is long title, maybe break line</p>
-                                    <p>view more button</p>
-                                </div>
-                                <div>
-                                    <p>This is title</p>
-                                    <p>view more button</p>
-                                </div>
+                            <div>
+                                <p style="font-style: normal;">font-style: normal</p>
+                                <p style="font-style: oblique;">font-style: oblique</p>
+                                <p style="font-style: italic;">font-style: italic</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- b_margin_layout -->
+                <!-- font-style -->
 
+                <div class="app_main_block" id="css_lineheight">
+                    <h2>line-height</h2>
+                    <p><c-strong>line-height</c-strong> còn gọi là <txt-bold>chiều cao dòng</txt-bold>, giúp văn bản, kí tự tạo ra khoảng cách các dòng theo cài đặt.</p>
+                    <p><c-strong>line-height</c-strong> có các giá trị phổ biến như là: <c-string>số, px, em, rem</c-string>.</p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>line-height:</dt>
+                                <dd><c-string>1.5</c-string>; <c-cmt>// 1.5 = 150% font-size hiện tại</c-cmt></dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div>
+                                <p style="background-color: darkcyan; padding: 4px 12px; line-height: 1.5;">line-height: 1.5</p>
+                                <p style="background-color: darkcyan; padding: 4px 12px; line-height: 20px;">line-height: 20px</p>
+                                <p style="background-color: darkcyan; padding: 4px 12px; line-height: 5em;">line-height: 5em</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- line-height -->
+
+                <div class="app_main_block" id="css_letterspacing">
+                    <h2>letter-spacing</h2>
+                    <p><c-strong>letter-spacing</c-strong> còn gọi là <txt-bold>khoảng cách kí tự</txt-bold>, giúp văn bản, kí tự tạo ra khoảng cách với nhau theo cài đặt.</p>
+                    <p><c-strong>letter-spacing</c-strong> có các giá trị phổ biến như là: <c-string>%, px, em, rem</c-string>.</p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>letter-spacing:</dt>
+                                <dd><c-string>0.5em</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div>
+                                <p style="letter-spacing: 0.5em;">letter-spacing: 0.5em</p>
+                                <p style="letter-spacing: 5px;">letter-spacing: 5px</p>
+                                <p style="letter-spacing: 1rem;">letter-spacing: 1rem</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- letter-spacing -->
+
+                <div class="app_main_block" id="css_texttransform">
+                    <h2>text-transform</h2>
+                    <p><c-strong>text-transform</c-strong> còn gọi là <txt-bold>biến đổi kiểu chữ</txt-bold>, giúp văn bản, kí tự có thể viết hoa, thường theo cài đặt.</p>
+                    <p><c-strong>text-transform</c-strong> có các giá trị phổ biến như là: <c-string>uppercase(viết hoa), lowercase(viết thường), capitalize(viết hoa chữ đầu)</c-string>.</p>
+                    <ul class="pre">
+                        <li>
+                            <c-keyw-name>p</c-keyw-name> {
+                            <dl>
+                                <dt>text-transform:</dt>
+                                <dd><c-string>uppercase</c-string>;</dd>
+                            </dl>
+                            }
+                        </li>
+                    </ul>
+                    <div class="css_board">
+                        <div class="css_board_block">
+                            <div>
+                                <p style="text-transform: uppercase;">text-transform: uppercase</p>
+                                <p style="text-transform: lowercase;">text-transform: lowercase</p>
+                                <p style="text-transform: capitalize;">text-transform: capitalize</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- text-transform -->
             </div>
         </div>
 
         <div class="app_related" id="related">
             <div class="app_releated_item">
-                <a href="../bai-4">Bài trước: margin, padding</a>
+                <a href="../bai-4">margin & padding</a>
             </div>
             <div class="app_releated_item">
-                <a href="../bai-6">Bài tiếp: position</a>
+                <a href="../bai-6">position</a>
             </div>
         </div>
         <div class="app_last_pos">
